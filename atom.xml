@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2025-09-15T14:16:11.233Z</updated>
+  <updated>2025-09-18T14:19:41.707Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello我来了</title>
+    <link href="https://vte.cc/%E7%AC%94%E8%AE%B0/hello/"/>
+    <id>https://vte.cc/%E7%AC%94%E8%AE%B0/hello/</id>
+    <published>2025-09-18T13:47:22.000Z</published>
+    <updated>2025-09-18T14:19:41.707Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过近段的时间，来调试和学习如何使用这个<code>keep</code>主题, 我的小破站也可以说是勉勉强强上线了，这也是我自己写的第一篇文章吧。毕竟从搭建这个小破站开始，就要学习：<code>域名，hexo，GitHub</code>的各种操作，还要在电脑中安装：Git，Node.js，Visual Studio Code等软件。</p><p>总之在折腾的过程当中是各种报错，各种各样的BUG是层出不穷，也有抓狂到想要砸电脑的冲动，在这折腾的时候也有想过不行就拉几把倒，不弄这破玩意儿了。</p><p>现在是弄成了，回头想想这也算是一种抓狂和心理自己给自己博弈的一种体验吧。</p><p>hello，我来了</p><p><img                         lazyload                       alt="image"                       data-src="https://img.vte.cc/test/hello.webp"                        alt="hello"                 ></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;经过近段的时间，来调试和学习如何使用这个&lt;code&gt;keep&lt;/code&gt;主题, 我的小破站也可以说是勉勉强强上线了，这也是我自己写的第一篇文章吧。毕竟从搭建这个小破站开始，就要学习：&lt;code&gt;域名，hexo，GitHub&lt;/code&gt;的各种操作，还要在电脑中安装：Git</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://vte.cc/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
