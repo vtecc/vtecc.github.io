@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2025-10-09T03:15:28.061Z</updated>
+  <updated>2025-10-09T04:01:55.820Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>hexo写文章用到的代码记录</title>
-    <link href="https://vte.cc/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/1/"/>
-    <id>https://vte.cc/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/1/</id>
+    <link href="https://vte.cc/natter/1/"/>
+    <id>https://vte.cc/natter/1/</id>
     <published>2025-10-09T02:45:28.000Z</published>
-    <updated>2025-10-09T03:15:28.061Z</updated>
+    <updated>2025-10-09T04:01:55.820Z</updated>
     
     <content type="html"><![CDATA[<p>咱这个小破站搭建成功了，现在记录一下以后要用到的代码，免得到时候翻箱倒柜的找。</p><p>因为这个写作是需要用Markdown语法格式写，所以把常用的到东西在这记录一下。</p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [维特笔记](https://vte.cc)</span><br></pre></td></tr></table></figure><p>渲染结果</p><p>这是一个链接 <a href="https://vte.cc/">维特笔记</a></p><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>插入图片Markdown语法代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片链接 <span class="string">&quot;图片title&quot;</span>)</span><br></pre></td></tr></table></figure><p>对应的HTML代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img   src=<span class="string">&quot;图片链接&quot;</span>  alt=<span class="string">&quot;图片alt&quot;</span> title=<span class="string">&quot;图片title&quot;</span>&gt;</span><br></pre></td></tr></table></figure><h2 id="视频插入"><a href="#视频插入" class="headerlink" title="视频插入"></a>视频插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">&quot; //player.bilibili.com/player.html?isOutside=true&amp;aid=115252595267797&amp;bvid=BV1G6JCzCE21&amp;cid=32575260409&amp;p=1&amp;as_wide=1&amp;high_quality=1&amp;danmaku=0&quot;</span> style=<span class="string">&quot;width: 100%; aspect-ratio: 16 / 9; border: none;&quot;</span> allowfullscreen&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure><iframe src=" //player.bilibili.com/player.html?isOutside=true&aid=115252595267797&bvid=BV1G6JCzCE21&cid=32575260409&p=1&as_wide=1&high_quality=1&danmaku=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe><p>一般来说自己编写也就这几样，其他的好像没有。</p>]]></content>
     
@@ -35,7 +35,7 @@
     
     
     
-    <category term="休闲灌水" scheme="https://vte.cc/categories/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/"/>
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
     
     
     <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
@@ -46,10 +46,10 @@
   
   <entry>
     <title>hello我来了</title>
-    <link href="https://vte.cc/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/hello/"/>
-    <id>https://vte.cc/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/hello/</id>
+    <link href="https://vte.cc/natter/hello/"/>
+    <id>https://vte.cc/natter/hello/</id>
     <published>2025-09-18T13:47:22.000Z</published>
-    <updated>2025-10-09T03:42:52.262Z</updated>
+    <updated>2025-10-09T04:02:07.318Z</updated>
     
     <content type="html"><![CDATA[<p>经过近段的时间，来调试和学习如何使用这个<code>keep</code>主题, 我的小破站也可以说是勉勉强强上线了，这也是我自己写的第一篇文章吧。毕竟从搭建这个小破站开始，就要学习：<code>域名，hexo，GitHub</code>的各种操作，还要在电脑中安装：Git，Node.js，Visual Studio Code等软件。</p><p>总之在折腾的过程当中是各种报错，各种各样的BUG是层出不穷，也有抓狂到想要砸电脑的冲动，在这折腾的时候也有想过不行就拉几把倒，不弄这破玩意儿了。</p><p>现在是弄成了，回头想想这也算是一种抓狂和心理自己给自己博弈的一种体验吧。</p><p>hello，我来了</p><p><img                         lazyload                       alt="image"                       data-src="https://img.vte.cc/test/hello.webp"                        alt="hello"                 ></p>]]></content>
     
@@ -61,7 +61,7 @@
     
     
     
-    <category term="休闲灌水" scheme="https://vte.cc/categories/%E4%BC%91%E9%97%B2%E7%81%8C%E6%B0%B4/"/>
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
     
     
     <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
