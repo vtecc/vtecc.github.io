@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>优化我的hexo主题之增加了分类和404错误页面</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <article class="post-detail">
+  <h1 class="post-title">优化我的hexo主题之增加了分类和404错误页面</h1>
+  <div class="post-meta">
+    <span class="meta-date">📅 2025-11-03</span>
+    
+      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+    
+    
+      <span class="meta-tags">🏷️ <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>, <a href="/tags/hexo/">hexo</a></span>
+    
+  </div>
+  <!-- 文章内容：增强代码块兼容性 -->
+  <div class="post-content code-block-fix">
+    <p>按照上次的使用AI工具的经验，这次给自己这个小破站增加了两个页面，分别是：分类页面和404错误页面。</p>
+<p>一、添加分类页面（Categories）</p>
+<ol>
+<li>创建分类页面文件</li>
+</ol>
+<p>在 source 文件夹下创建 categories 文件夹，新建 index.md：文件路径：source&#x2F;categories&#x2F;index.md</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">layout: categories  <span class="comment"># 指定分类布局</span></span><br><span class="line"><span class="built_in">date</span>: 2025-10-31 12:00:00</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建分类页面布局</li>
+</ol>
+<p>在 layout 文件夹下新建 categories.ejs：文件路径：layout&#x2F;categories.ejs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class=<span class="string">&quot;archive categories-page&quot;</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;archive-title&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;&lt;%= page.title %&gt;&lt;/h1&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% <span class="keyword">if</span> (site.categories.length &gt; 0) &#123; %&gt;</span><br><span class="line">    &lt;% site.categories.each(<span class="keyword">function</span>(category) &#123; %&gt;</span><br><span class="line">      &lt;div class=<span class="string">&quot;category-item&quot;</span>&gt;</span><br><span class="line">        &lt;!-- 分类名称与文章数量 --&gt;</span><br><span class="line">        &lt;h2 class=<span class="string">&quot;category-name&quot;</span>&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;&lt;%= category.permalink %&gt;&quot;</span> style=<span class="string">&quot;color: var(--accent-color);&quot;</span>&gt;</span><br><span class="line">            &lt;%= category.name %&gt;</span><br><span class="line">            &lt;span class=<span class="string">&quot;category-count&quot;</span>&gt;（&lt;%= category.posts.length %&gt;篇）&lt;/span&gt;</span><br><span class="line">          &lt;/a&gt;</span><br><span class="line">        &lt;/h2&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 分类下的文章列表 --&gt;</span><br><span class="line">        &lt;ul class=<span class="string">&quot;category-posts&quot;</span>&gt;</span><br><span class="line">          &lt;% category.posts.sort(<span class="string">&#x27;-date&#x27;</span>).each(<span class="keyword">function</span>(post) &#123; %&gt;</span><br><span class="line">            &lt;li class=<span class="string">&quot;archive-item&quot;</span>&gt;</span><br><span class="line">              &lt;span class=<span class="string">&quot;archive-date&quot;</span>&gt;&lt;%= <span class="built_in">date</span>(post.date, <span class="string">&#x27;YYYY-MM-DD&#x27;</span>) %&gt;&lt;/span&gt;</span><br><span class="line">              &lt;a href=<span class="string">&quot;&lt;%= post.permalink %&gt;&quot;</span> class=<span class="string">&quot;archive-title-link&quot;</span>&gt;&lt;%= post.title %&gt;&lt;/a&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">          &lt;% &#125;) %&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;% &#125;) %&gt;</span><br><span class="line">  &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;no-posts&quot;</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">&quot;no-posts-inner&quot;</span>&gt;</span><br><span class="line">        &lt;i class=<span class="string">&quot;fa fa-folder-o&quot;</span> style=<span class="string">&quot;font-size: 2rem; margin-bottom: 1rem;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;p&gt;暂无分类&lt;/p&gt;</span><br><span class="line">        &lt;p style=<span class="string">&quot;font-size: 0.9rem;&quot;</span>&gt;在文章Front-matter中添加 &lt;code&gt;categories: 分类名&lt;/code&gt; 创建分类&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>导航栏添加分类链接</li>
+</ol>
+<p>修改 layout&#x2F;_partial&#x2F;header.ejs，在导航菜单中添加分类项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class=<span class="string">&quot;header-menu&quot;</span>&gt;</span><br><span class="line">  &lt;ul class=<span class="string">&quot;menu-list&quot;</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">&quot;menu-item &lt;%= is_home() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;</span><br><span class="line">      &lt;a href=<span class="string">&quot;&lt;%= url_for(&#x27;/&#x27;) %&gt;&quot;</span>&gt;首页&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li class=<span class="string">&quot;menu-item &lt;%= is_archive() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;</span><br><span class="line">      &lt;a href=<span class="string">&quot;&lt;%= url_for(&#x27;/archives&#x27;) %&gt;&quot;</span>&gt;归档&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;!-- 新增分类导航项 --&gt;</span><br><span class="line">    &lt;li class=<span class="string">&quot;menu-item &lt;%= is_page(&#x27;categories&#x27;) ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;</span><br><span class="line">      &lt;a href=<span class="string">&quot;&lt;%= url_for(&#x27;/categories&#x27;) %&gt;&quot;</span>&gt;分类&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li class=<span class="string">&quot;menu-item &lt;%= is_tag() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;</span><br><span class="line">      &lt;a href=<span class="string">&quot;&lt;%= url_for(&#x27;/tags&#x27;) %&gt;&quot;</span>&gt;标签&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li class=<span class="string">&quot;menu-item &lt;%= is_page(&#x27;about&#x27;) ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;</span><br><span class="line">      &lt;a href=<span class="string">&quot;&lt;%= url_for(&#x27;/about&#x27;) %&gt;&quot;</span>&gt;关于&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>添加分类页面样式（style.css 补充）</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ==================================================</span></span><br><span class="line"><span class="comment">   分类页面样式</span></span><br><span class="line"><span class="comment">================================================== */</span></span><br><span class="line"><span class="selector-class">.categories-page</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--white);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="built_in">var</span>(--shadow);</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">800px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">  <span class="attribute">margin-right</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-item</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="built_in">var</span>(--border-color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-item</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">  <span class="attribute">border-bottom</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-name</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.4rem</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--accent-color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-count</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.9rem</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--secondary-color);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-posts</span> &#123;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 复用归档页文章项样式，保持一致 */</span></span><br><span class="line"><span class="selector-class">.category-posts</span> <span class="selector-class">.archive-item</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0.6rem</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="built_in">var</span>(--border-color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.category-posts</span> <span class="selector-class">.archive-item</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--light-gray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二、添加 404 错误页面</p>
+<ol>
+<li>创建 404 页面文件</li>
+</ol>
+<p>在 source 根目录下新建 404.html（直接放在 source 下，无需文件夹）：</p>
+<p>文件路径：source&#x2F;404.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;&lt;%= config.language || &#x27;zh-CN&#x27; %&gt;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>404 - 页面未找到<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/css/style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 导航栏 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">      &lt;%- include(&#x27;_partial/header&#x27;) %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 404内容区 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">&quot;four-zero-four&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;four-zero-four-inner&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;error-code&quot;</span>&gt;</span>404<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;error-message&quot;</span>&gt;</span>页面好像迷路了...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;error-tips&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>你访问的页面不存在或已被移动<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>建议检查URL是否正确，或返回首页重新导航<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%= url_for(&#x27;/&#x27;) %&gt;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;back-home-btn&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-arrow-left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 返回首页</span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 底部 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">      &lt;%- include(&#x27;_partial/footer&#x27;) %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加 404 页面样式（style.css 补充）</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ==================================================</span></span><br><span class="line"><span class="comment">   404页面样式</span></span><br><span class="line"><span class="comment">================================================== */</span></span><br><span class="line"><span class="selector-class">.four-zero-four</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--white);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">4rem</span> <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="built_in">var</span>(--shadow);</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">800px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">  <span class="attribute">margin-right</span>: auto;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.four-zero-four-inner</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error-code</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">6rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--accent-color);</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error-message</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.8rem</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-color);</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1.5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error-tips</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--secondary-color);</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.back-home-btn</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0.8rem</span> <span class="number">1.6rem</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--accent-color);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--white);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">transition</span>: background-color <span class="number">0.2s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.back-home-btn</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--accent-hover);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--white);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 响应式调整 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.four-zero-four</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">3rem</span> <span class="number">1.5rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.error-code</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">4.5rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.error-message</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.5rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到现在就成功的增加了这两个页面，当然以上的代码只适合我自己使用，对其他的任何人都是无效的。</p>
+<p>不过我在测试404错误页面的时候，上面的404错误页代码显示是不正常的，我也不知道是哪里出的问题。</p>
+<p>最后我把style.css文件里的404错误代码删除之后正常了！虽然现在看起来依然是一个怪怪的感觉。但是我在测试的时候，现在是正常的显示了，不像我一开始测试的时候出现的一堆乱码了。😄</p>
+<p>现在先记录一下，免得以后自己在分不清楚那个是那个。😄</p>
+
+  </div>
+</article>
+
+<!-- 上一篇/下一篇导航 -->
+<div class="post-nav-wrapper">
+  <h3 class="post-nav-title">文章导航</h3>
+  <div class="post-nav">
+    
+      <a href="/natter/5/" class="post-nav-item prev-item">
+        <span class="nav-icon">←</span>
+        <div class="nav-content">
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title">这才是真正的女装大佬</span>
+        </div>
+      </a>
+    
+    
+      <a href="/natter/3/" class="post-nav-item next-item">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">我用AI给自己写了一个hexo主题</span>
+        </div>
+        <span class="nav-icon">→</span>
+      </a>
+    
+  </div>
+</div>
+
+<!-- Giscus评论区 -->
+
+  <div class="comments-section">
+    <h3 class="comments-title">评论区</h3>
+    <div id="giscus-container"></div>
+  </div>
+
+  <!-- Giscus脚本 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="vtecc/vtecc.github.io"
+    data-repo-id="R_kgDOPwsEJA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPwsEJM4Cwa2n"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

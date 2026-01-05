@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>优化博客之增加一个摄影页面</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <article class="post-detail">
+  <h1 class="post-title">优化博客之增加一个摄影页面</h1>
+  <div class="post-meta">
+    <span class="meta-date">📅 2025-12-22</span>
+    
+      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+    
+    
+      <span class="meta-tags">🏷️ <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>, <a href="/tags/hexo/">hexo</a></span>
+    
+  </div>
+  <!-- 文章内容：增强代码块兼容性 -->
+  <div class="post-content code-block-fix">
+    <p>话说看到别人的博客里都有好多好多的功能，像什么<code>足迹 相册</code>等功能，属实是有点羡慕！所以现在趁着AI可以使用，那就让AI帮我写一个页面得了，嘎嘎。</p>
+<p>先说一下我的思路，我想的是要有新功能，但是还不需要花钱，并且适合我这种小白使用。所以我发现有些网站天生就适合储存照片，比如<code>Unsplash</code>。</p>
+<p>当然我不知道别人咋想的，也好像有人这么干，但是这么干的人我发现很少，我也不知道这个搞的想法对不对。所以我先尝试着用用再说。</p>
+<h1 id="步骤-1：创建-Hexo-照片页面"><a href="#步骤-1：创建-Hexo-照片页面" class="headerlink" title="步骤 1：创建 Hexo 照片页面"></a>步骤 1：创建 Hexo 照片页面</h1><p>首先在博客根目录执行命令，创建一个名为photos的页面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;photos&quot;</span></span><br></pre></td></tr></table></figure>
+<p>执行后会生成 source&#x2F;photos&#x2F;index.md 文件，打开它并修改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的照片集</span><br><span class="line"><span class="built_in">date</span>: &lt;%= new Date().toISOString() %&gt;</span><br><span class="line">layout: photos  <span class="comment"># 对应我们要写的模板文件</span></span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 可选：关闭评论区</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h1 id="步骤-2：新增照片页模板（核心）"><a href="#步骤-2：新增照片页模板（核心）" class="headerlink" title="步骤 2：新增照片页模板（核心）"></a>步骤 2：新增照片页模板（核心）</h1><p>在主题文件夹 themes&#x2F;你的主题名称&#x2F;layout&#x2F; 下新建 photos.ejs 文件，</p>
+<blockquote>
+<p>首先先说明一下，因为这个是我自己的hexo主题，所以可能不太适合你们使用，我主要是为了做一个笔记，但是这个思路你们可以借鉴一下哈，当然高手略过哈。我是直接使用<code>Unsplash</code>的api调用我自己上传的照片，这个也要说明一下，因为代码是不一样的。</p>
+</blockquote>
+<p>粘贴以下代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 复用主题统一的内容容器，保持宽度对齐 --&gt;</span><br><span class="line">&lt;div class=<span class="string">&quot;content-wrapper&quot;</span>&gt;</span><br><span class="line">  &lt;!-- 页面标题（和现有文章标题风格一致） --&gt;</span><br><span class="line">  &lt;h1 class=<span class="string">&quot;page-title&quot;</span> style=<span class="string">&quot;text-align: center; margin-bottom: clamp(20px, 3vw, 30px); color: var(--dark-color);&quot;</span>&gt;</span><br><span class="line">    &lt;%= page.title %&gt;</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 照片容器：Flex响应式布局，复用主题卡片样式 --&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;photos-grid&quot;</span> <span class="built_in">id</span>=<span class="string">&quot;unsplash-photos&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 加载中提示 --&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;loading-tip&quot;</span> style=<span class="string">&quot;width: 100%; text-align: center; color: var(--dark-color); font-size: 1em;&quot;</span>&gt;</span><br><span class="line">      正在加载我的照片...</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // ========== 替换成你自己的信息 ==========</span><br><span class="line">  const UNSPLASH_ACCESS_KEY = <span class="string">&quot;你的Unsplash Access Key&quot;</span>; // 替换成你的Access Key</span><br><span class="line">  const YOUR_UNSPLASH_USERNAME = <span class="string">&quot;你的Unsplash用户名&quot;</span>; // 替换成你的用户名（@后面的部分）</span><br><span class="line">  const PHOTO_COUNT = 12; // 要展示的照片数量（最大30）</span><br><span class="line">  // ======================================</span><br><span class="line"></span><br><span class="line">  // 调用Unsplash API：获取指定用户（你）的照片</span><br><span class="line">  fetch(`https://api.unsplash.com/users/<span class="variable">$&#123;YOUR_UNSPLASH_USERNAME&#125;</span>/photos?per_page=<span class="variable">$&#123;PHOTO_COUNT&#125;</span>&amp;client_id=<span class="variable">$&#123;UNSPLASH_ACCESS_KEY&#125;</span>`)</span><br><span class="line">    .<span class="keyword">then</span>(res =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!res.ok) throw new Error(<span class="string">&quot;加载失败，请检查Access Key和用户名是否正确&quot;</span>);</span><br><span class="line">      <span class="built_in">return</span> res.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="keyword">then</span>(data =&gt; &#123;</span><br><span class="line">      const photosGrid = document.getElementById(<span class="string">&quot;unsplash-photos&quot;</span>);</span><br><span class="line">      // 清空加载提示</span><br><span class="line">      photosGrid.innerHTML = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">      // 如果没有照片，显示提示</span><br><span class="line">      <span class="keyword">if</span> (data.length === 0) &#123;</span><br><span class="line">        photosGrid.innerHTML = `&lt;p style=<span class="string">&quot;width:100%; text-align:center; color:#666; font-size:1em;&quot;</span>&gt;你的Unsplash账户暂无公开照片～&lt;/p&gt;`;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 循环渲染你的照片卡片（复用主题样式）</span><br><span class="line">      data.forEach(photo =&gt; &#123;</span><br><span class="line">        const card = document.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">        card.className = <span class="string">&quot;photo-card&quot;</span>;</span><br><span class="line">        card.innerHTML = `</span><br><span class="line">          &lt;div class=<span class="string">&quot;photo-img-wrapper&quot;</span>&gt;</span><br><span class="line">            &lt;!-- 加载你的照片（选regular尺寸，平衡清晰度和加载速度） --&gt;</span><br><span class="line">            &lt;img src=<span class="string">&quot;<span class="variable">$&#123;photo.urls.regular&#125;</span>&quot;</span> alt=<span class="string">&quot;<span class="variable">$&#123;photo.alt_description || &#x27;我的Unsplash照片&#x27;&#125;</span>&quot;</span> loading=<span class="string">&quot;lazy&quot;</span>&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=<span class="string">&quot;photo-caption&quot;</span>&gt;</span><br><span class="line">            <span class="variable">$&#123;photo.alt_description || &#x27;我的照片&#x27;&#125;</span></span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        `;</span><br><span class="line">        photosGrid.appendChild(card);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(err =&gt; &#123;</span><br><span class="line">      const photosGrid = document.getElementById(<span class="string">&quot;unsplash-photos&quot;</span>);</span><br><span class="line">      photosGrid.innerHTML = `&lt;p style=<span class="string">&quot;width:100%; text-align:center; color:#e74c3c; font-size:1em;&quot;</span>&gt;加载失败：<span class="variable">$&#123;err.message&#125;</span>&lt;/p&gt;`;</span><br><span class="line">      console.error(<span class="string">&quot;Unsplash API错误：&quot;</span>, err);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>整段的代码 你只需要修改成为自己的<code>api</code>的<code>key</code>和账户名称，就能够显示自己上传的照片了。</p>
+<p>当然css样式方面根据你自己使用的hexo主题样式修改哈，这里我就不多说啦，因为每一个主题的css样式都不一样。</p>
+<p>看效果<br><img src="https://img.vte.cc//test/Screenshot_20251222115611.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此我的摄影页面就弄成了，当然主要还是ai牛逼。我是纯小白。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>以后我只需要在<code>Unsplash</code>这个网站中上传我拍摄的照片，那么这些我上传的照片就能够自动在我的小破站中展示，并且我无需再次修改这个页面的任何代码。</li>
+<li>我无需为了储存照片烦恼。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>照片的所有权不在自己手中，</li>
+<li>每小时最多1,000 次请求，超出限制会返回 429 错误（Too Many Requests）</li>
+</ul>
+<p>但是我估计我这个小破站是没啥人看的，所以我现在完全不担心这个，除非有人打我的小破站。</p>
+
+  </div>
+</article>
+
+<!-- 上一篇/下一篇导航 -->
+<div class="post-nav-wrapper">
+  <h3 class="post-nav-title">文章导航</h3>
+  <div class="post-nav">
+    
+      <a href="/natter/9/" class="post-nav-item prev-item">
+        <span class="nav-icon">←</span>
+        <div class="nav-content">
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title">咱也来个年终总结</span>
+        </div>
+      </a>
+    
+    
+      <a href="/natter/7/" class="post-nav-item next-item">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">冬天还真不适合在山里自驾</span>
+        </div>
+        <span class="nav-icon">→</span>
+      </a>
+    
+  </div>
+</div>
+
+<!-- Giscus评论区 -->
+
+  <div class="comments-section">
+    <h3 class="comments-title">评论区</h3>
+    <div id="giscus-container"></div>
+  </div>
+
+  <!-- Giscus脚本 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="vtecc/vtecc.github.io"
+    data-repo-id="R_kgDOPwsEJA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPwsEJM4Cwa2n"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

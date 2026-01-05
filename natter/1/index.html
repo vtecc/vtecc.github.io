@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hexo写文章用到的代码记录</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <article class="post-detail">
+  <h1 class="post-title">hexo写文章用到的代码记录</h1>
+  <div class="post-meta">
+    <span class="meta-date">📅 2025-10-09</span>
+    
+      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+    
+    
+      <span class="meta-tags">🏷️ <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>, <a href="/tags/hexo/">hexo</a></span>
+    
+  </div>
+  <!-- 文章内容：增强代码块兼容性 -->
+  <div class="post-content code-block-fix">
+    <p>咱这个小破站搭建成功了，现在记录一下以后要用到的代码，免得到时候翻箱倒柜的找。</p>
+<p>因为这个写作是需要用Markdown语法格式写，所以把常用的到东西在这记录一下。</p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [维特笔记](https://vte.cc)</span><br></pre></td></tr></table></figure>
+<p>渲染结果</p>
+<p>这是一个链接 <a href="https://vte.cc/">维特笔记</a></p>
+<h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>插入图片Markdown语法代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片链接 <span class="string">&quot;图片title&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对应的HTML代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img </span><br><span class="line"> src=<span class="string">&quot;图片链接&quot;</span> alt=<span class="string">&quot;图片alt&quot;</span> title=<span class="string">&quot;图片title&quot;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="引用书上的句子"><a href="#引用书上的句子" class="headerlink" title="引用书上的句子"></a>引用书上的句子</h3><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+
+<h3 id="引用网络上的文章"><a href="#引用网络上的文章" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h3><blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a target="_blank" rel="noopener" href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<h2 id="视频插入"><a href="#视频插入" class="headerlink" title="视频插入"></a>视频插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">&quot; //player.bilibili.com/player.html?isOutside=true&amp;aid=115252595267797&amp;bvid=BV1G6JCzCE21&amp;cid=32575260409&amp;p=1&amp;as_wide=1&amp;high_quality=1&amp;danmaku=0&quot;</span> style=<span class="string">&quot;width: 100%; aspect-ratio: 16 / 9; border: none;&quot;</span> allowfullscreen&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+
+<iframe src=" //player.bilibili.com/player.html?isOutside=true&aid=115252595267797&bvid=BV1G6JCzCE21&cid=32575260409&p=1&as_wide=1&high_quality=1&danmaku=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe>
+
+
+<h2 id="音乐插入"><a href="#音乐插入" class="headerlink" title="音乐插入"></a>音乐插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio controls&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">&quot;你的mp3地址&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;audio/mpeg&quot;</span>&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure>
+
+<audio controls>
+  <source src="https://wasmer.vte.cc/wp-content/uploads/2025/10/video_a__Ba__-Mine-Ba__-Mi._0.mp3" type="audio/mpeg">
+  您的浏览器不支持 audio 元素。
+</audio>
+
+<p>一般来说自己编写也就这几样，其他的好像没有。</p>
+
+  </div>
+</article>
+
+<!-- 上一篇/下一篇导航 -->
+<div class="post-nav-wrapper">
+  <h3 class="post-nav-title">文章导航</h3>
+  <div class="post-nav">
+    
+      <a href="/natter/ai/" class="post-nav-item prev-item">
+        <span class="nav-icon">←</span>
+        <div class="nav-content">
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title">AI工具确实牛逼</span>
+        </div>
+      </a>
+    
+    
+      <a href="/natter/hello/" class="post-nav-item next-item">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">hello我来了</span>
+        </div>
+        <span class="nav-icon">→</span>
+      </a>
+    
+  </div>
+</div>
+
+<!-- Giscus评论区 -->
+
+  <div class="comments-section">
+    <h3 class="comments-title">评论区</h3>
+    <div id="giscus-container"></div>
+  </div>
+
+  <!-- Giscus脚本 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="vtecc/vtecc.github.io"
+    data-repo-id="R_kgDOPwsEJA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPwsEJM4Cwa2n"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

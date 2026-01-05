@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开源项目</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <!-- 复用主题统一的内容容器 -->
+<div class="content-wrapper">
+  <!-- 页面标题（和现有风格一致） -->
+  <h1 class="page-title" style="text-align: center; margin-bottom: clamp(20px, 3vw, 30px); color: var(--dark-color);">
+    开源项目
+  </h1>
+
+  <!-- 项目容器：Flex响应式布局 -->
+  <div class="projects-grid" id="github-projects">
+    <!-- 加载中提示 -->
+    <div class="loading-tip" style="width: 100%; text-align: center; color: var(--dark-color); font-size: 1em;">
+      正在加载我的GitHub项目...
+    </div>
+  </div>
+</div>
+
+<script>
+  // ========== 仅保留用户名，删除Token ==========
+  const GITHUB_USERNAME = "vtecc";  // 比如：octocat
+  const PROJECTS_PER_PAGE = 12;  // 每页展示12个项目
+  // =============================================
+
+  // DOM元素
+  const projectsGrid = document.getElementById("github-projects");
+
+  // 加载GitHub项目（匿名访问，无Token）
+  function loadGitHubProjects() {
+    // 显示加载中
+    projectsGrid.innerHTML = `<div class="loading-tip" style="width: 100%; text-align: center; color: var(--dark-color); font-size: 1em;">正在加载我的GitHub项目...</div>`;
+
+    // 调用GitHub API（匿名访问，去掉Token请求头）
+    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=${PROJECTS_PER_PAGE}&sort=updated`, {
+      headers: {
+        "Accept": "application/vnd.github.v3+json" // 仅保留必要的请求头
+      }
+    })
+    .then(res => {
+      if (!res.ok) {
+        if (res.status === 403) throw new Error("API访问速率限制（匿名每小时60次），稍等再试");
+        else throw new Error("加载失败，请检查GitHub用户名是否正确");
+      }
+      return res.json();
+    })
+    .then(projects => {
+      // 清空加载提示
+      projectsGrid.innerHTML = "";
+
+      // 无项目时的提示
+      if (projects.length === 0) {
+        projectsGrid.innerHTML = `<p style="width:100%; text-align:center; color:#666; font-size:1em;">你的GitHub账户暂无公开项目～</p>`;
+        return;
+      }
+
+      // 渲染项目卡片（和现有主题风格统一）
+      projects.forEach(project => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        card.innerHTML = `
+          <div class="project-info">
+            <h3 class="project-name">
+              <a href="${project.html_url}" target="_blank" rel="noopener">${project.name}</a>
+            </h3>
+            <p class="project-desc">${project.description || "暂无项目描述"}</p>
+            <div class="project-meta">
+              <span class="project-lang">
+                <span style="background: ${getLangColor(project.language)}; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px;"></span>
+                ${project.language || "未知语言"}
+              </span>
+              <span class="project-stars">⭐ ${project.stargazers_count}</span>
+              <span class="project-update">更新于：${new Date(project.updated_at).toLocaleDateString()}</span>
+            </div>
+          </div>
+        `;
+        projectsGrid.appendChild(card);
+      });
+    })
+    .catch(err => {
+      projectsGrid.innerHTML = `<p style="width:100%; text-align:center; color:#e74c3c; font-size:1em;">加载失败：${err.message}</p>`;
+      console.error("GitHub API错误：", err);
+    });
+  }
+
+  // 辅助函数：根据编程语言显示对应颜色（和GitHub风格一致）
+  function getLangColor(lang) {
+    const langColors = {
+      "JavaScript": "#f1e05a",
+      "Python": "#3572A5",
+      "Java": "#b07219",
+      "TypeScript": "#2b7489",
+      "HTML": "#e34c26",
+      "CSS": "#563d7c",
+      "Go": "#00ADD8",
+      "PHP": "#4F5D95",
+      "C": "#555555",
+      "C++": "#00599C",
+      "Ruby": "#701516",
+      "Vue": "#41b883",
+      "React": "#61dafb",
+      "Dockerfile": "#384d54"
+    };
+    return langColors[lang] || "#999";
+  }
+
+  // 初始化加载项目
+  loadGitHubProjects();
+</script>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的图床解决方案</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <article class="post-detail">
+  <h1 class="post-title">我的图床解决方案</h1>
+  <div class="post-meta">
+    <span class="meta-date">📅 2025-10-20</span>
+    
+      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+    
+    
+      <span class="meta-tags">🏷️ <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>, <a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a></span>
+    
+  </div>
+  <!-- 文章内容：增强代码块兼容性 -->
+  <div class="post-content code-block-fix">
+    <p>这个小破站也搭建起来有一个多月了。在文章里写点东西有时候是需要配置图片的。文章里有时候没有图片总归是不行的。咱的图片要储存在哪里呢？这个也是前几天一直在想的问题，最终的图片储存地现在也是解决了。</p>
+<p>说一下我自己现在的图床解决方案就是：<code>PicGo + GitHub + PicX</code></p>
+<h1 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h1><p>PicGo是一款开源的图床管理工具，主要用于快速上传图片到云端并获取可分享的链接，非常适合写博客、文档和笔记时使用。它支持多种图床服务，如微博、七牛云、腾讯云COS、GitHub等，功能强大且简单易用。使用PicGo后，上传成功的图片会自动复制链接地址到剪贴板，方便用户在Markdown或网页中嵌入使用。</p>
+<p>PicGo官网：<a target="_blank" rel="noopener" href="https://picgo.github.io/">https://picgo.github.io/</a></p>
+<h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><p>GitHub这个就更好的理解了，我这里就不多介绍了。毕竟我这个小破站就部署在GitHub上面。</p>
+<p>GitHub官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
+<h1 id="PicX压缩图片工具"><a href="#PicX压缩图片工具" class="headerlink" title="PicX压缩图片工具"></a>PicX压缩图片工具</h1><p>PicX 是一款基于 GitHub API 开发的图床工具，提供图片上传托管、生成图片链接和常用图片工具箱服务。广泛适用于静态博客、社交网络、技术论坛、自媒体图文编辑和图片存储等场景。对于需要在互联网上存储及分享大量图片的用户来说，PicX 是一个免费、便捷、高效、稳定的解决方案。</p>
+<p>我并没有按照PicX的使用文档上面的操作，因为我只需要PicX里面的工具箱里的压缩功能和图片加水印功能。</p>
+<p>PicX官网：<a target="_blank" rel="noopener" href="https://picx.xpoet.cn/">https://picx.xpoet.cn/</a></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>效果展示这块我就上传一些 前几天去的邢台博物馆里的一些照片吧。</p>
+<details>
+<summary>点击查看效果</summary>
+
+<p><img src="https://img.vte.cc//test/IMG_20251018_123330.webp"><br><img src="https://img.vte.cc//test/IMG_20251018_111949.webp"><br><img src="https://img.vte.cc//test/IMG_20251018_111050.webp"><br><img src="https://img.vte.cc//test/IMG_20251018_111548.webp"></p>
+</details>
+
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><code>PicGo + GitHub + PicX</code>这三个组合使用是可以免费使用的，这也是我最近几天找到的办法。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>总体来说是依赖于GitHub这个社区生态，如果GitHub删除了自个的账号，那这一切都是浮云了。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>备份，一定要备份。</p>
+
+  </div>
+</article>
+
+<!-- 上一篇/下一篇导航 -->
+<div class="post-nav-wrapper">
+  <h3 class="post-nav-title">文章导航</h3>
+  <div class="post-nav">
+    
+      <a href="/natter/3/" class="post-nav-item prev-item">
+        <span class="nav-icon">←</span>
+        <div class="nav-content">
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title">我用AI给自己写了一个hexo主题</span>
+        </div>
+      </a>
+    
+    
+      <a href="/natter/ai/" class="post-nav-item next-item">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">AI工具确实牛逼</span>
+        </div>
+        <span class="nav-icon">→</span>
+      </a>
+    
+  </div>
+</div>
+
+<!-- Giscus评论区 -->
+
+  <div class="comments-section">
+    <h3 class="comments-title">评论区</h3>
+    <div id="giscus-container"></div>
+  </div>
+
+  <!-- Giscus脚本 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="vtecc/vtecc.github.io"
+    data-repo-id="R_kgDOPwsEJA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPwsEJM4Cwa2n"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

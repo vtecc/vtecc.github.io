@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>摄影</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <!-- 复用主题统一的内容容器，保持宽度对齐 -->
+<div class="content-wrapper">
+  <!-- 页面标题（和现有文章标题风格一致） -->
+  <h1 class="page-title" style="text-align: center; margin-bottom: clamp(20px, 3vw, 30px); color: var(--dark-color);">
+    摄影
+  </h1>
+
+  <!-- 照片容器：Flex响应式布局，复用主题卡片样式 -->
+  <div class="photos-grid" id="unsplash-photos">
+    <!-- 加载中提示 -->
+    <div class="loading-tip" style="width: 100%; text-align: center; color: var(--dark-color); font-size: 1em;">
+      正在加载我的照片...
+    </div>
+  </div>
+
+  <!-- 分页按钮容器（复用主题分页样式） -->
+  <div class="pagination" id="photo-pagination" style="margin-top: 30px; display: none;">
+    <a href="javascript:;" class="prev-btn" id="prev-page">上一页</a>
+    <span class="page-info" id="page-info">第 1 页 / 共 0 页</span>
+    <a href="javascript:;" class="next-btn" id="next-page">下一页</a>
+  </div>
+</div>
+
+<!-- 图片放大预览模态框 -->
+<div class="photo-modal" id="photo-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
+  <span class="modal-close" id="modal-close" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s;">×</span>
+  <img class="modal-img" id="modal-img" style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px;">
+</div>
+
+<script>
+  // ========== 替换成你自己的信息 ==========
+  const UNSPLASH_ACCESS_KEY = "k2Uy2DT3Xu6ZfEXMw1Fkut9-ldShWNbrd7IL7t0e6j8"; // 你的Unsplash Access Key
+  const YOUR_UNSPLASH_USERNAME = "vtecc"; // 你的Unsplash用户名（@后面的部分）
+  const PHOTO_PER_PAGE = 9; // 每页展示9张照片
+  // ======================================
+
+  // 分页状态管理
+  let currentPage = 1;
+  let totalPages = 1;
+  let totalPhotos = 0;
+
+  // DOM元素获取
+  const photosGrid = document.getElementById("unsplash-photos");
+  const paginationContainer = document.getElementById("photo-pagination");
+  const prevBtn = document.getElementById("prev-page");
+  const nextBtn = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
+  const photoModal = document.getElementById("photo-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalClose = document.getElementById("modal-close");
+
+  // 1. 加载指定页码的照片（核心函数）
+  function loadPhotos(page = 1) {
+    // 显示加载提示
+    photosGrid.innerHTML = `<div class="loading-tip" style="width: 100%; text-align: center; color: var(--dark-color); font-size: 1em;">正在加载第 ${page} 页照片...</div>`;
+    
+    // 调用Unsplash API（带分页参数）
+    fetch(`https://api.unsplash.com/users/${YOUR_UNSPLASH_USERNAME}/photos?page=${page}&per_page=${PHOTO_PER_PAGE}&client_id=${UNSPLASH_ACCESS_KEY}`)
+      .then(res => {
+        if (!res.ok) throw new Error("加载失败，请检查Access Key和用户名是否正确");
+        // 从响应头获取总照片数，计算总页数
+        totalPhotos = parseInt(res.headers.get("X-Total") || 0);
+        totalPages = Math.ceil(totalPhotos / PHOTO_PER_PAGE);
+        return res.json();
+      })
+      .then(data => {
+        // 清空加载提示
+        photosGrid.innerHTML = "";
+
+        // 无照片时显示提示
+        if (data.length === 0) {
+          photosGrid.innerHTML = `<p style="width:100%; text-align:center; color:#666; font-size:1em;">你的Unsplash账户暂无公开照片～</p>`;
+          paginationContainer.style.display = "none";
+          return;
+        }
+
+        // 循环渲染照片卡片（含时间/地点）
+        data.forEach(photo => {
+          // 格式化上传时间：ISO格式转 YYYY-MM-DD
+          const photoDate = new Date(photo.created_at);
+          const formattedDate = `${photoDate.getFullYear()}-${(photoDate.getMonth() + 1).toString().padStart(2, '0')}-${photoDate.getDate().toString().padStart(2, '0')}`;
+          
+          // 处理拍摄地点：空值时显示“未填写地点”
+          const photoLocation = photo.location ? photo.location.split(',')[0] : "未填写地点"; // 只取城市部分
+
+          const card = document.createElement("div");
+          card.className = "photo-card";
+          card.innerHTML = `
+            <div class="photo-img-wrapper">
+              <img src="${photo.urls.regular}" alt="${photo.alt_description || '我的Unsplash照片'}" loading="lazy" data-full-url="${photo.urls.full}">
+            </div>
+            <div class="photo-caption">
+              ${photo.alt_description || '摄影'}
+              <!-- 新增：拍摄时间+地点信息 -->
+              <div class="photo-meta-info">
+                <span class="photo-date">📅 ${formattedDate}</span>
+                <span class="photo-location">📍 ${photoLocation}</span>
+              </div>
+            </div>
+          `;
+          photosGrid.appendChild(card);
+
+          // 绑定图片点击放大事件
+          const img = card.querySelector("img");
+          img.addEventListener("click", () => {
+            modalImg.src = img.dataset.fullUrl; // 加载原图
+            photoModal.style.display = "flex"; // 显示模态框
+          });
+        });
+
+        // 更新分页按钮状态
+        currentPage = page;
+        updatePagination();
+      })
+      .catch(err => {
+        photosGrid.innerHTML = `<p style="width:100%; text-align:center; color:#e74c3c; font-size:1em;">加载失败：${err.message}</p>`;
+        paginationContainer.style.display = "none";
+        console.error("Unsplash API错误：", err);
+      });
+  }
+
+  // 2. 更新分页按钮状态（禁用/启用）
+  function updatePagination() {
+    paginationContainer.style.display = "block";
+    // 更新页码信息
+    pageInfo.textContent = `第 ${currentPage} 页 / 共 ${totalPages} 页`;
+    
+    // 上一页按钮：第一页禁用
+    if (currentPage <= 1) {
+      prevBtn.classList.add("disabled");
+      prevBtn.style.cursor = "not-allowed";
+      prevBtn.style.opacity = "0.6";
+      prevBtn.style.pointerEvents = "none";
+    } else {
+      prevBtn.classList.remove("disabled");
+      prevBtn.style.cursor = "pointer";
+      prevBtn.style.opacity = "1";
+      prevBtn.style.pointerEvents = "auto";
+    }
+
+    // 下一页按钮：最后一页禁用
+    if (currentPage >= totalPages) {
+      nextBtn.classList.add("disabled");
+      nextBtn.style.cursor = "not-allowed";
+      nextBtn.style.opacity = "0.6";
+      nextBtn.style.pointerEvents = "none";
+    } else {
+      nextBtn.classList.remove("disabled");
+      nextBtn.style.cursor = "pointer";
+      nextBtn.style.opacity = "1";
+      nextBtn.style.pointerEvents = "auto";
+    }
+  }
+
+  // 3. 绑定分页按钮点击事件
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      loadPhotos(currentPage - 1);
+      photosGrid.scrollIntoView({ behavior: "smooth" }); // 平滑滚动到照片区
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      loadPhotos(currentPage + 1);
+      photosGrid.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // 4. 图片放大模态框事件
+  // 关闭模态框（点击×）
+  modalClose.addEventListener("click", () => {
+    photoModal.style.display = "none";
+    modalImg.src = ""; // 清空图片缓存
+  });
+
+  // 点击模态框背景关闭
+  photoModal.addEventListener("click", (e) => {
+    if (e.target === photoModal) {
+      photoModal.style.display = "none";
+      modalImg.src = "";
+    }
+  });
+
+  // 按ESC键关闭模态框
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && photoModal.style.display === "flex") {
+      photoModal.style.display = "none";
+      modalImg.src = "";
+    }
+  });
+
+  // 初始化：加载第一页照片
+  loadPhotos(1);
+</script>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

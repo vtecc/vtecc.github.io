@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>维特笔记</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <div class="archive">
+  <h1 class="archive-title">
+    
+      2026年1月归档
+    
+  </h1>
+
+  
+    
+    
+    
+      
+      
+        <h2 class="archive-year">2026</h2>
+        
+      
+      <div class="archive-item">
+        <span class="archive-date">01-05</span>
+        <a href="/uncategorized/hello-world/">Hello World</a>
+      </div>
+    
+      
+      
+        <h2 class="archive-year">2025</h2>
+        
+      
+      <div class="archive-item">
+        <span class="archive-date">12-29</span>
+        <a href="/natter/9/">咱也来个年终总结</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">12-22</span>
+        <a href="/natter/8/">优化博客之增加一个摄影页面</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">12-18</span>
+        <a href="/natter/7/">冬天还真不适合在山里自驾</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">12-10</span>
+        <a href="/vitepress/vitepress/">电脑安装 VitePress 详细教程</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">12-03</span>
+        <a href="/natter/6/">又换hexo主题了</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">11-14</span>
+        <a href="/natter/5/">这才是真正的女装大佬</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">11-03</span>
+        <a href="/natter/4/">优化我的hexo主题之增加了分类和404错误页面</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">10-29</span>
+        <a href="/natter/3/">我用AI给自己写了一个hexo主题</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">10-20</span>
+        <a href="/natter/2/">我的图床解决方案</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">10-14</span>
+        <a href="/natter/ai/">AI工具确实牛逼</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">10-09</span>
+        <a href="/natter/1/">hexo写文章用到的代码记录</a>
+      </div>
+    
+      
+      
+      <div class="archive-item">
+        <span class="archive-date">09-18</span>
+        <a href="/natter/hello/">hello我来了</a>
+      </div>
+    
+  
+
+</div>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
