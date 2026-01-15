@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>冬天还真不适合在山里自驾</title>
+  <title>学习一下vitepress的使用</title>
   <!-- 引入CSS -->
   <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
@@ -48,27 +48,43 @@
   <!-- 页面内容区 -->
   <main class="content">
     <article class="post-detail">
-  <h1 class="post-title">冬天还真不适合在山里自驾</h1>
+  <h1 class="post-title">学习一下vitepress的使用</h1>
   <div class="post-meta">
-    <span class="meta-date">📅 2025-12-18</span>
+    <span class="meta-date">📅 2026-01-15</span>
     
-      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+      <span class="meta-category">📁 <a href="/categories/vitepress/">vitepress</a></span>
     
     
-      <span class="meta-tags">🏷️ <a href="/tags/%E8%87%AA%E9%A9%BE/">自驾</a></span>
+      <span class="meta-tags">🏷️ <a href="/tags/vitepress/">vitepress</a></span>
     
   </div>
   <!-- 文章内容：增强代码块兼容性 -->
   <div class="post-content code-block-fix">
-    <p>由于最近活不多，就是工作现在比较清闲，属于是大环境不好+自个有点懒。昨天早上突发奇想，想着冬天在山里转悠一圈，看看有没有什么比较好玩的。结果好玩的没看到，倒是惊吓却不少。</p>
-<p><img src="https://img.vte.cc//test/IMG_20251217_093710.webp"></p>
-<p>从进到山里的路程 很多地方都是厚厚的冰层路面这样的，这个还是比较平坦的，还有一些路段是急转弯+斜坡的路段，开车着实有点心惊胆战的！</p>
-<p>也怪自己闲着没事儿，干啥跑山里去晃悠！</p>
-<p>自个本身在平原里呆着，以为平原的雪都化了，山里的应该也好跑，谁知道山里的温度平均比平原的温度低几度，在有一个就是山里的气候跟平原也不一样。我这属于是吃了没常识的亏。也怨自己以前没好好学习😂😂😂。</p>
-<p><img src="https://img.vte.cc//test/IMG_20251217_101228.webp"></p>
-<p>不过在山里的感觉确实跟平原不一样，像这种的小瀑布平原是没有的，现在的山里的水非常的清澈。</p>
-<p>既然来都来了，自拍一张，也让我自恋一下。嘎嘎</p>
-<p><img src="https://img.vte.cc//test/IMG_20251217_092438.webp"></p>
+    <p>在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。</p>
+<h1 id="在自己电脑上安装vitepress的前置条件"><a href="#在自己电脑上安装vitepress的前置条件" class="headerlink" title="在自己电脑上安装vitepress的前置条件"></a>在自己电脑上安装vitepress的前置条件</h1><ul>
+<li><p>Node.js 18 及以上版本。</p>
+</li>
+<li><p>通过命令行界面 (CLI) 访问 VitePress 的终端，比如：git</p>
+</li>
+<li><p>支持 Markdown 语法的编辑器</p>
+</li>
+</ul>
+<h1 id="开始安装vitepress"><a href="#开始安装vitepress" class="headerlink" title="开始安装vitepress"></a>开始安装vitepress</h1><p>第一条命令是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm add -D vitepress@next</span><br></pre></td></tr></table></figure>
+<p>第二条命令是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx vitepress init</span><br></pre></td></tr></table></figure>
+<p>也就是所谓的vitepress安装向导，这个会提示你一步一步去安装vitepress。附图：</p>
+<p><img src="https://img.vte.cc/test/vitepress.png"></p>
+<p>当看到<code>Done! Now run npm run docs:dev and start writing.</code>这段话的时候，vitepress就在自己的电脑里安装成功了。</p>
+<p>vitepress的目录结构是这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├─ docs</span><br><span class="line">│  ├─ .vitepress</span><br><span class="line">│  │  └─ config.js</span><br><span class="line">│  ├─ api-examples.md</span><br><span class="line">│  ├─ markdown-examples.md</span><br><span class="line">│  └─ index.md</span><br><span class="line">└─ package.json</span><br></pre></td></tr></table></figure>
+
+<p>如果要查看自己电脑中的这个vitepress，还需要一条命令就是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run docs:dev</span><br></pre></td></tr></table></figure>
+<p><img src="https://img.vte.cc/test/vitepress1.png"></p>
+<p>这时候会给一个本地的地址+端口号：<code>http://localhost:5173/</code>。直接在自己的浏览器里输入这个地址就可以查看在自己电脑上安装的vitepress了。附图：</p>
+<p><img src="https://img.vte.cc/test/vitepress2.png"></p>
+<p>就这样我们的vitepress就在自己的电脑里安装成功了，这时候只需要把vitepress修改成为你自己想实现的页面，就OK了。</p>
 
   </div>
 </article>
@@ -78,19 +94,11 @@
   <h3 class="post-nav-title">文章导航</h3>
   <div class="post-nav">
     
-      <a href="/natter/8/" class="post-nav-item prev-item">
-        <span class="nav-icon">←</span>
-        <div class="nav-content">
-          <span class="nav-label">上一篇</span>
-          <span class="nav-title">优化博客之增加一个摄影页面</span>
-        </div>
-      </a>
     
-    
-      <a href="/natter/6/" class="post-nav-item next-item">
+      <a href="/natter/10/" class="post-nav-item next-item">
         <div class="nav-content">
           <span class="nav-label">下一篇</span>
-          <span class="nav-title">又换hexo主题了</span>
+          <span class="nav-title">邯郸博物馆一日游</span>
         </div>
         <span class="nav-icon">→</span>
       </a>
