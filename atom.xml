@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-01-15T07:15:28.805Z</updated>
+  <updated>2026-01-21T06:02:01.971Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不备案部署在GitHub的博客是否需要EdgeOne加速</title>
+    <link href="https://vte.cc/natter/12/"/>
+    <id>https://vte.cc/natter/12/</id>
+    <published>2026-01-21T05:31:08.000Z</published>
+    <updated>2026-01-21T06:02:01.971Z</updated>
+    
+    <content type="html"><![CDATA[<p>看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。</p><p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a href="https://www.itdog.cn/%E7%AB%99%E7%82%B9%E6%B5%8B%E8%AF%95ping%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8F%91%E7%8E%B0%E7%9B%B4%E8%BF%9EGitHub%E9%80%9F%E5%BA%A6%E6%96%B9%E9%9D%A2%E4%BC%9A%E6%9B%B4%E5%A5%BD%E3%80%82%E5%BD%93%E7%84%B6%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E5%B7%B2%E7%BB%8F%E5%A4%87%E6%A1%88%EF%BC%8C%E9%82%A3%E8%BF%98%E6%98%AF%E6%AF%94%E8%BE%83%E6%8E%A8%E8%8D%90EdgeOne%E5%8A%A0%E9%80%9F%E7%9A%84%E3%80%82">https://www.itdog.cn/站点测试ping的时候，发现直连GitHub速度方面会更好。当然如果你的站点已经备案，那还是比较推荐EdgeOne加速的。</a></p><p>随后也是问了一下豆包，豆包给出的解释也是说直连GitHub的效果要好一点。</p><h1 id="使用-EdgeOne-的优缺点分析"><a href="#使用-EdgeOne-的优缺点分析" class="headerlink" title="使用 EdgeOne 的优缺点分析"></a>使用 EdgeOne 的优缺点分析</h1><h2 id="✅-优点（不备案场景）"><a href="#✅-优点（不备案场景）" class="headerlink" title="✅ 优点（不备案场景）"></a>✅ 优点（不备案场景）</h2><p>稳定性提升</p><p>规避部分运营商对 GitHub 的 QoS 限制或路由波动</p><p>提供多节点冗余，某节点故障时自动切换</p><p>缓解 GitHub Pages 偶尔出现的访问中断问题</p><p>安全防护增强</p><p>免费 DDoS 基础防护、WAF 防火墙，抵御常见网络攻击</p><p>隐藏源站 IP，降低 GitHub Pages 被定向攻击风险</p><p>自动 HTTPS 与 SSL 证书管理，提升网站安全性</p><p>自定义域名优化</p><p>支持绑定自定义域名（需 CNAME 解析到 EdgeOne）</p><p>提供更灵活的 DNS 管理与流量调度能力</p><p>可配置缓存策略，减少重复回源，降低 GitHub API 限制风险</p><p>额外功能价值</p><p>边缘函数：实现简单动态功能（如访问统计、URL 重定向）</p><p>流量监控：可视化分析访问来源、带宽使用等数据</p><p>全球负载均衡：优化海外用户访问体验</p><h2 id="❌-缺点（不备案场景）"><a href="#❌-缺点（不备案场景）" class="headerlink" title="❌ 缺点（不备案场景）"></a>❌ 缺点（不备案场景）</h2><p>速度可能下降</p><p>多一层节点转发，增加延迟，尤其国内用户</p><p>海外节点带宽成本高，可能有隐性限速</p><p>部分地区可能出现丢包率上升问题</p><p>配置复杂度增加</p><p>需额外设置 CNAME 解析、源站配置、缓存规则等</p><p>需处理 EdgeOne 与 GitHub Pages 的 HTTPS 兼容问题</p><p>排查问题时需同时分析 EdgeOne 与 GitHub 两端日志</p><p>潜在成本</p><p>免费版有带宽 &#x2F; 请求数限制（每月 10GB 流量、100 万请求）</p><p>超额后需付费，增加运营成本</p><p>功能受限</p><p>无法使用国内节点，加速效果远不如备案后</p><p>部分高级功能（如国内智能调度）不可用</p><h1 id="适用场景与决策建议"><a href="#适用场景与决策建议" class="headerlink" title="适用场景与决策建议"></a>适用场景与决策建议</h1><h2 id="🌟-建议使用-EdgeOne-的情况"><a href="#🌟-建议使用-EdgeOne-的情况" class="headerlink" title="🌟 建议使用 EdgeOne 的情况"></a>🌟 建议使用 EdgeOne 的情况</h2><p>直连不稳定：GitHub Pages 在你所在地区频繁断连或波动</p><p>安全需求高：博客有敏感内容或担心被攻击</p><p>自定义域名：希望使用自己的域名且需要更好的 DNS 管理</p><p>海外用户多：博客主要面向海外读者，EdgeOne 海外节点可优化访问体验</p><p>长期规划：未来可能备案，提前配置 EdgeOne 便于后续无缝切换国内节点</p><h2 id="⚠️-建议不使用-EdgeOne-的情况"><a href="#⚠️-建议不使用-EdgeOne-的情况" class="headerlink" title="⚠️ 建议不使用 EdgeOne 的情况"></a>⚠️ 建议不使用 EdgeOne 的情况</h2><p>直连速度与稳定性俱佳：ping 值低且页面加载快，无频繁访问问题</p><p>极简配置需求：不想增加额外维护成本，追求 “部署即忘”</p><p>流量极小：个人博客访问量低，GitHub Pages 完全能满足需求</p><p>成本敏感：不愿承担任何潜在费用，坚持零成本运营</p><h1 id="最终建议"><a href="#最终建议" class="headerlink" title="最终建议"></a>最终建议</h1><p>如果直连 GitHub Pages 速度稳定且满足需求，优先选择不使用 EdgeOne，避免多一层转发带来的性能损耗与配置复杂度。</p><p>如果直连不稳定或有安全 &#x2F; 自定义域名需求，可尝试配置优化后的 EdgeOne（选择最优海外节点 + 合理缓存策略），同时接受可能的轻微性能损失，换取更好的稳定性与安全性。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。&lt;/p&gt;
+&lt;p&gt;但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="EdgeOne" scheme="https://vte.cc/tags/EdgeOne/"/>
+    
+  </entry>
   
   <entry>
     <title>学习一下vitepress的使用</title>

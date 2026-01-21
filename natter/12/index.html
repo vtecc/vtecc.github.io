@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不备案部署在GitHub的博客是否需要EdgeOne加速</title>
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
+</head>
+<body>
+  <!-- 头部（导航） -->
+  <header class="header">
+  <div class="container">
+    <div class="site-branding">
+      <!-- Logo -->
+      
+        <a href="/" class="site-logo">
+          <img 
+            src="/images/logo.svg" 
+            alt="维特笔记" 
+            width="60px" 
+            height="60px"
+            class="logo-img"
+          >
+        </a>
+      
+      <!-- 网站标题 -->
+      <h1 class="site-title">
+        <a href="/">维特笔记</a>
+      </h1>
+    </div>
+    <!-- 导航菜单 -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/archives">归档</a></li>
+        <li><a href="/projects">项目</a></li>
+        <li><a href="/photos">摄影</a></li>
+        <li><a href="/about">关于</a></li>
+        <!-- 自定义菜单（从主题配置读取） -->
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- 页面内容区 -->
+  <main class="content">
+    <article class="post-detail">
+  <h1 class="post-title">不备案部署在GitHub的博客是否需要EdgeOne加速</h1>
+  <div class="post-meta">
+    <span class="meta-date">📅 2026-01-21</span>
+    
+      <span class="meta-category">📁 <a href="/categories/natter/">natter</a></span>
+    
+    
+      <span class="meta-tags">🏷️ <a href="/tags/EdgeOne/">EdgeOne</a></span>
+    
+  </div>
+  <!-- 文章内容：增强代码块兼容性 -->
+  <div class="post-content code-block-fix">
+    <p>看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。</p>
+<p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a target="_blank" rel="noopener" href="https://www.itdog.cn/%E7%AB%99%E7%82%B9%E6%B5%8B%E8%AF%95ping%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8F%91%E7%8E%B0%E7%9B%B4%E8%BF%9EGitHub%E9%80%9F%E5%BA%A6%E6%96%B9%E9%9D%A2%E4%BC%9A%E6%9B%B4%E5%A5%BD%E3%80%82%E5%BD%93%E7%84%B6%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E5%B7%B2%E7%BB%8F%E5%A4%87%E6%A1%88%EF%BC%8C%E9%82%A3%E8%BF%98%E6%98%AF%E6%AF%94%E8%BE%83%E6%8E%A8%E8%8D%90EdgeOne%E5%8A%A0%E9%80%9F%E7%9A%84%E3%80%82">https://www.itdog.cn/站点测试ping的时候，发现直连GitHub速度方面会更好。当然如果你的站点已经备案，那还是比较推荐EdgeOne加速的。</a></p>
+<p>随后也是问了一下豆包，豆包给出的解释也是说直连GitHub的效果要好一点。</p>
+<h1 id="使用-EdgeOne-的优缺点分析"><a href="#使用-EdgeOne-的优缺点分析" class="headerlink" title="使用 EdgeOne 的优缺点分析"></a>使用 EdgeOne 的优缺点分析</h1><h2 id="✅-优点（不备案场景）"><a href="#✅-优点（不备案场景）" class="headerlink" title="✅ 优点（不备案场景）"></a>✅ 优点（不备案场景）</h2><p>稳定性提升</p>
+<p>规避部分运营商对 GitHub 的 QoS 限制或路由波动</p>
+<p>提供多节点冗余，某节点故障时自动切换</p>
+<p>缓解 GitHub Pages 偶尔出现的访问中断问题</p>
+<p>安全防护增强</p>
+<p>免费 DDoS 基础防护、WAF 防火墙，抵御常见网络攻击</p>
+<p>隐藏源站 IP，降低 GitHub Pages 被定向攻击风险</p>
+<p>自动 HTTPS 与 SSL 证书管理，提升网站安全性</p>
+<p>自定义域名优化</p>
+<p>支持绑定自定义域名（需 CNAME 解析到 EdgeOne）</p>
+<p>提供更灵活的 DNS 管理与流量调度能力</p>
+<p>可配置缓存策略，减少重复回源，降低 GitHub API 限制风险</p>
+<p>额外功能价值</p>
+<p>边缘函数：实现简单动态功能（如访问统计、URL 重定向）</p>
+<p>流量监控：可视化分析访问来源、带宽使用等数据</p>
+<p>全球负载均衡：优化海外用户访问体验</p>
+<h2 id="❌-缺点（不备案场景）"><a href="#❌-缺点（不备案场景）" class="headerlink" title="❌ 缺点（不备案场景）"></a>❌ 缺点（不备案场景）</h2><p>速度可能下降</p>
+<p>多一层节点转发，增加延迟，尤其国内用户</p>
+<p>海外节点带宽成本高，可能有隐性限速</p>
+<p>部分地区可能出现丢包率上升问题</p>
+<p>配置复杂度增加</p>
+<p>需额外设置 CNAME 解析、源站配置、缓存规则等</p>
+<p>需处理 EdgeOne 与 GitHub Pages 的 HTTPS 兼容问题</p>
+<p>排查问题时需同时分析 EdgeOne 与 GitHub 两端日志</p>
+<p>潜在成本</p>
+<p>免费版有带宽 &#x2F; 请求数限制（每月 10GB 流量、100 万请求）</p>
+<p>超额后需付费，增加运营成本</p>
+<p>功能受限</p>
+<p>无法使用国内节点，加速效果远不如备案后</p>
+<p>部分高级功能（如国内智能调度）不可用</p>
+<h1 id="适用场景与决策建议"><a href="#适用场景与决策建议" class="headerlink" title="适用场景与决策建议"></a>适用场景与决策建议</h1><h2 id="🌟-建议使用-EdgeOne-的情况"><a href="#🌟-建议使用-EdgeOne-的情况" class="headerlink" title="🌟 建议使用 EdgeOne 的情况"></a>🌟 建议使用 EdgeOne 的情况</h2><p>直连不稳定：GitHub Pages 在你所在地区频繁断连或波动</p>
+<p>安全需求高：博客有敏感内容或担心被攻击</p>
+<p>自定义域名：希望使用自己的域名且需要更好的 DNS 管理</p>
+<p>海外用户多：博客主要面向海外读者，EdgeOne 海外节点可优化访问体验</p>
+<p>长期规划：未来可能备案，提前配置 EdgeOne 便于后续无缝切换国内节点</p>
+<h2 id="⚠️-建议不使用-EdgeOne-的情况"><a href="#⚠️-建议不使用-EdgeOne-的情况" class="headerlink" title="⚠️ 建议不使用 EdgeOne 的情况"></a>⚠️ 建议不使用 EdgeOne 的情况</h2><p>直连速度与稳定性俱佳：ping 值低且页面加载快，无频繁访问问题</p>
+<p>极简配置需求：不想增加额外维护成本，追求 “部署即忘”</p>
+<p>流量极小：个人博客访问量低，GitHub Pages 完全能满足需求</p>
+<p>成本敏感：不愿承担任何潜在费用，坚持零成本运营</p>
+<h1 id="最终建议"><a href="#最终建议" class="headerlink" title="最终建议"></a>最终建议</h1><p>如果直连 GitHub Pages 速度稳定且满足需求，优先选择不使用 EdgeOne，避免多一层转发带来的性能损耗与配置复杂度。</p>
+<p>如果直连不稳定或有安全 &#x2F; 自定义域名需求，可尝试配置优化后的 EdgeOne（选择最优海外节点 + 合理缓存策略），同时接受可能的轻微性能损失，换取更好的稳定性与安全性。</p>
+
+  </div>
+</article>
+
+<!-- 上一篇/下一篇导航 -->
+<div class="post-nav-wrapper">
+  <h3 class="post-nav-title">文章导航</h3>
+  <div class="post-nav">
+    
+    
+      <a href="/vitepress/11/" class="post-nav-item next-item">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">学习一下vitepress的使用</span>
+        </div>
+        <span class="nav-icon">→</span>
+      </a>
+    
+  </div>
+</div>
+
+<!-- Giscus评论区 -->
+
+  <div class="comments-section">
+    <h3 class="comments-title">评论区</h3>
+    <div id="giscus-container"></div>
+  </div>
+
+  <!-- Giscus脚本 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="vtecc/vtecc.github.io"
+    data-repo-id="R_kgDOQz1gbw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQz1gb84C0liB"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+  <div class="container">
+    <!-- 建站时间显示 -->
+    <p class="build-time">
+      本站始建于：<span id="build-start">2025-09-15</span> | 
+      已运行：<span id="run-time">0年0月0天</span>
+    </p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
+    <!-- 空间穿梭 -->
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+  </div>
+</footer>
+
+<!-- 计算运行时长的JS -->
+<script>
+// 获取建站时间（从主题配置读取）
+const buildStartTime = new Date('2025-09-15');
+
+// 计算时间差函数
+function calculateRunTime() {
+  const now = new Date();
+  const diff = now - buildStartTime;
+
+  // 计算年、月、天
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+  // 更新显示
+  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
+}
+
+// 初始化计算
+calculateRunTime();
+// 每天更新一次
+setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
+</script>
+
+  <!-- 引入JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
