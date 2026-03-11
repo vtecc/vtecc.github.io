@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-01-21T06:02:01.971Z</updated>
+  <updated>2026-03-11T02:56:28.659Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这个春节去了一趟山东看了一场烟花秀</title>
+    <link href="https://vte.cc/natter/13/"/>
+    <id>https://vte.cc/natter/13/</id>
+    <published>2026-03-11T02:35:47.000Z</published>
+    <updated>2026-03-11T02:56:28.659Z</updated>
+    
+    <content type="html"><![CDATA[<p>  刚刚抽了一眼我的这个小破站，竟然有两个月没动它了。现在有一个多小时的时间，就来更新一下我这个小破站。</p><p>主要还是在春节期间比较懒，也差不多有两个月没开电脑了！一方面是比较忙，另一方面是比较懒！当然了主要还是懒！</p><p>其实也不算是懒，主要问题是我们大年初二就已经上班了！所以说比较忙！不扯这个了。</p><p>换一个轻松点的话题，还是说说这个春节都去哪里玩了吧，大年初二白天上班了，晚上就自驾去了一趟山东省临清的《东宛园》看了一场十多分钟的烟花秀。</p><p>视频放在了下面：</p><iframe src=" //player.bilibili.com/player.html?isOutside=true&aid=116103250581214&bvid=BV1A5f3BSEX3&cid=36180790648&p=1" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe><p>至于为什么要去山东看这个烟花秀，那是因为河北不让放炮，它奶奶的一点年味都没有，静悄悄一个春节，但是也不是完全没有声音，最起码警笛声一直响！在县城里等同于五步一哨三步一岗的严阵以待。</p><p>就算是村里也是不让放烟花！这个真心感觉当领导的怕被罚，有句老话说的就是：有点屁事屁权威全使老百姓身上了，</p><p>就先写到这吧，这也是今年过春节最大的一个亮点，去了一趟山东，看了一场烟花秀。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="自驾" scheme="https://vte.cc/tags/%E8%87%AA%E9%A9%BE/"/>
+    
+    <category term="烟花" scheme="https://vte.cc/tags/%E7%83%9F%E8%8A%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>不备案部署在GitHub的博客是否需要EdgeOne加速</title>
