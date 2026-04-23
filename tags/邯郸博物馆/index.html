@@ -3,85 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>维特笔记</title>
-  <!-- 引入CSS -->
+  <title>维特笔记 | </title>
   <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
 </head>
 <body>
-  <!-- 头部（导航） -->
-  <header class="header">
+
+<header class="header">
   <div class="container">
-    <div class="site-branding">
-      <!-- Logo -->
-      
-        <a href="/" class="site-logo">
-          <img 
-            src="/images/logo.svg" 
-            alt="维特笔记" 
-            width="60px" 
-            height="60px"
-            class="logo-img"
-          >
-        </a>
-      
-      <!-- 网站标题 -->
-      <h1 class="site-title">
-        <a href="/">维特笔记</a>
-      </h1>
-    </div>
-    <!-- 导航菜单 -->
+    <div class="logo">VTECC 工作室</div>
     <nav class="nav">
-      <ul>
-        <li><a href="/">首页</a></li>
-        <li><a href="/archives">归档</a></li>
-        <li><a href="/projects">项目</a></li>
-        <li><a href="/photos">摄影</a></li>
-        <li><a href="/about">关于</a></li>
-        <!-- 自定义菜单（从主题配置读取） -->
-        
-      </ul>
+      
+      <a href="/">首页</a>
+      
+      <a href="/about">关于</a>
+      
+      <a href="/works">作品</a>
+      
+      <a href="/archives">归档</a>
+      
+      <a href="/categories">分类</a>
+      
+      <a href="/tags">标签</a>
+      
     </nav>
   </div>
 </header>
 
-  <!-- 页面内容区 -->
-  <main class="content">
-    <div class="tag">
-  
-    <!-- 单个标签的文章列表 -->
-    <h1 class="tag-title">标签：</h1>
-    <div class="post-list">
+<main class="main">
+  <section class="tag-page section">
+  <div class="container">
+    <h2 class="section-title">标签：邯郸博物馆</h2>
+    <div class="tag-card-list">
       
-        <article class="post-item">
-          <h3><a href="/natter/10/">邯郸博物馆一日游</a></h3>
-          <span class="post-date">2026-01-13</span>
-        </article>
+        
+        <div class="tag-card">
+          <span class="tag-date">2026-01-13</span>
+          <a href="/natter/10/" class="tag-title">邯郸博物馆一日游</a>
+        </div>
+        
       
     </div>
-  
-</div>
-  </main>
+  </div>
+</section>
+</main>
 
-  <!-- 底部 -->
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <!-- 建站时间显示 -->
     <p class="build-time">
-      本站始建于：<span id="build-start">2025-09-15</span> | 
+      本站始建于：<span id="build-start">Mon Sep 15 2025 08:00:00 GMT+0800 (中国标准时间)</span> | 
       已运行：<span id="run-time">0年0月0天</span>
     </p>
-    <p>&copy; 2026 维特笔记 - 基于Hexo & vte</p>
+    <p>&copy; 2026 维特笔记 - 基于Hexo & vtecc</p>
     <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
     <!-- 空间穿梭 -->
-    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客"><img src="https://www.blogsclub.org/images/shuttle_1.png"></a>
+    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客" class="shuttle-icon">
+      <img src="https://www.blogsclub.org/images/shuttle_1.png">
+    </a>
   </div>
 </footer>
 
 <!-- 计算运行时长的JS -->
 <script>
 // 获取建站时间（从主题配置读取）
-const buildStartTime = new Date('2025-09-15');
+const buildStartTime = new Date('Mon Sep 15 2025 08:00:00 GMT+0800 (中国标准时间)');
 
 // 计算时间差函数
 function calculateRunTime() {
@@ -103,7 +89,5 @@ calculateRunTime();
 setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
 </script>
 
-  <!-- 引入JS -->
-  <script src="/js/main.js"></script>
 </body>
 </html>
