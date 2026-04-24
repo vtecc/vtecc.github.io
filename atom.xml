@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-04-01T13:24:21.060Z</updated>
+  <updated>2026-04-24T03:41:31.582Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科技改变生活这话不假</title>
+    <link href="https://vte.cc/natter/15/"/>
+    <id>https://vte.cc/natter/15/</id>
+    <published>2026-04-24T02:28:32.000Z</published>
+    <updated>2026-04-24T03:41:31.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>话说好长时间没更新我这个小破站了！主要是不知道该写点啥！再有一个就是，有点懒，自我感觉就算没写，这个小破站也还是这样，但是我忽略了一个重要的细节，那就是这个小破站的更新动力是我自己本身啊，如果我只是满足于此的话，这个小破站是不会有任何新的变化的。</p><p>所有在我想明白这个问题以后，我想对于我这个小破站来讲的话，是时候做点变化了。</p><h2 id="变化"><a href="#变化" class="headerlink" title="变化"></a>变化</h2><p>我利用了豆包重塑了一下我这个小破站的主题，让这个小破站再一次的大变样。这次的主题风格是一个工作室类型的，因为很早很早之前就想把我这个小破站做成一个工作室的样子，对的，只是样子是工作室类型的。</p><p>附图：<br><img src="https://img.vte.cc/test/home-vtecc.jpeg"></p><p>去掉了一些不必要的页面比如：<code>摄影</code>那个页面,这个页面在我的《<a href="https://vte.cc/natter/8/">优化博客之增加一个摄影页面</a>》里有提到。</p><p>增加了一个《<a href="https://vte.cc/works/">作品</a>》的页面,</p><p>后期也许还会增加别的页面，但是现在就先这样吧，实在是我自己的能力不太行，弄得太多感觉太乱了。</p><h2 id="豆包的使用感觉分享"><a href="#豆包的使用感觉分享" class="headerlink" title="豆包的使用感觉分享"></a>豆包的使用感觉分享</h2><p>在我使用豆包的过程当中，尤其是重塑这个hexo主题的过程当中，发现了非常有意思的地方。</p><p>在使用豆包生成这个hexo主题的时候，如果你是只是用了一条命令的话，比如：给我写一个hexo主题。</p><p>那么豆包会直接给你写一个它认为的一个hexo博客主题，而且它写的这个hexo博客主题你直接使用的时候会出现报错，尤其是频繁的报错，以及各种各样的报错！不要问我咋知道的!说多了都是泪！</p><p>如果你给它的指令是一个有要求和尽可能的说清楚你自己需求的话，那就是另当别论了，那时候你会发现这个豆包是相当的好用啊。</p><p>在有一个就是豆包的上下文好像不是很好用，就拿我让豆包写这个hexo的主题来说，因为我是有点时间就用豆包去优化这个hexo主题，所有不是一次性写成的，要经历很多天才完成的，在这个过程当中会发现它输出代码的样式和之前的代码样式会出现不一样，有的地方直接就是给去掉了。</p><p>所以说豆包的上下文不太好用，尤其是把时间线拉长就会出现这个问题。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从建站开始到现在的折腾hexo主题来说，尽管已经是7个多月了，如果不是豆包，可能这个站点是不会出现的！</p><p>所以说：科技改变生活，这句话不假。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;话说好长时间没更新我这个小破站了！主要是不知道该写点啥！再有一个就是，有点懒，自我感觉就算没写，这个小破站也还是这样，但是我忽略了一个重要的细节，那就是这个小破站的更新动力是我自己本身啊，如果我只是满足于此的话，这个小破站是不会有任何新的变化的。&lt;/p&gt;
+&lt;p&gt;所有在我想明</summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="小破站" scheme="https://vte.cc/tags/%E5%B0%8F%E7%A0%B4%E7%AB%99/"/>
+    
+    <category term="豆包" scheme="https://vte.cc/tags/%E8%B1%86%E5%8C%85/"/>
+    
+    <category term="hexo主题" scheme="https://vte.cc/tags/hexo%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>为情绪买单之入手一个简短的单拼域名</title>
