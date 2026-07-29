@@ -241,3 +241,67 @@ a{
         height: 90px;
     }
 }
+/* 归档页面美化样式 */
+.archive-wrap{
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+.archive-title{
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+.archive-year{
+    margin-bottom: 36px;
+}
+.archive-year-title{
+    font-size:20px;
+    color:#222;
+    margin-bottom:16px;
+    padding-bottom:6px;
+    border-bottom: 1px solid #eee;
+}
+.archive-items{
+    list-style: none;
+    padding-left: 8px;
+}
+.archive-item{
+    display:flex;
+    align-items:center;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+.archive-item:hover{
+    background-color: #f7f8fa;
+    border-radius:6px;
+    padding-left:8px;
+}
+.archive-date{
+    color:#666;
+    font-size:14px;
+    min-width: 86px;
+}
+.archive-link{
+    color:#333;
+    text-decoration: none;
+}
+.archive-link:hover{
+    color:#2563eb;
+    text-decoration: underline;
+}
+.archive-empty{
+    text-align:center;
+    margin-top:80px;
+    color:#888;
+    font-size:16px;
+}
+@media screen and (max-width: 640px){
+    .archive-item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:4px;
+    }
+    .archive-date{
+        min-width:auto;
+    }
+}
