@@ -1,63 +1,43 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>维特笔记 | 优化博客之增加一个摄影页面</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优化博客之增加一个摄影页面 | 维特笔记</title>
+    <meta name="description" content="">
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
 <meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
 </head>
 <body>
-
-<header class="header">
-  <div class="container">
-    <div class="logo">VTECC 工作室</div>
-    <nav class="nav">
-      
-      <a href="/">首页</a>
-      
-      <a href="/about">关于</a>
-      
-      <a href="/works">作品</a>
-      
-      <a href="/archives">归档</a>
-      
-      <a href="/categories">分类</a>
-      
-      <a href="/tags">标签</a>
-      
-    </nav>
-  </div>
-</header>
-
-<main class="main">
-  <section class="post-page section">
-  <div class="container">
-    <!-- 文章标题区 -->
-    <div class="post-header">
-      <h1 class="post-title">优化博客之增加一个摄影页面</h1>
-      <div class="post-meta">
-        <span>2025-12-22</span>
-        
-          <span>｜</span>
-          
-            <a href="/categories/natter/">natter</a>
-          
-        
-        
-          <span>｜</span>
-          
-            <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
-          
-            <a href="/tags/hexo/">hexo</a>
-          
-        
-      </div>
+<nav class="site-nav">
+    <div class="nav-wrap">
+        <a href="/" class="nav-logo">维特笔记</a>
+        <div class="nav-menu">
+            
+                <a href="/">首页</a>
+            
+                <a href="/archives">归档</a>
+            
+                <a href="/tags">标签</a>
+            
+                <a href="/categories">分类</a>
+            
+                <a href="/about">关于</a>
+            
+        </div>
     </div>
+</nav>
 
-    <!-- 文章内容区 -->
+<main class="container post-page">
+    <h1 class="post-title">优化博客之增加一个摄影页面</h1>
+    <div class="post-meta">
+        <time>发布时间：2025-12-22</time>
+    </div>
     <div class="post-content">
-      <p>话说看到别人的博客里都有好多好多的功能，像什么<code>足迹 相册</code>等功能，属实是有点羡慕！所以现在趁着AI可以使用，那就让AI帮我写一个页面得了，嘎嘎。</p>
+        <p>话说看到别人的博客里都有好多好多的功能，像什么<code>足迹 相册</code>等功能，属实是有点羡慕！所以现在趁着AI可以使用，那就让AI帮我写一个页面得了，嘎嘎。</p>
 <p>先说一下我的思路，我想的是要有新功能，但是还不需要花钱，并且适合我这种小白使用。所以我发现有些网站天生就适合储存照片，比如<code>Unsplash</code>。</p>
 <p>当然我不知道别人咋想的，也好像有人这么干，但是这么干的人我发现很少，我也不知道这个搞的想法对不对。所以我先尝试着用用再说。</p>
 <h1 id="步骤-1：创建-Hexo-照片页面"><a href="#步骤-1：创建-Hexo-照片页面" class="headerlink" title="步骤 1：创建 Hexo 照片页面"></a>步骤 1：创建 Hexo 照片页面</h1><p>首先在博客根目录执行命令，创建一个名为photos的页面：</p>
@@ -89,88 +69,45 @@
 
     </div>
 
-    <!-- 上一篇 & 下一篇 -->
+    <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
-      
-      <div class="post-prev">
-        <span>上一篇</span>
-        <a href="/natter/9/">咱也来个年终总结</a>
-      </div>
-      
+        
+        <a class="post-nav-item prev" href="/natter/9/">
+            <span>← 上一篇</span>
+            <div>咱也来个年终总结</div>
+        </a>
+        
 
-      
-      <div class="post-next">
-        <span>下一篇</span>
-        <a href="/natter/7/">冬天还真不适合在山里自驾</a>
-      </div>
-      
+        
+        <a class="post-nav-item next" href="/natter/7/">
+            <span>下一篇 →</span>
+            <div>冬天还真不适合在山里自驾</div>
+        </a>
+        
     </div>
 
-    <!-- giscus 评论区 -->
+    <!-- Giscus 评论区 -->
     
-    <div class="comment-section">
-      <h3 class="comment-title">评论区</h3>
-      <script src="https://giscus.app/client.js"
-        data-repo="vtecc/vtecc.github.io"
-        data-repo-id=""
-        data-category="Announcements"
-        data-category-id=""
-        data-mapping="pathname"
-        data-strict=""
-        data-reactions-enabled=""
-        data-emit-metadata=""
-        data-input-position=""
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-      </script>
+    <div class="giscus-wrap">
+        <h3>评论</h3>
+        <script src="https://giscus.app/client.js"
+                data-repo="vtecc/vtecc.github.io"
+                data-repo-id="R_kgDOQz1gbw"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOQz1gb84C0liB"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-theme="light"
+                crossorigin="anonymous"
+                async>
+        </script>
     </div>
     
-  </div>
-</section>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <!-- 建站时间显示 -->
-    <p class="build-time">
-      本站始建于：<span id="build-start">Mon Sep 15 2025 08:00:00 GMT+0800 (中国标准时间)</span> | 
-      已运行：<span id="run-time">0年0月0天</span>
-    </p>
-    <p>&copy; 2026 维特笔记 - 基于Hexo & vtecc</p>
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a></p>
-    <!-- 空间穿梭 -->
-    <a href="https://blogs.quest" target="_blank" title="空间穿梭-随机访问BlogsClub成员博客" class="shuttle-icon">
-      <img src="https://www.blogsclub.org/images/shuttle_1.png">
-    </a>
-  </div>
+<footer class="site-footer">
+    <p>© 2026 All Rights Reserved</p>
 </footer>
-
-<!-- 计算运行时长的JS -->
-<script>
-// 获取建站时间（从主题配置读取）
-const buildStartTime = new Date('Mon Sep 15 2025 08:00:00 GMT+0800 (中国标准时间)');
-
-// 计算时间差函数
-function calculateRunTime() {
-  const now = new Date();
-  const diff = now - buildStartTime;
-
-  // 计算年、月、天
-  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-
-  // 更新显示
-  document.getElementById('run-time').textContent = `${years}年${months}月${days}天`;
-}
-
-// 初始化计算
-calculateRunTime();
-// 每天更新一次
-setInterval(calculateRunTime, 1000 * 60 * 60 * 24);
-</script>
-
+<script src="/js/main.js"></script>
 </body>
 </html>
