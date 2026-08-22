@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-08-12T12:20:38.799Z</updated>
+  <updated>2026-08-22T12:41:34.663Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好不容易看上一个域名结果被抢注了</title>
+    <link href="https://vte.cc/natter/18/"/>
+    <id>https://vte.cc/natter/18/</id>
+    <published>2026-08-22T12:29:02.000Z</published>
+    <updated>2026-08-22T12:41:34.663Z</updated>
+    
+    <content type="html"><![CDATA[<p>这段时间对于域名还是比较痴迷的，尤其是那种双拼域名，话说貌似近一段时间，看到很多人都抛弃了.net域名，原因无非就是一个字：贵！</p><p>但是对于我来说如果遇到一个品相还不错，还是值得拿下的。我也不是米农，不会囤积很多域名在手上，所以就算这个域名贵点，也不是不能接受。最近就看中一个.net域名，还是比较简短和好记的，又是一个四字母的双拼域名，昨晚上查询这个.net域名的时候发现就在今天域名注册局会释放掉这个域名。昨晚上凌晨1点的时候看了一下，还没释放，结果今早上在去查询的时候，TMD竟然已经被注册了！</p><p>我靠，简直是无语至极啊！就在后半夜2.18分的时候抢注的！我了个操。</p><p><img src="https://img.vte.cc/yumingqiangzhu.jpeg"></p><p>TMD，真的有点破防了！！！！</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这段时间对于域名还是比较痴迷的，尤其是那种双拼域名，话说貌似近一段时间，看到很多人都抛弃了.net域名，原因无非就是一个字：贵！&lt;/p&gt;
+&lt;p&gt;但是对于我来说如果遇到一个品相还不错，还是值得拿下的。我也不是米农，不会囤积很多域名在手上，所以就算这个域名贵点，也不是不能接受。</summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="域名" scheme="https://vte.cc/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>给小破站加速之乱七八糟的方法</title>
