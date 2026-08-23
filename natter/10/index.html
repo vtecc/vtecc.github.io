@@ -29,11 +29,34 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">邯郸博物馆一日游</span>
+    </div>
+
     <h1 class="post-title">邯郸博物馆一日游</h1>
+
     <div class="post-meta">
         <time>发布时间：2026-01-13</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E9%82%AF%E9%83%B8%E5%8D%9A%E7%89%A9%E9%A6%86/" class="tag-item">#邯郸博物馆</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>礼拜六的时候孩子在家闲不下去了，那天正好也是闲着没上班，反正闲着也是闲着，也是想着出去转转，毕竟老师在家玩手机，也不是一个事儿。思来想去的也没啥好玩的地方，本来商量着去山里转悠去呢，结果孩子不愿意。嫌大冬天的山里景色也是光秃秃的没有好看的地方。</p>
 <p>我闺女提议去博物馆，我想着只要不是在家玩手机，去哪都行。于是乎去了一趟邯郸博物馆，你别说这趟邯郸博物馆还真不白去。</p>
@@ -63,6 +86,7 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -72,6 +96,7 @@
         </a>
         
 
+
         
         <a class="post-nav-item next" href="/natter/9/">
             <span>下一篇 →</span>
@@ -80,30 +105,47 @@
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>

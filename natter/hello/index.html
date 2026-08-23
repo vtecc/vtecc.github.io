@@ -29,11 +29,34 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">hello我来了</span>
+    </div>
+
     <h1 class="post-title">hello我来了</h1>
+
     <div class="post-meta">
         <time>发布时间：2025-09-18</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="tag-item">#博客</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>经过近段的时间，来调试和学习如何使用这个<code>keep</code>主题, 我的小破站也可以说是勉勉强强上线了，这也是我自己写的第一篇文章吧。毕竟从搭建这个小破站开始，就要学习：<code>域名，hexo，GitHub</code>的各种操作，还要在电脑中安装：Git，Node.js，Visual Studio Code等软件。</p>
 <p>总之在折腾的过程当中是各种报错，各种各样的BUG是层出不穷，也有抓狂到想要砸电脑的冲动，在这折腾的时候也有想过不行就拉几把倒，不弄这破玩意儿了。</p>
@@ -47,6 +70,7 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -56,33 +80,51 @@
         </a>
         
 
+
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>

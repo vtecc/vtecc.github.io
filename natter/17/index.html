@@ -29,11 +29,34 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">给小破站加速之乱七八糟的方法</span>
+    </div>
+
     <h1 class="post-title">给小破站加速之乱七八糟的方法</h1>
+
     <div class="post-meta">
         <time>发布时间：2026-08-12</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/vercel/" class="tag-item">#vercel</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>在上一篇文章中我有提到过想让这个小破站在国内打开速度再快一些哈，这两天呢也是通过查看其他博主的一些文章，但是发现这类型的文章好像还是有点久远的年代，就算是最近的一段时间也是在24年左右的文章了，当然也在看一些如：hexo插件压缩的相关文章，但是我发现好像也是几年前的插件，我也不知道那个插件还能不能用了！尤其是GitHub这个社区，目前来说不使用一点办法，连GitHub这个社区都不打开！</p>
 <p>当然更多的文章是推荐使用国内的一些idc，比如：腾讯云 阿里云 华为云等相关的一些大厂服务器。在此我想说：我就一小破站真不至于用那些昂贵的服务器！就算给我一台服务器，我也捣鼓不明白这个服务器的使用办法！毕竟还是有点老喽！其实我的想法很简单。小破站能不花钱就不要花钱，虽然花钱能够快速的解决问题，但是像我这个年纪在在这上面花钱感觉有点不值得！毕竟不是脑子一热就冲动的年纪了！</p>
@@ -48,6 +71,7 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -57,6 +81,7 @@
         </a>
         
 
+
         
         <a class="post-nav-item next" href="/natter/16/">
             <span>下一篇 →</span>
@@ -65,30 +90,47 @@
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>

@@ -29,11 +29,36 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">优化我的hexo主题之增加了分类和404错误页面</span>
+    </div>
+
     <h1 class="post-title">优化我的hexo主题之增加了分类和404错误页面</h1>
+
     <div class="post-meta">
         <time>发布时间：2025-11-03</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="tag-item">#博客</a>
+            
+            <a href="/tags/hexo/" class="tag-item">#hexo</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>按照上次的使用AI工具的经验，这次给自己这个小破站增加了两个页面，分别是：分类页面和404错误页面。</p>
 <p>一、添加分类页面（Categories）</p>
@@ -74,6 +99,7 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -83,6 +109,7 @@
         </a>
         
 
+
         
         <a class="post-nav-item next" href="/natter/3/">
             <span>下一篇 →</span>
@@ -91,30 +118,47 @@
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>

@@ -29,11 +29,38 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">科技改变生活这话不假</span>
+    </div>
+
     <h1 class="post-title">科技改变生活这话不假</h1>
+
     <div class="post-meta">
         <time>发布时间：2026-04-24</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%B0%8F%E7%A0%B4%E7%AB%99/" class="tag-item">#小破站</a>
+            
+            <a href="/tags/%E8%B1%86%E5%8C%85/" class="tag-item">#豆包</a>
+            
+            <a href="/tags/hexo%E4%B8%BB%E9%A2%98/" class="tag-item">#hexo主题</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>话说好长时间没更新我这个小破站了！主要是不知道该写点啥！再有一个就是，有点懒，自我感觉就算没写，这个小破站也还是这样，但是我忽略了一个重要的细节，那就是这个小破站的更新动力是我自己本身啊，如果我只是满足于此的话，这个小破站是不会有任何新的变化的。</p>
 <p>所有在我想明白这个问题以后，我想对于我这个小破站来讲的话，是时候做点变化了。</p>
@@ -53,6 +80,7 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -62,6 +90,7 @@
         </a>
         
 
+
         
         <a class="post-nav-item next" href="/natter/14/">
             <span>下一篇 →</span>
@@ -70,30 +99,47 @@
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>

@@ -29,11 +29,34 @@
     </div>
 </nav>
 
+
 <main class="container post-page">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">好不容易看上一个域名结果被抢注了</span>
+    </div>
+
     <h1 class="post-title">好不容易看上一个域名结果被抢注了</h1>
+
     <div class="post-meta">
         <time>发布时间：2026-08-22</time>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%9F%9F%E5%90%8D/" class="tag-item">#域名</a>
+            
+        </div>
+        
     </div>
+
     <div class="post-content">
         <p>这段时间对于域名还是比较痴迷的，尤其是那种双拼域名，话说貌似近一段时间，看到很多人都抛弃了.net域名，原因无非就是一个字：贵！</p>
 <p>但是对于我来说如果遇到一个品相还不错，还是值得拿下的。我也不是米农，不会囤积很多域名在手上，所以就算这个域名贵点，也不是不能接受。最近就看中一个.net域名，还是比较简短和好记的，又是一个四字母的双拼域名，昨晚上查询这个.net域名的时候发现就在今天域名注册局会释放掉这个域名。昨晚上凌晨1点的时候看了一下，还没释放，结果今早上在去查询的时候，TMD竟然已经被注册了！</p>
@@ -43,11 +66,13 @@
 
     </div>
 
+
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
         <div class="post-nav-item empty"></div>
         
+
 
         
         <a class="post-nav-item next" href="/natter/17/">
@@ -57,30 +82,47 @@
         
     </div>
 
-    <!-- Giscus 评论区 -->
+
+    <!-- Giscus 延迟加载 -->
     
     <div class="giscus-wrap">
         <h3>评论</h3>
-        <script src="https://giscus.app/client.js"
-                data-repo="vtecc/vtecc.github.io"
-                data-repo-id="R_kgDOQz1gbw"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOQz1gb84C0liB"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-theme="light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div id="giscus-container"></div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(item=>{
+      if(item.isIntersecting){
+        observer.unobserve(item.target);
+        const s = document.createElement('script');
+        s.src = "https://giscus.app/client.js";
+        s.crossOrigin = "anonymous";
+        s.async = true;
+        s.dataset.repo = "vtecc/vtecc.github.io";
+        s.dataset.repoId = "R_kgDOQz1gbw";
+        s.dataset.category = "Announcements";
+        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
+        s.dataset.mapping = "pathname";
+        s.dataset.reactionsEnabled = "1";
+        s.dataset.theme = "light";
+        document.getElementById('giscus-container').appendChild(s);
+      }
+    })
+  })
+  const box = document.querySelector('#giscus-container');
+  if(box) observer.observe(box);
+})
+</script>
     
 </main>
+
 
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 341 天
+        <br>本站运行于 2025-09-15，已稳定运行 342 天
         
     </p>
 </footer>
