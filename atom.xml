@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-08-22T12:41:34.663Z</updated>
+  <updated>2026-09-01T10:44:26.092Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给我这个小破站换个域名</title>
+    <link href="https://vte.cc/natter/19/"/>
+    <id>https://vte.cc/natter/19/</id>
+    <published>2026-09-01T10:28:06.000Z</published>
+    <updated>2026-09-01T10:44:26.092Z</updated>
+    
+    <content type="html"><![CDATA[<p>话说我这个小破站也马上有一年的时间了，刚刚瞅了一眼，已经是342天了，马上就到365天了，期间一直使用的是vte.cc这个域名，这个域名不能说不好，只是不太好记，而且.cc域名还有很多做那种站点，就是你想的那种站点！</p><p>所以想了一下我还是换一个域名吧，现在换域名的代价还不算大，如果后期，我说的是如果，当时间长了之后，在换域名的话，代价会更加的大，而且很多东西都会围绕这个域名相关的东西会非常的被动的。再说了现在也没多少人来看我这个小破站，《PS：这个小破站除了我自己在这得瑟，基本上也没人看。》</p><p>我这个小破站的名字是：<strong>维特笔记</strong>。所以给自己这个小破站换一个：weite.net，当然这个域名在三四天前刚刚注册下来，🤭</p><p>在接下来的几天我估计如果有访问者看我这个小破站会出现访问失败的页面，所以如果你刚好打开我这个小破站，我在这里只能说暂时抱歉啦。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;话说我这个小破站也马上有一年的时间了，刚刚瞅了一眼，已经是342天了，马上就到365天了，期间一直使用的是vte.cc这个域名，这个域名不能说不好，只是不太好记，而且.cc域名还有很多做那种站点，就是你想的那种站点！&lt;/p&gt;
+&lt;p&gt;所以想了一下我还是换一个域名吧，现在换域名</summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="域名" scheme="https://vte.cc/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>好不容易看上一个域名结果被抢注了</title>
@@ -567,33 +595,6 @@
     <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="hexo" scheme="https://vte.cc/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello我来了</title>
-    <link href="https://vte.cc/natter/hello/"/>
-    <id>https://vte.cc/natter/hello/</id>
-    <published>2025-09-18T13:47:22.000Z</published>
-    <updated>2025-10-30T11:35:43.179Z</updated>
-    
-    <content type="html"><![CDATA[<p>经过近段的时间，来调试和学习如何使用这个<code>keep</code>主题, 我的小破站也可以说是勉勉强强上线了，这也是我自己写的第一篇文章吧。毕竟从搭建这个小破站开始，就要学习：<code>域名，hexo，GitHub</code>的各种操作，还要在电脑中安装：Git，Node.js，Visual Studio Code等软件。</p><p>总之在折腾的过程当中是各种报错，各种各样的BUG是层出不穷，也有抓狂到想要砸电脑的冲动，在这折腾的时候也有想过不行就拉几把倒，不弄这破玩意儿了。</p><p>现在是弄成了，回头想想这也算是一种抓狂和心理自己给自己博弈的一种体验吧。</p><p>hello，我来了</p><p><img src="https://img.vte.cc/test/hello.webp" alt="hello"></p><audio controls>  <source src="https://wasmer.vte.cc/wp-content/uploads/2025/10/video_a__Ba__-Mine-Ba__-Mi._0.mp3" type="audio/mpeg">  您的浏览器不支持 audio 元素。</audio>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;经过近段的时间，来调试和学习如何使用这个&lt;code&gt;keep&lt;/code&gt;主题,</summary>
-        
-      
-    
-    
-    
-    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
-    
-    
-    <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
