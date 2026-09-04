@@ -32,7 +32,29 @@
     <p>
         © 2026 All Rights Reserved
         
-        <br>本站运行于 2025-09-15，已稳定运行 351 天
+        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
+        <script>
+(function(){
+  const startTime = new Date("2025-09-15").getTime();
+  function update(){
+    const now = Date.now();
+    let diff = now - startTime;
+    if(diff < 0) diff = 0;
+
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const el = document.getElementById('run-time');
+    if(el){
+      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
+    }
+  }
+  update();
+  setInterval(update, 1000);
+})();
+        </script>
         
     </p>
 </footer>
