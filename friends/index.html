@@ -58,9 +58,7 @@
         </ul>
     </div>
     
-    <!-- 分割线，区分友链列表和申请留言区 -->
     <hr style="margin: 50px 0; border: none; border-top: 1px solid #eee;">
-    <!-- 友链申请留言板块 -->
     <div class="apply-friend">
         <h3 class="archive-year-title">申请友链</h3>
         <p style="color:#666; margin:12px 0 30px 0;">
@@ -69,44 +67,43 @@
             站点地址：https://xxx.com<br>
             站点简介：XXX
         </p>
-        <!-- Waline评论区 延迟加载 -->
         
         <div class="waline-wrap">
-            <div id="waline-friends"></div>
+            <div id="waline-friends" style="min-height: 100px;"></div>
         </div>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(item=>{
-      if(item.isIntersecting){
-        observer.unobserve(item.target);
-        // 加载waline样式
-        const walineCss = document.createElement('link');
-        walineCss.rel = 'stylesheet';
-        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
-        document.head.appendChild(walineCss);
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(item => {
+                    if (item.isIntersecting) {
+                        observer.unobserve(item.target);
+                        console.log('友链页：Waline区域进入视口，开始加载waline资源');
+                        //加载css
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = '/waline/waline.css';
+                        document.head.appendChild(link);
 
-        // 加载waline脚本并初始化
-        const s = document.createElement('script');
-        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
-        s.crossOrigin = "anonymous";
-        s.async = true;
-        s.onload = function(){
-          Waline.init({
-            el: '#waline-friends',
-            serverURL: 'https://waline.weite.net',
-            pageview: false,
-            comment: true,
-          });
-        }
-        document.body.appendChild(s);
-      }
-    })
-  })
-  const box = document.querySelector('#waline-friends');
-  if(box) observer.observe(box);
-})
-</script>
+                        const moduleScript = document.createElement('script');
+                        moduleScript.type = 'module';
+                        moduleScript.textContent = `
+                            import * as Waline from '/waline/waline.js';
+                            Waline.init({
+                                el: '#waline-friends',
+                                serverURL: 'https://waline.weite.net',
+                                pageview: false,
+                                comment: true,
+                            });
+                            console.log('✅友链页Waline初始化成功');
+                        `;
+                        document.body.appendChild(moduleScript);
+                    }
+                })
+            })
+            const box = document.querySelector('#waline-friends');
+            if (box) observer.observe(box);
+        })
+        </script>
         
     </div>
 </main>

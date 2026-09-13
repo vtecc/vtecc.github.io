@@ -29,7 +29,6 @@
     </div>
 </nav>
 <main class="container post-page">
-    <!-- 面包屑导航 -->
     <div class="breadcrumb">
         <a href="/">首页</a>
         
@@ -70,7 +69,6 @@
 <p><img src="https://img.vte.cc//test/1764740935055-2076095648.jpg"><br><img src="https://img.vte.cc//test/1764740918981-1066627082.jpg"></p>
 
     </div>
-    <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
         <a class="post-nav-item prev" href="/natter/7/">
@@ -86,45 +84,44 @@
         
     </div>
 
-    <!-- Waline 评论区，延迟加载，替换原Giscus -->
     
     <div class="waline-wrap">
         <h3>评论</h3>
-        <div id="waline-container"></div>
+        <div id="waline-container" style="min-height:100px;"></div>
     </div>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(item=>{
-      if(item.isIntersecting){
-        observer.unobserve(item.target);
-        // 加载Waline CSS
-        const walineCss = document.createElement('link');
-        walineCss.rel = 'stylesheet';
-        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
-        document.head.appendChild(walineCss);
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(item=>{
+                if(item.isIntersecting){
+                    observer.unobserve(item.target);
+                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
+                    // 加载CSS
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '/waline/waline.css';
+                    document.head.appendChild(link);
 
-        // 加载Waline JS并初始化
-        const s = document.createElement('script');
-        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
-        s.crossOrigin = "anonymous";
-        s.async = true;
-        s.onload = function(){
-          Waline.init({
-            el: '#waline-container',
-            serverURL: 'https://waline.weite.net',
-            pageview: false,
-            comment: true,
-          });
-        }
-        document.body.appendChild(s);
-      }
+                    const moduleScript = document.createElement('script');
+                    moduleScript.type = 'module';
+                    moduleScript.textContent = `
+                        import * as Waline from '/waline/waline.js';
+                        Waline.init({
+                            el: '#waline-container',
+                            serverURL: 'https://waline.weite.net',
+                            pageview: false,
+                            comment: true,
+                        });
+                        console.log('✅文章页Waline初始化成功');
+                    `;
+                    document.body.appendChild(moduleScript);
+                }
+            })
+        })
+        const box = document.querySelector('#waline-container');
+        if(box) observer.observe(box);
     })
-  })
-  const box = document.querySelector('#waline-container');
-  if(box) observer.observe(box);
-})
-</script>
+    </script>
     
 </main>
 <footer class="site-footer">
