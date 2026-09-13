@@ -28,8 +28,6 @@
         </div>
     </div>
 </nav>
-
-
 <main class="container post-page">
     <!-- 面包屑导航 -->
     <div class="breadcrumb">
@@ -42,9 +40,7 @@
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">学习一下vitepress的使用</span>
     </div>
-
     <h1 class="post-title">学习一下vitepress的使用</h1>
-
     <div class="post-meta">
         <time>发布时间：2026-01-15</time>
         
@@ -56,7 +52,6 @@
         </div>
         
     </div>
-
     <div class="post-content">
         <p>在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。</p>
 <h1 id="在自己电脑上安装vitepress的前置条件"><a href="#在自己电脑上安装vitepress的前置条件" class="headerlink" title="在自己电脑上安装vitepress的前置条件"></a>在自己电脑上安装vitepress的前置条件</h1><ul>
@@ -85,8 +80,6 @@
 <p>就这样我们的vitepress就在自己的电脑里安装成功了，这时候只需要把vitepress修改成为你自己想实现的页面，就OK了。</p>
 
     </div>
-
-
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -95,8 +88,6 @@
             <div>不备案部署在GitHub的博客是否需要EdgeOne加速</div>
         </a>
         
-
-
         
         <a class="post-nav-item next" href="/natter/10/">
             <span>下一篇 →</span>
@@ -105,12 +96,11 @@
         
     </div>
 
-
-    <!-- Giscus 延迟加载 -->
+    <!-- Waline 评论区，延迟加载，替换原Giscus -->
     
-    <div class="giscus-wrap">
+    <div class="waline-wrap">
         <h3>评论</h3>
-        <div id="giscus-container"></div>
+        <div id="waline-container"></div>
     </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -118,29 +108,35 @@ document.addEventListener('DOMContentLoaded',function(){
     entries.forEach(item=>{
       if(item.isIntersecting){
         observer.unobserve(item.target);
+        // 加载Waline CSS
+        const walineCss = document.createElement('link');
+        walineCss.rel = 'stylesheet';
+        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCss);
+
+        // 加载Waline JS并初始化
         const s = document.createElement('script');
-        s.src = "https://giscus.app/client.js";
+        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
         s.crossOrigin = "anonymous";
         s.async = true;
-        s.dataset.repo = "vtecc/vtecc.github.io";
-        s.dataset.repoId = "R_kgDOQz1gbw";
-        s.dataset.category = "Announcements";
-        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
-        s.dataset.mapping = "pathname";
-        s.dataset.reactionsEnabled = "1";
-        s.dataset.theme = "light";
-        document.getElementById('giscus-container').appendChild(s);
+        s.onload = function(){
+          Waline.init({
+            el: '#waline-container',
+            serverURL: 'https://waline.weite.net',
+            pageview: false,
+            comment: true,
+          });
+        }
+        document.body.appendChild(s);
       }
     })
   })
-  const box = document.querySelector('#giscus-container');
+  const box = document.querySelector('#waline-container');
   if(box) observer.observe(box);
 })
 </script>
     
 </main>
-
-
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved

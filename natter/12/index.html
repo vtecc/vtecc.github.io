@@ -28,8 +28,6 @@
         </div>
     </div>
 </nav>
-
-
 <main class="container post-page">
     <!-- 面包屑导航 -->
     <div class="breadcrumb">
@@ -42,9 +40,7 @@
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">不备案部署在GitHub的博客是否需要EdgeOne加速</span>
     </div>
-
     <h1 class="post-title">不备案部署在GitHub的博客是否需要EdgeOne加速</h1>
-
     <div class="post-meta">
         <time>发布时间：2026-01-21</time>
         
@@ -56,7 +52,6 @@
         </div>
         
     </div>
-
     <div class="post-content">
         <p>看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。</p>
 <p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a target="_blank" rel="noopener" href="https://www.itdog.cn/%E7%AB%99%E7%82%B9%E6%B5%8B%E8%AF%95ping%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8F%91%E7%8E%B0%E7%9B%B4%E8%BF%9EGitHub%E9%80%9F%E5%BA%A6%E6%96%B9%E9%9D%A2%E4%BC%9A%E6%9B%B4%E5%A5%BD%E3%80%82%E5%BD%93%E7%84%B6%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E5%B7%B2%E7%BB%8F%E5%A4%87%E6%A1%88%EF%BC%8C%E9%82%A3%E8%BF%98%E6%98%AF%E6%AF%94%E8%BE%83%E6%8E%A8%E8%8D%90EdgeOne%E5%8A%A0%E9%80%9F%E7%9A%84%E3%80%82">https://www.itdog.cn/站点测试ping的时候，发现直连GitHub速度方面会更好。当然如果你的站点已经备案，那还是比较推荐EdgeOne加速的。</a></p>
@@ -104,8 +99,6 @@
 <p>如果直连不稳定或有安全 &#x2F; 自定义域名需求，可尝试配置优化后的 EdgeOne（选择最优海外节点 + 合理缓存策略），同时接受可能的轻微性能损失，换取更好的稳定性与安全性。</p>
 
     </div>
-
-
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -114,8 +107,6 @@
             <div>这个春节去了一趟山东看了一场烟花秀</div>
         </a>
         
-
-
         
         <a class="post-nav-item next" href="/vitepress/11/">
             <span>下一篇 →</span>
@@ -124,12 +115,11 @@
         
     </div>
 
-
-    <!-- Giscus 延迟加载 -->
+    <!-- Waline 评论区，延迟加载，替换原Giscus -->
     
-    <div class="giscus-wrap">
+    <div class="waline-wrap">
         <h3>评论</h3>
-        <div id="giscus-container"></div>
+        <div id="waline-container"></div>
     </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -137,29 +127,35 @@ document.addEventListener('DOMContentLoaded',function(){
     entries.forEach(item=>{
       if(item.isIntersecting){
         observer.unobserve(item.target);
+        // 加载Waline CSS
+        const walineCss = document.createElement('link');
+        walineCss.rel = 'stylesheet';
+        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCss);
+
+        // 加载Waline JS并初始化
         const s = document.createElement('script');
-        s.src = "https://giscus.app/client.js";
+        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
         s.crossOrigin = "anonymous";
         s.async = true;
-        s.dataset.repo = "vtecc/vtecc.github.io";
-        s.dataset.repoId = "R_kgDOQz1gbw";
-        s.dataset.category = "Announcements";
-        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
-        s.dataset.mapping = "pathname";
-        s.dataset.reactionsEnabled = "1";
-        s.dataset.theme = "light";
-        document.getElementById('giscus-container').appendChild(s);
+        s.onload = function(){
+          Waline.init({
+            el: '#waline-container',
+            serverURL: 'https://waline.weite.net',
+            pageview: false,
+            comment: true,
+          });
+        }
+        document.body.appendChild(s);
       }
     })
   })
-  const box = document.querySelector('#giscus-container');
+  const box = document.querySelector('#waline-container');
   if(box) observer.observe(box);
 })
 </script>
     
 </main>
-
-
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved

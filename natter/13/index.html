@@ -28,8 +28,6 @@
         </div>
     </div>
 </nav>
-
-
 <main class="container post-page">
     <!-- 面包屑导航 -->
     <div class="breadcrumb">
@@ -42,9 +40,7 @@
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">这个春节去了一趟山东看了一场烟花秀</span>
     </div>
-
     <h1 class="post-title">这个春节去了一趟山东看了一场烟花秀</h1>
-
     <div class="post-meta">
         <time>发布时间：2026-03-11</time>
         
@@ -58,7 +54,6 @@
         </div>
         
     </div>
-
     <div class="post-content">
         <p>  刚刚抽了一眼我的这个小破站，竟然有两个月没动它了。现在有一个多小时的时间，就来更新一下我这个小破站。</p>
 <p>主要还是在春节期间比较懒，也差不多有两个月没开电脑了！一方面是比较忙，另一方面是比较懒！当然了主要还是懒！</p>
@@ -72,8 +67,6 @@
 <p>就先写到这吧，这也是今年过春节最大的一个亮点，去了一趟山东，看了一场烟花秀。</p>
 
     </div>
-
-
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -82,8 +75,6 @@
             <div>为情绪买单之入手一个简短的单拼域名</div>
         </a>
         
-
-
         
         <a class="post-nav-item next" href="/natter/12/">
             <span>下一篇 →</span>
@@ -92,12 +83,11 @@
         
     </div>
 
-
-    <!-- Giscus 延迟加载 -->
+    <!-- Waline 评论区，延迟加载，替换原Giscus -->
     
-    <div class="giscus-wrap">
+    <div class="waline-wrap">
         <h3>评论</h3>
-        <div id="giscus-container"></div>
+        <div id="waline-container"></div>
     </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -105,29 +95,35 @@ document.addEventListener('DOMContentLoaded',function(){
     entries.forEach(item=>{
       if(item.isIntersecting){
         observer.unobserve(item.target);
+        // 加载Waline CSS
+        const walineCss = document.createElement('link');
+        walineCss.rel = 'stylesheet';
+        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCss);
+
+        // 加载Waline JS并初始化
         const s = document.createElement('script');
-        s.src = "https://giscus.app/client.js";
+        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
         s.crossOrigin = "anonymous";
         s.async = true;
-        s.dataset.repo = "vtecc/vtecc.github.io";
-        s.dataset.repoId = "R_kgDOQz1gbw";
-        s.dataset.category = "Announcements";
-        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
-        s.dataset.mapping = "pathname";
-        s.dataset.reactionsEnabled = "1";
-        s.dataset.theme = "light";
-        document.getElementById('giscus-container').appendChild(s);
+        s.onload = function(){
+          Waline.init({
+            el: '#waline-container',
+            serverURL: 'https://waline.weite.net',
+            pageview: false,
+            comment: true,
+          });
+        }
+        document.body.appendChild(s);
       }
     })
   })
-  const box = document.querySelector('#giscus-container');
+  const box = document.querySelector('#waline-container');
   if(box) observer.observe(box);
 })
 </script>
     
 </main>
-
-
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved

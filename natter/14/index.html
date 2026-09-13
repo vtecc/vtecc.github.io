@@ -28,8 +28,6 @@
         </div>
     </div>
 </nav>
-
-
 <main class="container post-page">
     <!-- 面包屑导航 -->
     <div class="breadcrumb">
@@ -42,9 +40,7 @@
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">为情绪买单之入手一个简短的单拼域名</span>
     </div>
-
     <h1 class="post-title">为情绪买单之入手一个简短的单拼域名</h1>
-
     <div class="post-meta">
         <time>发布时间：2026-04-01</time>
         
@@ -56,7 +52,6 @@
         </div>
         
     </div>
-
     <div class="post-content">
         <p>从昨晚上在西部数码看了一下一口价的域名，其中有一个单拼的域名，非常的简短，并且也非常的好记。</p>
 <p>昨晚上那会的想法是：感觉没必要买这个域名，因为本身咱这个vte.cc也不算长，就是有点难记住！今儿白天在工作的时候就想着要不要直接下手拿下它，毕竟也不算贵。</p>
@@ -71,8 +66,6 @@
 <p>qiu.pw</p>
 
     </div>
-
-
     <!-- 上一篇 / 下一篇 -->
     <div class="post-nav">
         
@@ -81,8 +74,6 @@
             <div>科技改变生活这话不假</div>
         </a>
         
-
-
         
         <a class="post-nav-item next" href="/natter/13/">
             <span>下一篇 →</span>
@@ -91,12 +82,11 @@
         
     </div>
 
-
-    <!-- Giscus 延迟加载 -->
+    <!-- Waline 评论区，延迟加载，替换原Giscus -->
     
-    <div class="giscus-wrap">
+    <div class="waline-wrap">
         <h3>评论</h3>
-        <div id="giscus-container"></div>
+        <div id="waline-container"></div>
     </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -104,29 +94,35 @@ document.addEventListener('DOMContentLoaded',function(){
     entries.forEach(item=>{
       if(item.isIntersecting){
         observer.unobserve(item.target);
+        // 加载Waline CSS
+        const walineCss = document.createElement('link');
+        walineCss.rel = 'stylesheet';
+        walineCss.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCss);
+
+        // 加载Waline JS并初始化
         const s = document.createElement('script');
-        s.src = "https://giscus.app/client.js";
+        s.src = "https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js";
         s.crossOrigin = "anonymous";
         s.async = true;
-        s.dataset.repo = "vtecc/vtecc.github.io";
-        s.dataset.repoId = "R_kgDOQz1gbw";
-        s.dataset.category = "Announcements";
-        s.dataset.categoryId = "DIC_kwDOQz1gb84C0liB";
-        s.dataset.mapping = "pathname";
-        s.dataset.reactionsEnabled = "1";
-        s.dataset.theme = "light";
-        document.getElementById('giscus-container').appendChild(s);
+        s.onload = function(){
+          Waline.init({
+            el: '#waline-container',
+            serverURL: 'https://waline.weite.net',
+            pageview: false,
+            comment: true,
+          });
+        }
+        document.body.appendChild(s);
       }
     })
   })
-  const box = document.querySelector('#giscus-container');
+  const box = document.querySelector('#waline-container');
   if(box) observer.observe(box);
 })
 </script>
     
 </main>
-
-
 <footer class="site-footer">
     <p>
         © 2026 All Rights Reserved
