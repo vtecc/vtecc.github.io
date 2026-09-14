@@ -6,7 +6,7 @@
   <link href="https://vte.cc/atom.xml" rel="self"/>
   
   <link href="https://vte.cc/"/>
-  <updated>2026-09-01T11:07:55.612Z</updated>
+  <updated>2026-09-14T14:43:58.261Z</updated>
   <id>https://vte.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小破站一周年了</title>
+    <link href="https://vte.cc/natter/20/"/>
+    <id>https://vte.cc/natter/20/</id>
+    <published>2026-09-14T13:29:47.000Z</published>
+    <updated>2026-09-14T14:43:58.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>  时间真的好快，马上我这个小破站就要一周年了，遥想25年9月15日才搭建起来的小破站，竟然已经陆陆续续走过了一年的光景，只能说是时间真的好快啊！明天就一周年了，我在这里顺便记录一下，毕竟我只是一个做事只有三分钟热度的人，这个小破站竟然能够坚持住一年的时间，太不可思议了！</p><p><img src="https://img.vte.cc/weite-1.webp"></p><p>在这一年的时间里我统计了一下，我一共写了22篇文章，姑且算是文章吧，大部分都是我自己胡编乱造的一些文字记录。当然有一些东西现在已经消失了，但是当时还是有一定的记录的，比如：《<a href="https://www.weite.net/natter/3/">我用AI给自己写了一个hexo主题</a>》，这个就是第一次使用AI工具写的第一个hexo主题，话说当时简直激动坏了！那时候感觉自己就是一个天才，感觉万物都可以被重塑。当然那时候也是有飘飘然的感觉！</p><p>不过随后就是不太理想的遭遇，现在回想起来只能说是那时候天真，简直天真的有点不像话，在随后的遭遇就是各种BUG，所有不得不换hexo主题，在这篇《<a href="https://www.weite.net/natter/6/">又换hexo主题了</a>》有过说明。</p><p>其中还自以为是的增加了一个引用Unsplash功能做起来的一个摄影页面《<a href="https://www.weite.net/natter/8/">优化博客之增加一个摄影页面</a>》，不过在随后的时间也去掉了！主要是因为加载太慢导致的。</p><p>那时候想的就是，既然AI工具可以生成比较炫酷的东西，为什么不弄一个好看且个性的东西，毕竟自己的小破站自己可以360度无死角的改变，再者说了，我的地盘我做主。在第三次利用AI工具尝试修改了自己的小破站，这篇文章有过记载《<a href="https://www.weite.net/natter/15/">科技改变生活这话不假</a>》</p><p>理想很丰满，现实很骨感，因为我这个小破站是托管在GitHub上面，而GitHub的总部又是在美国，对你没看错，是在美国，也就是说：我这个小破站的代码储存在了美国，而咱们大天朝的访客打开我这个小破站，就在点击我这个小破站的域名的瞬间，先要在美国确认我这个小破站的地址，然后在返回我这个小破站的一些css js等特效，还有我这个小破站的一些无聊的内容，在对于咱们大天朝的访客来讲，打开我这个小破站的速度和体验感，那是相当的拉跨了。当然也有打不开的情况！遇到这种情况那更是糟糕了！</p><p>所有在我痛定思痛的考虑下，我利用AI写了我第四版本的hexo主题。也就是你现在看到的hexo主题。</p><p><img src="https://img.vte.cc/vtecc-hexo.png"></p><p>这次的hexo主题，主打就一个抛弃掉一些没啥用的累赘，就一个比较使用的功能，那就是集中展示写作的内容，这个hexo主题也和hexo的理念差不多，</p><ul><li>Hexo 是一个快速、简洁且高效的博客框架。 Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li></ul><p>当然除了首页是一个引导页的类型，其他的页面基本上围绕的就是以写作为目的，所有没什么花里胡哨的东西。</p><p>也就是在最近几天，我把我的域名从vte.cc换成了weite.net，我个人感觉这样比较正规！主要是我发现现在很多.cc的站点出现了很多那种，就是那种莫名其妙并且很有诱惑力的站点，我真心不想与它为伍！</p><p>所以最近想着就是把域名换掉，也很庆幸当时weite.net还没有被注册，在我看到这个域名没被注册后，直接自己给注册下来了。虽然这个域名的成本不低，但是我自个寻摸着一年也就百十块，还是能够负担得起的。😄</p><p>当然在自己使用的留言板块<strong>giscus</strong>也将近一年的时光里，发现很多小伙伴的地区根本就打不开<strong>GitHub</strong>的页面，这无疑是给我这个小破站增加了互动成本了，所以在昨天我利用AI工具和搜索，把我这个<strong>giscus</strong>的留言板块换成了更符合咱们自己人使用的留言板块，就是：<strong>Waline</strong></p><p>在随后的使用AI工具后，发现AI工具只是一个工具，它不是万能的，虽然它表现的很智能，但是它依然只是一个工具。不是万能，不能所有的东西全靠AI解决，但是不得不说AI工具确实很智能。这点必须要承认的，如果没有AI工具，我这个站点应该不会存在！</p><p>最后总结一下我这个小破站的一年吧！</p><p>有点用的东西几乎没有，乱八七糟的东西有点。但是不多！按照一年22篇文章来说，这个记录只能说是很平凡！但这也表明平凡是人这一辈子的主旋律，高光的时刻毕竟是短暂的，而且是稍纵即逝！</p><p>所以这个小破站在之后的时光里，或许会发一些没什么营养并且千篇一律的姑且说是文章吧。</p><p>暂时就这些，当然有些东西还没有在这篇文章中有所记载。主要是我有点懒了，感觉写这篇文章就用掉了肚子里唯一的一点墨水！</p><p>最后给自己打个气，27年我想在写一篇两周年记录文章。</p><p><img src="https://img.vte.cc/1zhounian.webp"></p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
+    
+    
+    <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>给我这个小破站换个域名</title>
@@ -564,37 +591,6 @@
     
     
     <category term="AI工具" scheme="https://vte.cc/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo写文章用到的代码记录</title>
-    <link href="https://vte.cc/natter/1/"/>
-    <id>https://vte.cc/natter/1/</id>
-    <published>2025-10-09T02:45:28.000Z</published>
-    <updated>2025-11-05T14:50:52.672Z</updated>
-    
-    <content type="html"><![CDATA[<p>咱这个小破站搭建成功了，现在记录一下以后要用到的代码，免得到时候翻箱倒柜的找。</p><p>因为这个写作是需要用Markdown语法格式写，所以把常用的到东西在这记录一下。</p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [维特笔记](https://vte.cc)</span><br></pre></td></tr></table></figure><p>渲染结果</p><p>这是一个链接 <a href="https://vte.cc/">维特笔记</a></p><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>插入图片Markdown语法代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片链接 <span class="string">&quot;图片title&quot;</span>)</span><br></pre></td></tr></table></figure><p>对应的HTML代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img </span><br><span class="line"> src=<span class="string">&quot;图片链接&quot;</span> alt=<span class="string">&quot;图片alt&quot;</span> title=<span class="string">&quot;图片title&quot;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="引用书上的句子"><a href="#引用书上的句子" class="headerlink" title="引用书上的句子"></a>引用书上的句子</h3><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p><footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote><h3 id="引用网络上的文章"><a href="#引用网络上的文章" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h3><blockquote><p>Every interaction is both precious and an opportunity to delight.</p><footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote><h2 id="视频插入"><a href="#视频插入" class="headerlink" title="视频插入"></a>视频插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">&quot; //player.bilibili.com/player.html?isOutside=true&amp;aid=115252595267797&amp;bvid=BV1G6JCzCE21&amp;cid=32575260409&amp;p=1&amp;as_wide=1&amp;high_quality=1&amp;danmaku=0&quot;</span> style=<span class="string">&quot;width: 100%; aspect-ratio: 16 / 9; border: none;&quot;</span> allowfullscreen&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure><iframe src=" //player.bilibili.com/player.html?isOutside=true&aid=115252595267797&bvid=BV1G6JCzCE21&cid=32575260409&p=1&as_wide=1&high_quality=1&danmaku=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe><h2 id="音乐插入"><a href="#音乐插入" class="headerlink" title="音乐插入"></a>音乐插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio controls&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">&quot;你的mp3地址&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;audio/mpeg&quot;</span>&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure><audio controls>  <source src="https://wasmer.vte.cc/wp-content/uploads/2025/10/video_a__Ba__-Mine-Ba__-Mi._0.mp3" type="audio/mpeg">  您的浏览器不支持 audio 元素。</audio><p>一般来说自己编写也就这几样，其他的好像没有。</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;咱这个小破站搭建成功了，现在记录一下以后要用到的代码，免得到时候翻箱倒柜的找。&lt;/p&gt;
-&lt;p&gt;因为这个写作是需要用Markdown语法格式写，所以把常用的到东西在这记录一下。&lt;/p&gt;
-&lt;h2 id=&quot;超链接&quot;&gt;&lt;a href=&quot;#超链接&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="natter" scheme="https://vte.cc/categories/natter/"/>
-    
-    
-    <category term="博客" scheme="https://vte.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="hexo" scheme="https://vte.cc/tags/hexo/"/>
     
   </entry>
   
