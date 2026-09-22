@@ -129,12 +129,10 @@
     const now = Date.now();
     let diff = now - startTime;
     if(diff < 0) diff = 0;
-
     const day = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const second = Math.floor((diff % (1000 * 60)) / 1000);
-
     const el = document.getElementById('run-time');
     if(el){
       el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
@@ -148,5 +146,7 @@
     </p>
 </footer>
 <script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
 </body>
 </html>

@@ -66,6 +66,10 @@
                     域名 <span>(3)</span>
                 </a>
             
+                <a href="/tags/hexo%E4%B8%BB%E9%A2%98/" class="tag-item">
+                    hexo主题 <span>(2)</span>
+                </a>
+            
                 <a href="/tags/%E5%B0%8F%E7%A0%B4%E7%AB%99/" class="tag-item">
                     小破站 <span>(1)</span>
                 </a>
@@ -74,24 +78,20 @@
                     豆包 <span>(1)</span>
                 </a>
             
-                <a href="/tags/hexo%E4%B8%BB%E9%A2%98/" class="tag-item">
-                    hexo主题 <span>(2)</span>
-                </a>
-            
-                <a href="/tags/vercel/" class="tag-item">
-                    vercel <span>(1)</span>
-                </a>
-            
                 <a href="/tags/%E5%9B%BE%E5%BA%8A/" class="tag-item">
                     图床 <span>(1)</span>
+                </a>
+            
+                <a href="/tags/%E6%8A%96%E9%9F%B3/" class="tag-item">
+                    抖音 <span>(1)</span>
                 </a>
             
                 <a href="/tags/AI%E5%B7%A5%E5%85%B7/" class="tag-item">
                     AI工具 <span>(3)</span>
                 </a>
             
-                <a href="/tags/%E6%8A%96%E9%9F%B3/" class="tag-item">
-                    抖音 <span>(1)</span>
+                <a href="/tags/vercel/" class="tag-item">
+                    vercel <span>(1)</span>
                 </a>
             
         </div>
@@ -109,12 +109,10 @@
     const now = Date.now();
     let diff = now - startTime;
     if(diff < 0) diff = 0;
-
     const day = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const second = Math.floor((diff % (1000 * 60)) / 1000);
-
     const el = document.getElementById('run-time');
     if(el){
       el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
@@ -128,5 +126,7 @@
     </p>
 </footer>
 <script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
 </body>
 </html>
