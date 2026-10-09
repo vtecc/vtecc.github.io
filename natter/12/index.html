@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>不备案部署在GitHub的博客是否需要EdgeOne加速 | 维特笔记</title>
+    <meta name="description" content="维特笔记，记录技术、生活与思考。">
+    <!-- canonical 规范链接 -->
+    <link rel="canonical" href="https://www.weite.net/natter/12/">
+    <!-- favicon图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:site_name" content="维特笔记">
+    <meta property="og:title" content="不备案部署在GitHub的博客是否需要EdgeOne加速 | 维特笔记">
+    <meta property="og:description" content="维特笔记，记录技术、生活与思考。">
+    <meta property="og:url" content="https://www.weite.net/natter/12/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/share-cover.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="不备案部署在GitHub的博客是否需要EdgeOne加速 | 维特笔记">
+    <meta name="twitter:description" content="维特笔记，记录技术、生活与思考。">
+    <meta name="twitter:image" content="/img/share-cover.webp">
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    
+    
+    
+    
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<nav class="site-nav">
+    <div class="nav-wrap">
+        <a href="/" class="nav-logo">维特笔记</a>
+        <div class="nav-menu">
+            
+                <a href="/">首页</a>
+            
+                <a href="/archives">归档</a>
+            
+                <a href="/friends">友链</a>
+            
+                <a href="/about">关于</a>
+            
+        </div>
+    </div>
+</nav>
+<main class="container post-page">
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">不备案部署在GitHub的博客是否需要EdgeOne加速</span>
+    </div>
+    <h1 class="post-title">不备案部署在GitHub的博客是否需要EdgeOne加速</h1>
+    <div class="post-meta">
+        <time>发布时间：2026-01-21</time>
+        
+        <div class="post-readtime">⏱ 预计阅读 4 分钟</div>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/EdgeOne/" class="tag-item">#EdgeOne</a>
+            
+        </div>
+        
+    </div>
+
+    <div class="post-layout-wrap">
+        <article class="post-content">
+            <p>看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。</p>
+<p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a target="_blank" rel="noopener" href="https://www.itdog.cn/%E7%AB%99%E7%82%B9%E6%B5%8B%E8%AF%95ping%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8F%91%E7%8E%B0%E7%9B%B4%E8%BF%9EGitHub%E9%80%9F%E5%BA%A6%E6%96%B9%E9%9D%A2%E4%BC%9A%E6%9B%B4%E5%A5%BD%E3%80%82%E5%BD%93%E7%84%B6%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E5%B7%B2%E7%BB%8F%E5%A4%87%E6%A1%88%EF%BC%8C%E9%82%A3%E8%BF%98%E6%98%AF%E6%AF%94%E8%BE%83%E6%8E%A8%E8%8D%90EdgeOne%E5%8A%A0%E9%80%9F%E7%9A%84%E3%80%82">https://www.itdog.cn/站点测试ping的时候，发现直连GitHub速度方面会更好。当然如果你的站点已经备案，那还是比较推荐EdgeOne加速的。</a></p>
+<p>随后也是问了一下豆包，豆包给出的解释也是说直连GitHub的效果要好一点。</p>
+<h1 id="使用-EdgeOne-的优缺点分析"><a href="#使用-EdgeOne-的优缺点分析" class="headerlink" title="使用 EdgeOne 的优缺点分析"></a>使用 EdgeOne 的优缺点分析</h1><h2 id="✅-优点（不备案场景）"><a href="#✅-优点（不备案场景）" class="headerlink" title="✅ 优点（不备案场景）"></a>✅ 优点（不备案场景）</h2><p>稳定性提升</p>
+<p>规避部分运营商对 GitHub 的 QoS 限制或路由波动</p>
+<p>提供多节点冗余，某节点故障时自动切换</p>
+<p>缓解 GitHub Pages 偶尔出现的访问中断问题</p>
+<p>安全防护增强</p>
+<p>免费 DDoS 基础防护、WAF 防火墙，抵御常见网络攻击</p>
+<p>隐藏源站 IP，降低 GitHub Pages 被定向攻击风险</p>
+<p>自动 HTTPS 与 SSL 证书管理，提升网站安全性</p>
+<p>自定义域名优化</p>
+<p>支持绑定自定义域名（需 CNAME 解析到 EdgeOne）</p>
+<p>提供更灵活的 DNS 管理与流量调度能力</p>
+<p>可配置缓存策略，减少重复回源，降低 GitHub API 限制风险</p>
+<p>额外功能价值</p>
+<p>边缘函数：实现简单动态功能（如访问统计、URL 重定向）</p>
+<p>流量监控：可视化分析访问来源、带宽使用等数据</p>
+<p>全球负载均衡：优化海外用户访问体验</p>
+<h2 id="❌-缺点（不备案场景）"><a href="#❌-缺点（不备案场景）" class="headerlink" title="❌ 缺点（不备案场景）"></a>❌ 缺点（不备案场景）</h2><p>速度可能下降</p>
+<p>多一层节点转发，增加延迟，尤其国内用户</p>
+<p>海外节点带宽成本高，可能有隐性限速</p>
+<p>部分地区可能出现丢包率上升问题</p>
+<p>配置复杂度增加</p>
+<p>需额外设置 CNAME 解析、源站配置、缓存规则等</p>
+<p>需处理 EdgeOne 与 GitHub Pages 的 HTTPS 兼容问题</p>
+<p>排查问题时需同时分析 EdgeOne 与 GitHub 两端日志</p>
+<p>潜在成本</p>
+<p>免费版有带宽 &#x2F; 请求数限制（每月 10GB 流量、100 万请求）</p>
+<p>超额后需付费，增加运营成本</p>
+<p>功能受限</p>
+<p>无法使用国内节点，加速效果远不如备案后</p>
+<p>部分高级功能（如国内智能调度）不可用</p>
+<h1 id="适用场景与决策建议"><a href="#适用场景与决策建议" class="headerlink" title="适用场景与决策建议"></a>适用场景与决策建议</h1><h2 id="🌟-建议使用-EdgeOne-的情况"><a href="#🌟-建议使用-EdgeOne-的情况" class="headerlink" title="🌟 建议使用 EdgeOne 的情况"></a>🌟 建议使用 EdgeOne 的情况</h2><p>直连不稳定：GitHub Pages 在你所在地区频繁断连或波动</p>
+<p>安全需求高：博客有敏感内容或担心被攻击</p>
+<p>自定义域名：希望使用自己的域名且需要更好的 DNS 管理</p>
+<p>海外用户多：博客主要面向海外读者，EdgeOne 海外节点可优化访问体验</p>
+<p>长期规划：未来可能备案，提前配置 EdgeOne 便于后续无缝切换国内节点</p>
+<h2 id="⚠️-建议不使用-EdgeOne-的情况"><a href="#⚠️-建议不使用-EdgeOne-的情况" class="headerlink" title="⚠️ 建议不使用 EdgeOne 的情况"></a>⚠️ 建议不使用 EdgeOne 的情况</h2><p>直连速度与稳定性俱佳：ping 值低且页面加载快，无频繁访问问题</p>
+<p>极简配置需求：不想增加额外维护成本，追求 “部署即忘”</p>
+<p>流量极小：个人博客访问量低，GitHub Pages 完全能满足需求</p>
+<p>成本敏感：不愿承担任何潜在费用，坚持零成本运营</p>
+<h1 id="最终建议"><a href="#最终建议" class="headerlink" title="最终建议"></a>最终建议</h1><p>如果直连 GitHub Pages 速度稳定且满足需求，优先选择不使用 EdgeOne，避免多一层转发带来的性能损耗与配置复杂度。</p>
+<p>如果直连不稳定或有安全 &#x2F; 自定义域名需求，可尝试配置优化后的 EdgeOne（选择最优海外节点 + 合理缓存策略），同时接受可能的轻微性能损失，换取更好的稳定性与安全性。</p>
+
+        </article>
+        <aside class="post-toc">
+            <div class="toc-inner">
+                <h4 class="toc-title">目录</h4>
+                <nav id="toc-nav"></nav>
+            </div>
+        </aside>
+    </div>
+
+    
+    <div class="cc-notice">
+        <p><strong>版权声明：</strong>
+        本文采用
+        
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY‑NC‑SA 4.0</a>
+        
+        许可协议进行许可。转载请注明出处。
+        </p>
+    </div>
+    
+
+    <div class="post-nav">
+        
+        <a class="post-nav-item prev" href="/natter/13/">
+            <span>← 上一篇</span>
+            <div>这个春节去了一趟山东看了一场烟花秀</div>
+        </a>
+        
+        
+        <a class="post-nav-item next" href="/vitepress/11/">
+            <span>下一篇 →</span>
+            <div>学习一下vitepress的使用</div>
+        </a>
+        
+    </div>
+    
+    <div class="waline-wrap">
+        <h3>评论</h3>
+        <div id="waline-container" style="min-height:100px;"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(item=>{
+                if(item.isIntersecting){
+                    observer.unobserve(item.target);
+                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '/waline/waline.css';
+                    document.head.appendChild(link);
+                    const moduleScript = document.createElement('script');
+                    moduleScript.type = 'module';
+                    moduleScript.textContent = `
+                        import * as Waline from '/waline/waline.js';
+                        Waline.init({
+                            el: '#waline-container',
+                            serverURL: 'https://waline.weite.net',
+                            pageview: false,
+                            comment: true,
+                        });
+                        console.log('✅文章页Waline初始化成功');
+                    `;
+                    document.body.appendChild(moduleScript);
+                }
+            })
+        })
+        const box = document.querySelector('#waline-container');
+        if(box) observer.observe(box);
+    })
+    </script>
+    
+
+    <button id="back-top" type="button" title="回到顶部">↑</button>
+
+    <script>
+    (function buildPostToc(){
+        const tocNav = document.getElementById('toc-nav');
+        const tocWrap = document.querySelector('.post-toc');
+        if(!tocNav || !tocWrap) return;
+
+        const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'));
+        const h2List = headings.filter(el=>el.tagName==='H2');
+
+        if(h2List.length < 3){
+            tocWrap.classList.add('toc-hide');
+            return;
+        }
+
+        headings.forEach(h=>{
+            if(!h.id){
+                h.id = "toc-" + h.innerText.trim().replace(/\W+/g,"-");
+            }
+            const a = document.createElement('a');
+            a.href = "#"+h.id;
+            a.innerText = h.innerText;
+            if(h.tagName === 'H3') a.classList.add("toc-h3");
+            tocNav.appendChild(a);
+        });
+    })();
+
+    (function backTopInit(){
+        const btn = document.getElementById('back-top');
+        if(!btn) return;
+        const showOffset = window.innerHeight;
+        function scrollHandler(){
+            if(window.scrollY > showOffset){
+                btn.classList.add('show');
+            }else{
+                btn.classList.remove('show');
+            }
+        }
+        window.addEventListener('scroll', scrollHandler);
+        btn.addEventListener('click', ()=>{
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+        scrollHandler();
+    })();
+    </script>
+</main>
+<footer class="site-footer">
+    <p>
+        © 2026 All Rights Reserved
+        
+        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
+        <script>
+(function(){
+  const startTime = new Date("2025-09-15").getTime();
+  function update(){
+    const now = Date.now();
+    let diff = now - startTime;
+    if(diff < 0) diff = 0;
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
+    const el = document.getElementById('run-time');
+    if(el){
+      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
+    }
+  }
+  update();
+  setInterval(update, 1000);
+})();
+        </script>
+        
+    </p>
+</footer>
+<script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
+</body>
+</html>
+

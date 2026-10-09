@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>hexo写文章用到的代码记录 | 维特笔记</title>
+    <meta name="description" content="维特笔记，记录技术、生活与思考。">
+    <!-- canonical 规范链接 -->
+    <link rel="canonical" href="https://www.weite.net/natter/1/">
+    <!-- favicon图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:site_name" content="维特笔记">
+    <meta property="og:title" content="hexo写文章用到的代码记录 | 维特笔记">
+    <meta property="og:description" content="维特笔记，记录技术、生活与思考。">
+    <meta property="og:url" content="https://www.weite.net/natter/1/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/share-cover.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="hexo写文章用到的代码记录 | 维特笔记">
+    <meta name="twitter:description" content="维特笔记，记录技术、生活与思考。">
+    <meta name="twitter:image" content="/img/share-cover.webp">
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    
+    
+    
+    
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<nav class="site-nav">
+    <div class="nav-wrap">
+        <a href="/" class="nav-logo">维特笔记</a>
+        <div class="nav-menu">
+            
+                <a href="/">首页</a>
+            
+                <a href="/archives">归档</a>
+            
+                <a href="/friends">友链</a>
+            
+                <a href="/about">关于</a>
+            
+        </div>
+    </div>
+</nav>
+<main class="container post-page">
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">hexo写文章用到的代码记录</span>
+    </div>
+    <h1 class="post-title">hexo写文章用到的代码记录</h1>
+    <div class="post-meta">
+        <time>发布时间：2025-10-09</time>
+        
+        <div class="post-readtime">⏱ 预计阅读 2 分钟</div>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="tag-item">#博客</a>
+            
+            <a href="/tags/hexo/" class="tag-item">#hexo</a>
+            
+        </div>
+        
+    </div>
+
+    <div class="post-layout-wrap">
+        <article class="post-content">
+            <p>咱这个小破站搭建成功了，现在记录一下以后要用到的代码，免得到时候翻箱倒柜的找。</p>
+<p>因为这个写作是需要用Markdown语法格式写，所以把常用的到东西在这记录一下。</p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">这是一个链接 [维特笔记](https://vte.cc)<br></code></pre></td></tr></table></figure>
+<p>渲染结果</p>
+<p>这是一个链接 <a target="_blank" rel="noopener" href="https://vte.cc/">维特笔记</a></p>
+<h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>插入图片Markdown语法代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">![图片alt](图片链接 <span class="hljs-string">&quot;图片title&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>对应的HTML代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;img <br> src=<span class="hljs-string">&quot;图片链接&quot;</span> alt=<span class="hljs-string">&quot;图片alt&quot;</span> title=<span class="hljs-string">&quot;图片title&quot;</span><br>&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="引用书上的句子"><a href="#引用书上的句子" class="headerlink" title="引用书上的句子"></a>引用书上的句子</h3><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+
+<h3 id="引用网络上的文章"><a href="#引用网络上的文章" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h3><blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a target="_blank" rel="noopener" href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<h2 id="视频插入"><a href="#视频插入" class="headerlink" title="视频插入"></a>视频插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;iframe src=<span class="hljs-string">&quot; //player.bilibili.com/player.html?isOutside=true&amp;aid=115252595267797&amp;bvid=BV1G6JCzCE21&amp;cid=32575260409&amp;p=1&amp;as_wide=1&amp;high_quality=1&amp;danmaku=0&quot;</span> style=<span class="hljs-string">&quot;width: 100%; aspect-ratio: 16 / 9; border: none;&quot;</span> allowfullscreen&gt; &lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+
+
+<iframe src=" //player.bilibili.com/player.html?isOutside=true&aid=115252595267797&bvid=BV1G6JCzCE21&cid=32575260409&p=1&as_wide=1&high_quality=1&danmaku=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe>
+
+
+<h2 id="音乐插入"><a href="#音乐插入" class="headerlink" title="音乐插入"></a>音乐插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;audio controls&gt;<br>  &lt;<span class="hljs-built_in">source</span> src=<span class="hljs-string">&quot;你的mp3地址&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;audio/mpeg&quot;</span>&gt;<br>  您的浏览器不支持 audio 元素。<br>&lt;/audio&gt;<br></code></pre></td></tr></table></figure>
+
+<audio controls>
+  <source src="https://wasmer.vte.cc/wp-content/uploads/2025/10/video_a__Ba__-Mine-Ba__-Mi._0.mp3" type="audio/mpeg">
+  您的浏览器不支持 audio 元素。
+</audio>
+
+<p>一般来说自己编写也就这几样，其他的好像没有。</p>
+
+        </article>
+        <aside class="post-toc">
+            <div class="toc-inner">
+                <h4 class="toc-title">目录</h4>
+                <nav id="toc-nav"></nav>
+            </div>
+        </aside>
+    </div>
+
+    
+    <div class="cc-notice">
+        <p><strong>版权声明：</strong>
+        本文采用
+        
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY‑NC‑SA 4.0</a>
+        
+        许可协议进行许可。转载请注明出处。
+        </p>
+    </div>
+    
+
+    <div class="post-nav">
+        
+        <a class="post-nav-item prev" href="/natter/ai/">
+            <span>← 上一篇</span>
+            <div>AI工具确实牛逼</div>
+        </a>
+        
+        
+        <a class="post-nav-item next" href="/natter/hello/">
+            <span>下一篇 →</span>
+            <div>hello我来了</div>
+        </a>
+        
+    </div>
+    
+    <div class="waline-wrap">
+        <h3>评论</h3>
+        <div id="waline-container" style="min-height:100px;"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(item=>{
+                if(item.isIntersecting){
+                    observer.unobserve(item.target);
+                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '/waline/waline.css';
+                    document.head.appendChild(link);
+                    const moduleScript = document.createElement('script');
+                    moduleScript.type = 'module';
+                    moduleScript.textContent = `
+                        import * as Waline from '/waline/waline.js';
+                        Waline.init({
+                            el: '#waline-container',
+                            serverURL: 'https://waline.weite.net',
+                            pageview: false,
+                            comment: true,
+                        });
+                        console.log('✅文章页Waline初始化成功');
+                    `;
+                    document.body.appendChild(moduleScript);
+                }
+            })
+        })
+        const box = document.querySelector('#waline-container');
+        if(box) observer.observe(box);
+    })
+    </script>
+    
+
+    <button id="back-top" type="button" title="回到顶部">↑</button>
+
+    <script>
+    (function buildPostToc(){
+        const tocNav = document.getElementById('toc-nav');
+        const tocWrap = document.querySelector('.post-toc');
+        if(!tocNav || !tocWrap) return;
+
+        const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'));
+        const h2List = headings.filter(el=>el.tagName==='H2');
+
+        if(h2List.length < 3){
+            tocWrap.classList.add('toc-hide');
+            return;
+        }
+
+        headings.forEach(h=>{
+            if(!h.id){
+                h.id = "toc-" + h.innerText.trim().replace(/\W+/g,"-");
+            }
+            const a = document.createElement('a');
+            a.href = "#"+h.id;
+            a.innerText = h.innerText;
+            if(h.tagName === 'H3') a.classList.add("toc-h3");
+            tocNav.appendChild(a);
+        });
+    })();
+
+    (function backTopInit(){
+        const btn = document.getElementById('back-top');
+        if(!btn) return;
+        const showOffset = window.innerHeight;
+        function scrollHandler(){
+            if(window.scrollY > showOffset){
+                btn.classList.add('show');
+            }else{
+                btn.classList.remove('show');
+            }
+        }
+        window.addEventListener('scroll', scrollHandler);
+        btn.addEventListener('click', ()=>{
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+        scrollHandler();
+    })();
+    </script>
+</main>
+<footer class="site-footer">
+    <p>
+        © 2026 All Rights Reserved
+        
+        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
+        <script>
+(function(){
+  const startTime = new Date("2025-09-15").getTime();
+  function update(){
+    const now = Date.now();
+    let diff = now - startTime;
+    if(diff < 0) diff = 0;
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
+    const el = document.getElementById('run-time');
+    if(el){
+      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
+    }
+  }
+  update();
+  setInterval(update, 1000);
+})();
+        </script>
+        
+    </p>
+</footer>
+<script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
+</body>
+</html>
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>优化我的hexo主题之增加了分类和404错误页面 | 维特笔记</title>
+    <meta name="description" content="维特笔记，记录技术、生活与思考。">
+    <!-- canonical 规范链接 -->
+    <link rel="canonical" href="https://www.weite.net/natter/4/">
+    <!-- favicon图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:site_name" content="维特笔记">
+    <meta property="og:title" content="优化我的hexo主题之增加了分类和404错误页面 | 维特笔记">
+    <meta property="og:description" content="维特笔记，记录技术、生活与思考。">
+    <meta property="og:url" content="https://www.weite.net/natter/4/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/share-cover.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="优化我的hexo主题之增加了分类和404错误页面 | 维特笔记">
+    <meta name="twitter:description" content="维特笔记，记录技术、生活与思考。">
+    <meta name="twitter:image" content="/img/share-cover.webp">
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    
+    
+    
+    
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<nav class="site-nav">
+    <div class="nav-wrap">
+        <a href="/" class="nav-logo">维特笔记</a>
+        <div class="nav-menu">
+            
+                <a href="/">首页</a>
+            
+                <a href="/archives">归档</a>
+            
+                <a href="/friends">友链</a>
+            
+                <a href="/about">关于</a>
+            
+        </div>
+    </div>
+</nav>
+<main class="container post-page">
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">优化我的hexo主题之增加了分类和404错误页面</span>
+    </div>
+    <h1 class="post-title">优化我的hexo主题之增加了分类和404错误页面</h1>
+    <div class="post-meta">
+        <time>发布时间：2025-11-03</time>
+        
+        <div class="post-readtime">⏱ 预计阅读 8 分钟</div>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="tag-item">#博客</a>
+            
+            <a href="/tags/hexo/" class="tag-item">#hexo</a>
+            
+        </div>
+        
+    </div>
+
+    <div class="post-layout-wrap">
+        <article class="post-content">
+            <p>按照上次的使用AI工具的经验，这次给自己这个小破站增加了两个页面，分别是：分类页面和404错误页面。</p>
+<p>一、添加分类页面（Categories）</p>
+<ol>
+<li>创建分类页面文件</li>
+</ol>
+<p>在 source 文件夹下创建 categories 文件夹，新建 index.md：文件路径：source&#x2F;categories&#x2F;index.md</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">---<br>title: 文章分类<br>layout: categories  <span class="hljs-comment"># 指定分类布局</span><br><span class="hljs-built_in">date</span>: 2025-10-31 12:00:00<br>---<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建分类页面布局</li>
+</ol>
+<p>在 layout 文件夹下新建 categories.ejs：文件路径：layout&#x2F;categories.ejs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;section class=<span class="hljs-string">&quot;archive categories-page&quot;</span>&gt;<br>  &lt;div class=<span class="hljs-string">&quot;archive-title&quot;</span>&gt;<br>    &lt;h1&gt;&lt;%= page.title %&gt;&lt;/h1&gt;<br>  &lt;/div&gt;<br><br>  &lt;% <span class="hljs-keyword">if</span> (site.categories.length &gt; 0) &#123; %&gt;<br>    &lt;% site.categories.each(<span class="hljs-keyword">function</span>(category) &#123; %&gt;<br>      &lt;div class=<span class="hljs-string">&quot;category-item&quot;</span>&gt;<br>        &lt;!-- 分类名称与文章数量 --&gt;<br>        &lt;h2 class=<span class="hljs-string">&quot;category-name&quot;</span>&gt;<br>          &lt;a href=<span class="hljs-string">&quot;&lt;%= category.permalink %&gt;&quot;</span> style=<span class="hljs-string">&quot;color: var(--accent-color);&quot;</span>&gt;<br>            &lt;%= category.name %&gt;<br>            &lt;span class=<span class="hljs-string">&quot;category-count&quot;</span>&gt;（&lt;%= category.posts.length %&gt;篇）&lt;/span&gt;<br>          &lt;/a&gt;<br>        &lt;/h2&gt;<br>        <br>        &lt;!-- 分类下的文章列表 --&gt;<br>        &lt;ul class=<span class="hljs-string">&quot;category-posts&quot;</span>&gt;<br>          &lt;% category.posts.sort(<span class="hljs-string">&#x27;-date&#x27;</span>).each(<span class="hljs-keyword">function</span>(post) &#123; %&gt;<br>            &lt;li class=<span class="hljs-string">&quot;archive-item&quot;</span>&gt;<br>              &lt;span class=<span class="hljs-string">&quot;archive-date&quot;</span>&gt;&lt;%= <span class="hljs-built_in">date</span>(post.date, <span class="hljs-string">&#x27;YYYY-MM-DD&#x27;</span>) %&gt;&lt;/span&gt;<br>              &lt;a href=<span class="hljs-string">&quot;&lt;%= post.permalink %&gt;&quot;</span> class=<span class="hljs-string">&quot;archive-title-link&quot;</span>&gt;&lt;%= post.title %&gt;&lt;/a&gt;<br>            &lt;/li&gt;<br>          &lt;% &#125;) %&gt;<br>        &lt;/ul&gt;<br>      &lt;/div&gt;<br>    &lt;% &#125;) %&gt;<br>  &lt;% &#125; <span class="hljs-keyword">else</span> &#123; %&gt;<br>    &lt;div class=<span class="hljs-string">&quot;no-posts&quot;</span>&gt;<br>      &lt;div class=<span class="hljs-string">&quot;no-posts-inner&quot;</span>&gt;<br>        &lt;i class=<span class="hljs-string">&quot;fa fa-folder-o&quot;</span> style=<span class="hljs-string">&quot;font-size: 2rem; margin-bottom: 1rem;&quot;</span>&gt;&lt;/i&gt;<br>        &lt;p&gt;暂无分类&lt;/p&gt;<br>        &lt;p style=<span class="hljs-string">&quot;font-size: 0.9rem;&quot;</span>&gt;在文章Front-matter中添加 &lt;code&gt;categories: 分类名&lt;/code&gt; 创建分类&lt;/p&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;% &#125; %&gt;<br>&lt;/section&gt;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>导航栏添加分类链接</li>
+</ol>
+<p>修改 layout&#x2F;_partial&#x2F;header.ejs，在导航菜单中添加分类项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;nav class=<span class="hljs-string">&quot;header-menu&quot;</span>&gt;<br>  &lt;ul class=<span class="hljs-string">&quot;menu-list&quot;</span>&gt;<br>    &lt;li class=<span class="hljs-string">&quot;menu-item &lt;%= is_home() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;<br>      &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/&#x27;) %&gt;&quot;</span>&gt;首页&lt;/a&gt;<br>    &lt;/li&gt;<br>    &lt;li class=<span class="hljs-string">&quot;menu-item &lt;%= is_archive() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;<br>      &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/archives&#x27;) %&gt;&quot;</span>&gt;归档&lt;/a&gt;<br>    &lt;/li&gt;<br>    &lt;!-- 新增分类导航项 --&gt;<br>    &lt;li class=<span class="hljs-string">&quot;menu-item &lt;%= is_page(&#x27;categories&#x27;) ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;<br>      &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/categories&#x27;) %&gt;&quot;</span>&gt;分类&lt;/a&gt;<br>    &lt;/li&gt;<br>    &lt;li class=<span class="hljs-string">&quot;menu-item &lt;%= is_tag() ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;<br>      &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/tags&#x27;) %&gt;&quot;</span>&gt;标签&lt;/a&gt;<br>    &lt;/li&gt;<br>    &lt;li class=<span class="hljs-string">&quot;menu-item &lt;%= is_page(&#x27;about&#x27;) ? &#x27;active&#x27; : &#x27;&#x27; %&gt;&quot;</span>&gt;<br>      &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/about&#x27;) %&gt;&quot;</span>&gt;关于&lt;/a&gt;<br>    &lt;/li&gt;<br>  &lt;/ul&gt;<br>&lt;/nav&gt;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>添加分类页面样式（style.css 补充）</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* ==================================================</span><br><span class="hljs-comment">   分类页面样式</span><br><span class="hljs-comment">================================================== */</span><br><span class="hljs-selector-class">.categories-page</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--white);<br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-built_in">var</span>(--shadow);<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">800px</span>;<br>  <span class="hljs-attribute">margin-left</span>: auto;<br>  <span class="hljs-attribute">margin-right</span>: auto;<br>&#125;<br><br><span class="hljs-selector-class">.category-item</span> &#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">1rem</span>;<br>  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--border-color);<br>&#125;<br><br><span class="hljs-selector-class">.category-item</span><span class="hljs-selector-pseudo">:last-child</span> &#123;<br>  <span class="hljs-attribute">border-bottom</span>: none;<br>&#125;<br><br><span class="hljs-selector-class">.category-name</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.4rem</span>;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1rem</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--accent-color);<br>&#125;<br><br><span class="hljs-selector-class">.category-count</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.9rem</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color);<br>  <span class="hljs-attribute">font-weight</span>: normal;<br>&#125;<br><br><span class="hljs-selector-class">.category-posts</span> &#123;<br>  <span class="hljs-attribute">list-style</span>: none;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 复用归档页文章项样式，保持一致 */</span><br><span class="hljs-selector-class">.category-posts</span> <span class="hljs-selector-class">.archive-item</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.6rem</span> <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> dashed <span class="hljs-built_in">var</span>(--border-color);<br>&#125;<br><br><span class="hljs-selector-class">.category-posts</span> <span class="hljs-selector-class">.archive-item</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--light-gray);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>二、添加 404 错误页面</p>
+<ol>
+<li>创建 404 页面文件</li>
+</ol>
+<p>在 source 根目录下新建 404.html（直接放在 source 下，无需文件夹）：</p>
+<p>文件路径：source&#x2F;404.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;&lt;%= config.language || &#x27;zh-CN&#x27; %&gt;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>404 - 页面未找到<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/style.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 导航栏 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>      &lt;%- include(&#x27;_partial/header&#x27;) %&gt;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- 404内容区 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;four-zero-four&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;four-zero-four-inner&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;error-code&quot;</span>&gt;</span>404<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;error-message&quot;</span>&gt;</span>页面好像迷路了...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;error-tips&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你访问的页面不存在或已被移动<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>建议检查URL是否正确，或返回首页重新导航<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;%= url_for(&#x27;/&#x27;) %&gt;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;back-home-btn&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa fa-arrow-left&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> 返回首页<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- 底部 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>      &lt;%- include(&#x27;_partial/footer&#x27;) %&gt;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加 404 页面样式（style.css 补充）</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* ==================================================</span><br><span class="hljs-comment">   404页面样式</span><br><span class="hljs-comment">================================================== */</span><br><span class="hljs-selector-class">.four-zero-four</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--white);<br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">4rem</span> <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-built_in">var</span>(--shadow);<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">800px</span>;<br>  <span class="hljs-attribute">margin-left</span>: auto;<br>  <span class="hljs-attribute">margin-right</span>: auto;<br>  <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-class">.four-zero-four-inner</span> &#123;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">500px</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;<br>&#125;<br><br><span class="hljs-selector-class">.error-code</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">6rem</span>;<br>  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--accent-color);<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1rem</span>;<br>  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-selector-class">.error-message</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.8rem</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color);<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5rem</span>;<br>&#125;<br><br><span class="hljs-selector-class">.error-tips</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color);<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">2rem</span>;<br>  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.7</span>;<br>&#125;<br><br><span class="hljs-selector-class">.back-home-btn</span> &#123;<br>  <span class="hljs-attribute">display</span>: inline-block;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.8rem</span> <span class="hljs-number">1.6rem</span>;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--accent-color);<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white);<br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;<br>  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.2s</span> ease;<br>&#125;<br><br><span class="hljs-selector-class">.back-home-btn</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--accent-hover);<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white);<br>&#125;<br><br><span class="hljs-comment">/* 响应式调整 */</span><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">768px</span>) &#123;<br>  <span class="hljs-selector-class">.four-zero-four</span> &#123;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">3rem</span> <span class="hljs-number">1.5rem</span>;<br>  &#125;<br>  <br>  <span class="hljs-selector-class">.error-code</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">4.5rem</span>;<br>  &#125;<br>  <br>  <span class="hljs-selector-class">.error-message</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5rem</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>到现在就成功的增加了这两个页面，当然以上的代码只适合我自己使用，对其他的任何人都是无效的。</p>
+<p>不过我在测试404错误页面的时候，上面的404错误页代码显示是不正常的，我也不知道是哪里出的问题。</p>
+<p>最后我把style.css文件里的404错误代码删除之后正常了！虽然现在看起来依然是一个怪怪的感觉。但是我在测试的时候，现在是正常的显示了，不像我一开始测试的时候出现的一堆乱码了。😄</p>
+<p>现在先记录一下，免得以后自己在分不清楚那个是那个。😄</p>
+
+        </article>
+        <aside class="post-toc">
+            <div class="toc-inner">
+                <h4 class="toc-title">目录</h4>
+                <nav id="toc-nav"></nav>
+            </div>
+        </aside>
+    </div>
+
+    
+    <div class="cc-notice">
+        <p><strong>版权声明：</strong>
+        本文采用
+        
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY‑NC‑SA 4.0</a>
+        
+        许可协议进行许可。转载请注明出处。
+        </p>
+    </div>
+    
+
+    <div class="post-nav">
+        
+        <a class="post-nav-item prev" href="/natter/5/">
+            <span>← 上一篇</span>
+            <div>这才是真正的女装大佬</div>
+        </a>
+        
+        
+        <a class="post-nav-item next" href="/natter/3/">
+            <span>下一篇 →</span>
+            <div>我用AI给自己写了一个hexo主题</div>
+        </a>
+        
+    </div>
+    
+    <div class="waline-wrap">
+        <h3>评论</h3>
+        <div id="waline-container" style="min-height:100px;"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(item=>{
+                if(item.isIntersecting){
+                    observer.unobserve(item.target);
+                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '/waline/waline.css';
+                    document.head.appendChild(link);
+                    const moduleScript = document.createElement('script');
+                    moduleScript.type = 'module';
+                    moduleScript.textContent = `
+                        import * as Waline from '/waline/waline.js';
+                        Waline.init({
+                            el: '#waline-container',
+                            serverURL: 'https://waline.weite.net',
+                            pageview: false,
+                            comment: true,
+                        });
+                        console.log('✅文章页Waline初始化成功');
+                    `;
+                    document.body.appendChild(moduleScript);
+                }
+            })
+        })
+        const box = document.querySelector('#waline-container');
+        if(box) observer.observe(box);
+    })
+    </script>
+    
+
+    <button id="back-top" type="button" title="回到顶部">↑</button>
+
+    <script>
+    (function buildPostToc(){
+        const tocNav = document.getElementById('toc-nav');
+        const tocWrap = document.querySelector('.post-toc');
+        if(!tocNav || !tocWrap) return;
+
+        const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'));
+        const h2List = headings.filter(el=>el.tagName==='H2');
+
+        if(h2List.length < 3){
+            tocWrap.classList.add('toc-hide');
+            return;
+        }
+
+        headings.forEach(h=>{
+            if(!h.id){
+                h.id = "toc-" + h.innerText.trim().replace(/\W+/g,"-");
+            }
+            const a = document.createElement('a');
+            a.href = "#"+h.id;
+            a.innerText = h.innerText;
+            if(h.tagName === 'H3') a.classList.add("toc-h3");
+            tocNav.appendChild(a);
+        });
+    })();
+
+    (function backTopInit(){
+        const btn = document.getElementById('back-top');
+        if(!btn) return;
+        const showOffset = window.innerHeight;
+        function scrollHandler(){
+            if(window.scrollY > showOffset){
+                btn.classList.add('show');
+            }else{
+                btn.classList.remove('show');
+            }
+        }
+        window.addEventListener('scroll', scrollHandler);
+        btn.addEventListener('click', ()=>{
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+        scrollHandler();
+    })();
+    </script>
+</main>
+<footer class="site-footer">
+    <p>
+        © 2026 All Rights Reserved
+        
+        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
+        <script>
+(function(){
+  const startTime = new Date("2025-09-15").getTime();
+  function update(){
+    const now = Date.now();
+    let diff = now - startTime;
+    if(diff < 0) diff = 0;
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
+    const el = document.getElementById('run-time');
+    if(el){
+      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
+    }
+  }
+  update();
+  setInterval(update, 1000);
+})();
+        </script>
+        
+    </p>
+</footer>
+<script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
+</body>
+</html>
+
