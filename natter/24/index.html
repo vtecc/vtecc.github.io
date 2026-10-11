@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>记录电脑重做系统后迁移hexo数据的记录 | 维特笔记</title>
+    <meta name="description" content="维特笔记，记录技术、生活与思考。">
+    <!-- canonical 规范链接 -->
+    <link rel="canonical" href="https://www.weite.net/natter/24/">
+    <!-- favicon图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:site_name" content="维特笔记">
+    <meta property="og:title" content="记录电脑重做系统后迁移hexo数据的记录 | 维特笔记">
+    <meta property="og:description" content="维特笔记，记录技术、生活与思考。">
+    <meta property="og:url" content="https://www.weite.net/natter/24/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/share-cover.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="记录电脑重做系统后迁移hexo数据的记录 | 维特笔记">
+    <meta name="twitter:description" content="维特笔记，记录技术、生活与思考。">
+    <meta name="twitter:image" content="/img/share-cover.webp">
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    
+    
+    
+    
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
+</head>
+
+<nav class="site-nav">
+    <div class="nav-wrap">
+        <a href="/" class="nav-logo">维特笔记</a>
+        <div class="nav-menu">
+            
+                <a href="/">首页</a>
+            
+                <a href="/archives">归档</a>
+            
+                <a href="/friends">友链</a>
+            
+                <a href="/about">关于</a>
+            
+        </div>
+    </div>
+</nav>
+<main class="container post-page">
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        
+            <span class="breadcrumb-sep">/</span>
+            
+            <a href="/categories/natter/">natter</a>
+        
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">记录电脑重做系统后迁移hexo数据的记录</span>
+    </div>
+    <h1 class="post-title">记录电脑重做系统后迁移hexo数据的记录</h1>
+    <div class="post-meta">
+        <time>发布时间：2026-10-11</time>
+        
+        <div class="post-readtime">⏱ 预计阅读 4 分钟</div>
+        
+        <div class="post-tags">
+            <span>标签：</span>
+            
+            <a href="/tags/hexo/" class="tag-item">#hexo</a>
+            
+            <a href="/tags/%E7%94%B5%E8%84%91/" class="tag-item">#电脑</a>
+            
+        </div>
+        
+    </div>
+
+    <div class="post-layout-wrap">
+        <article class="post-content">
+            <p>话说前段时间在捣鼓我这个小破站的时候，我这台服役了近十年的古董电脑开始了无缘无故的卡顿，当然还有一些别的问题伴随出现，这就导致我不得不把我这台电脑拿到修电脑的地方去检修了。</p>
+<p>在检修这台电脑之前，我先在网上搜了一下如何备份hexo这个方法，并且备份了一下我这个小破站的原始数据，之前就没有备份过hexo的数据，也没有想过电脑会突然出现故障，所以这次算是提醒我备份数据的重要性了。</p>
+<p>在网上找到的资料里是只需要备份：<strong>_config.yml，themes，source，scaffolds，package.json，.gitignore</strong>等文件就行，我怕弄错，所以直接把整体的hexo文件直接打包成为压缩包，然后转存到U盘了。这样最起码不会丢失文件哈。</p>
+<p>我这台电脑拿到修电脑的地方后，修电脑的人看我的眼神就有点怪！后期在闲聊的时候师傅说：这电脑保养的真好，十多年了还能正常运转！整的我还挺尴尬😄。修好电脑后就需要配置hexo等相关的环境了。</p>
+<h2 id="新电脑必要安装："><a href="#新电脑必要安装：" class="headerlink" title="新电脑必要安装："></a>新电脑必要安装：</h2><p>安装<strong>Nodejs</strong>和<strong>Git</strong>，方便后续编辑可再安装个<strong>Visual Studio Code</strong></p>
+<p>安装过程中重点记住两个点，一个是要添加 <strong>Git Bash Here</strong> 到右键菜单，一个是要把 <strong>Git</strong> 添加到全局变量。</p>
+<h2 id="迁移U盘里的Hexo原始数据："><a href="#迁移U盘里的Hexo原始数据：" class="headerlink" title="迁移U盘里的Hexo原始数据："></a>迁移U盘里的Hexo原始数据：</h2><p>我在我电脑的D盘里新建了一个文件夹来存放我的hexo数据，并且在新的文件夹里用git工具执行如下命令（为新电脑全局安装hexo，安装Hexo项目依赖，以及安装hexo插件hexo-depolyer-git）以此一条条执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g <br>npm install<br>npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<p>在安装好hexo后，随后插上U盘，拷贝之前备份的hexo数据里的：<strong>_config.yml，themes，source，scaffolds，package.json，.gitignore</strong>到你新安装的hexo根目录里并且完整的覆盖掉同名的文件夹以及文件即可。</p>
+<h2 id="生成新的GitHub连接秘钥"><a href="#生成新的GitHub连接秘钥" class="headerlink" title="生成新的GitHub连接秘钥"></a>生成新的GitHub连接秘钥</h2><p>重新使用Git生成新的ssh key，重新添加至你的Github，使当前电脑的Git与你的Github相连，</p>
+<h3 id="生成ssh-key代码是："><a href="#生成ssh-key代码是：" class="headerlink" title="生成ssh key代码是："></a>生成ssh key代码是：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;你的名字&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;你的邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;你的邮箱&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="复制本地公钥到GitHub"><a href="#复制本地公钥到GitHub" class="headerlink" title="复制本地公钥到GitHub"></a>复制本地公钥到GitHub</h3><p>ssh key的公钥一般在电脑的C盘里C:\Users\Administrator.ssh的位置下，就可以看到秘钥了，id_rsa是私钥，千万不能泄露出去，id_rsa.pub是公钥，我们需要复制公钥里面的内容进入github。</p>
+<p>有大佬已经写好如何操作了，我就不写了，直接贴他的网址进来就行了：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1433084">https://developer.aliyun.com/article/1433084</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>最后就是打开现在已经弄好的hexo文件夹，用hexo常用的命令测试一下看看是不是已经正常显示了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
+<p>检查一下，如果没什么问题直接推送到GitHub上就完活了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo d<br></code></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>要习惯性备份原电脑里的Hexo文件。</p>
+<p>要习惯性备份原电脑里的Hexo文件。</p>
+<p>要习惯性备份原电脑里的Hexo文件。</p>
+<p>重要的事情说三遍。</p>
+<p>我这操作基本上来说等同于给hexo搬家，并且网上很多大佬都有写过，但是我还是觉得写一写比较好点，万一哪天我想不起来了，还能回头看看我写的东西。😄</p>
+
+        </article>
+        <aside class="post-toc">
+            <div class="toc-inner">
+                <h4 class="toc-title">目录</h4>
+                <nav id="toc-nav"></nav>
+            </div>
+        </aside>
+    </div>
+
+    
+    <div class="cc-notice">
+        <p><strong>版权声明：</strong>
+        本文采用
+        
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY‑NC‑SA 4.0</a>
+        
+        许可协议进行许可。转载请注明出处。
+        </p>
+    </div>
+    
+
+    <div class="post-nav">
+        
+        <div class="post-nav-item empty"></div>
+        
+        
+        <a class="post-nav-item next" href="/natter/23/">
+            <span>下一篇 →</span>
+            <div>趁着这个假期好好的捣鼓了一下我这个小破站</div>
+        </a>
+        
+    </div>
+    
+    <div class="waline-wrap">
+        <h3>评论</h3>
+        <div id="waline-container" style="min-height:100px;"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(item=>{
+                if(item.isIntersecting){
+                    observer.unobserve(item.target);
+                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '/waline/waline.css';
+                    document.head.appendChild(link);
+                    const moduleScript = document.createElement('script');
+                    moduleScript.type = 'module';
+                    moduleScript.textContent = `
+                        import * as Waline from '/waline/waline.js';
+                        Waline.init({
+                            el: '#waline-container',
+                            serverURL: 'https://waline.weite.net',
+                            pageview: false,
+                            comment: true,
+                        });
+                        console.log('✅文章页Waline初始化成功');
+                    `;
+                    document.body.appendChild(moduleScript);
+                }
+            })
+        })
+        const box = document.querySelector('#waline-container');
+        if(box) observer.observe(box);
+    })
+    </script>
+    
+
+    <button id="back-top" type="button" title="回到顶部">↑</button>
+
+    <script>
+    (function buildPostToc(){
+        const tocNav = document.getElementById('toc-nav');
+        const tocWrap = document.querySelector('.post-toc');
+        if(!tocNav || !tocWrap) return;
+
+        const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'));
+        const h2List = headings.filter(el=>el.tagName==='H2');
+
+        if(h2List.length < 3){
+            tocWrap.classList.add('toc-hide');
+            return;
+        }
+
+        headings.forEach(h=>{
+            if(!h.id){
+                h.id = "toc-" + h.innerText.trim().replace(/\W+/g,"-");
+            }
+            const a = document.createElement('a');
+            a.href = "#"+h.id;
+            a.innerText = h.innerText;
+            if(h.tagName === 'H3') a.classList.add("toc-h3");
+            tocNav.appendChild(a);
+        });
+    })();
+
+    (function backTopInit(){
+        const btn = document.getElementById('back-top');
+        if(!btn) return;
+        const showOffset = window.innerHeight;
+        function scrollHandler(){
+            if(window.scrollY > showOffset){
+                btn.classList.add('show');
+            }else{
+                btn.classList.remove('show');
+            }
+        }
+        window.addEventListener('scroll', scrollHandler);
+        btn.addEventListener('click', ()=>{
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+        scrollHandler();
+    })();
+    </script>
+</main>
+<footer class="site-footer">
+    <p>
+        © 2026 All Rights Reserved
+        
+        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
+        <script>
+(function(){
+  const startTime = new Date("2025-09-15").getTime();
+  function update(){
+    const now = Date.now();
+    let diff = now - startTime;
+    if(diff < 0) diff = 0;
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
+    const el = document.getElementById('run-time');
+    if(el){
+      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
+    }
+  }
+  update();
+  setInterval(update, 1000);
+})();
+        </script>
+        
+    </p>
+</footer>
+<script src="/js/main.js"></script>
+<!-- umami访问统计脚本放在这里 -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
+</body>
+</html>
+
