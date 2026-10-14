@@ -9,7 +9,26 @@
   <link href="https://www.weite.net/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, 维特笔记</rights>
   <title>维特笔记</title>
-  <updated>2026-10-11T12:41:26.283Z</updated>
+  <updated>2026-10-14T11:54:39.567Z</updated>
+  <entry>
+    <author>
+      <name>维特笔记</name>
+    </author>
+    <category term="vitepress" scheme="https://www.weite.net/categories/vitepress/"/>
+    <category term="豆包" scheme="https://www.weite.net/tags/%E8%B1%86%E5%8C%85/"/>
+    <category term="AI" scheme="https://www.weite.net/tags/AI/"/>
+    <content>
+      <![CDATA[<p>话说现在看到的资讯方面的信息基本上被AI刷屏了，比如：ChatGPT、文心一言、通义千问、WorkBuddy、Kimi Work、Claude、豆包、Midjourney、即梦、可灵 Kling、Pika、Sora、 Prezo等。 这些模型覆盖聊天、办公、创作、视频、绘画等全场景。</p><p>我就在想，我要不要也试试放开一点本地电脑的权限，让这AI也在我的电脑上试一试，再说了我也是最近重新做的系统，电脑上基本上很干净，除了安装了这一个hexo，其他的东西也没有，也让我试试看有没有他们视频上说的那么流弊。</p><p>以前电脑里倒是有VitePress，这不最近重做了系统，现在想在自己的电脑里在安装一个 VitePress文档程序，来继续学习。</p><p>《<font color="red">不备份重要文件是多么痛的领悟啊！😂</font>》</p><p>在这么多的AI工具里只有豆包我使用的时间还长一点，所以直接在本地电脑安装了一个豆包来作为这次试验的对象。</p><p><img src="https://img.weite.net/doubao20261014.webp"></p><p>不试不知道，一试吓一跳，我自己弄VitePress的时候基本上得一两个小时才能弄好，尤其是敲一些命令行的这些东西。</p><p>用豆包来安装VitePress用时1分53秒，比我以前自己一点一点的弄简直快太多了，同时我也检查了一下用豆包安装的VitePress会不会出现未知的错误，答案是没有出错。非常的nice。</p><p>现在的AI简直是越来越智能了。</p>]]>
+    </content>
+    <id>https://www.weite.net/vitepress/25/</id>
+    <link href="https://www.weite.net/vitepress/25/"/>
+    <published>2026-10-14T11:11:02.000Z</published>
+    <summary>
+      <![CDATA[<p>话说现在看到的资讯方面的信息基本上被AI刷屏了，比如：ChatGPT、文心一言、通义千问、WorkBuddy、Kimi Work、Claude、豆包、Midjourney、即梦、可灵 Kling、Pika、Sora、 Prezo等。]]>
+    </summary>
+    <title>用豆包给我电脑里安装了一个VitePress</title>
+    <updated>2026-10-14T11:54:39.567Z</updated>
+  </entry>
   <entry>
     <author>
       <name>维特笔记</name>
@@ -372,26 +391,5 @@
     </summary>
     <title>又换hexo主题了</title>
     <updated>2025-12-08T05:38:22.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>维特笔记</name>
-    </author>
-    <category term="natter" scheme="https://www.weite.net/categories/natter/"/>
-    <category term="抖音" scheme="https://www.weite.net/tags/%E6%8A%96%E9%9F%B3/"/>
-    <content>
-      <![CDATA[<p>话说最近这两天我在刷抖音的时候，被一个女装大佬刷屏了。那长相属实太漂亮了。</p><p>这怎么说呢，就想欣赏他的美，对你没看错，一个男的长得老美了!</p><p>上图：</p><p><img src="https://img.vte.cc//test/kaixinyuanyuan%20(1).webp"></p><p>你瞅瞅，这谁看谁不迷糊。当然这个是网友们PS的。其实我更喜欢的是抖音里的一个切片。</p><p>尤其是：开心元元七擒孟获</p><p>上视频：</p><iframe src="https://open.douyin.com/player/video?vid=7553007557515283739&autoplay=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe><p>现在我满脑子都是那句：又忘了哥<br><img src="https://img.vte.cc//test/kaixinyuanyuan2.webp"></p><p>其实还有很多的，可以在抖音里搜：开心元元连麦名场面</p><iframe src="https://open.douyin.com/player/video?vid=7550359669622263092&autoplay=0" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen> </iframe><p>哈哈</p>]]>
-    </content>
-    <id>https://www.weite.net/natter/5/</id>
-    <link href="https://www.weite.net/natter/5/"/>
-    <published>2025-11-14T04:05:19.000Z</published>
-    <summary>
-      <![CDATA[<p>话说最近这两天我在刷抖音的时候，被一个女装大佬刷屏了。那长相属实太漂亮了。</p>
-<p>这怎么说呢，就想欣赏他的美，对你没看错，一个男的长得老美了!</p>
-<p>上图：</p>
-<p><img]]>
-    </summary>
-    <title>这才是真正的女装大佬</title>
-    <updated>2025-11-14T04:39:24.000Z</updated>
   </entry>
 </feed>
