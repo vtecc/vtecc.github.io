@@ -9,7 +9,27 @@
   <link href="https://www.weite.net/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, 维特笔记</rights>
   <title>维特笔记</title>
-  <updated>2026-10-14T11:54:39.567Z</updated>
+  <updated>2026-10-19T13:15:09.494Z</updated>
+  <entry>
+    <author>
+      <name>维特笔记</name>
+    </author>
+    <category term="natter" scheme="https://www.weite.net/categories/natter/"/>
+    <category term="hexo" scheme="https://www.weite.net/tags/hexo/"/>
+    <category term="WorkBuddy" scheme="https://www.weite.net/tags/WorkBuddy/"/>
+    <content>
+      <![CDATA[<p>哇哦，我的小破站又一次换了新的hexo主题，不过呢，这次的hexo主题全程由WorkBuddy书写，我个人基本上就是写了一点我脑子里的想法，WorkBuddy则全程自己操作编写，自己上线测试，自己主动修复BUG。</p><p>至于WorkBuddy在写这个hexo主题的时候，我在干啥呢？嘿嘿，我在用手机打游戏呢，对你没看错，我就是在电脑跟前拿着手机打着游戏，而WorkBuddy自己吭哧吭哧的写hexo主题，自己吭哧吭哧的上线测试，自己吭哧吭哧的修复BUG，这次的hexo主题弄起来，我是真的舒舒服服的玩这游戏就给写出来了。哈哈。</p><p><img src="https://img.weite.net/WorkBuddy.webp"></p><p>我一直感觉就有点不真实，以前自己用其他的AI弄的hexo主题，几乎是得好几天才能真正的简单使用，而且是BUG遍地都是，前面的那几款hexo主题和现在的hexo主题完全没法比，这次的hexo主题被优化的也是非常非常的棒，至少在打开我这个小破站的时候，看到的感觉是有那么一点点的惊艳地。这种前端的技术，让我自己学的话，我估计我也没这个耐心和时间。总之我感觉我这个小破站现在显得有那么一点点《<strong>专业</strong>》嘎嘎👍</p><p>还有文章的显示这块也是感觉棒棒哒，以前一直都搞不定的显示代码块也被完美的显示出来了。文章的排版和显示效果也是给个大大的赞。</p><p><img src="https://img.weite.net/daimakuai.webp"></p><p>当然这次也增加了一点其他的页面，这些页面我还没想好该放点什么比较好，暂时先这样容我后期慢慢的增加一些真实的东西进去，现在先放点Demo称称样子。</p><p>而且这次是一边打着游戏一边看着WorkBuddy写，这种感觉简直不要太爽啦。当然新的hexo主题，我自己也得先适应适应。先写到这里。嘎嘎</p><p>科技改变生活，流弊呀。</p>]]>
+    </content>
+    <id>https://www.weite.net/natter/26/</id>
+    <link href="https://www.weite.net/natter/26/"/>
+    <published>2026-10-19T12:39:35.000Z</published>
+    <summary>
+      <![CDATA[<p>哇哦，我的小破站又一次换了新的hexo主题，不过呢，这次的hexo主题全程由WorkBuddy书写，我个人基本上就是写了一点我脑子里的想法，WorkBuddy则全程自己操作编写，自己上线测试，自己主动修复BUG。</p>
+<p>至于WorkBuddy在写这个hexo主题的时]]>
+    </summary>
+    <title>使用WorkBuddy写hexo主题确实比较安逸</title>
+    <updated>2026-10-19T13:15:09.494Z</updated>
+  </entry>
   <entry>
     <author>
       <name>维特笔记</name>
@@ -371,25 +391,5 @@
     </summary>
     <title>冬天还真不适合在山里自驾</title>
     <updated>2025-12-18T07:28:52.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>维特笔记</name>
-    </author>
-    <category term="natter" scheme="https://www.weite.net/categories/natter/"/>
-    <category term="hexo" scheme="https://www.weite.net/tags/hexo/"/>
-    <category term="AI工具" scheme="https://www.weite.net/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    <content>
-      <![CDATA[<p>话说我又一次换主题了，这次依然是使用AI工具帮我生成的。</p><p>这次利用AI工具生成的hexo主题要比上一次生成的全面，上一次的记录《<a href="https://vte.cc/natter/3/">我用AI给自己写了一个hexo主题</a>》相比于上次的hexo主题，这次的bug相对来说更加少，具体还得等我慢慢使用下来再看，目前从我测试的结果来说还没怎么出现bug。</p><p>先展示一下效果哈。</p><p>首页<br><img src="https://img.vte.cc//test/vteblog.jpg"><br>归档页<br><img src="https://img.vte.cc//test/vtearchives.jpg"><br>分类页<br><img src="https://img.vte.cc//test/vtecategory.jpg"><br>标签页<br><img src="https://img.vte.cc//test/tags.jpg"><br>文章页<br><img src="https://img.vte.cc//test/Hello%20World.jpg"></p><p>在这里还是要说一下最近使用AI工具的心得哈。这个AI工具写代码确实是非常的便捷，尤其是对于我这个啥都不会的小白。</p><p>如果没有AI工具，我现在别说是弄hexo主题，就是搭建这个小破站页费劲，😄</p><p>不过在看其他人使用AI工具的言语中，好像AI工具页办砸了不少事情！当然他们具体的使用情况我不太清楚。但是就我自己现在的使用情况来看，绝对是利大于弊的。</p><p>我估计他们办砸的事情是因为他们太懒了，也可能是给AI工具的权限太大了。这个是看到他们说的事情，我自个总结出来的。也不知道对不对哈。</p><p>反正我自己的操作思路是先让AI工具帮我生成这些代码，然后我自己在一遍一遍的去测试。虽然这样慢一点。但是就我个人来说可以大概清楚再哪里出的问题，然后去解决这个问题。</p><p>所以我又换hexo主题啦，嘎嘎。</p><hr><p>顺便说一下，我换了一个键盘和鼠标。</p><p><img src="https://img.vte.cc//test/1764740935055-2076095648.jpg"><br><img src="https://img.vte.cc//test/1764740918981-1066627082.jpg"></p>]]>
-    </content>
-    <id>https://www.weite.net/natter/6/</id>
-    <link href="https://www.weite.net/natter/6/"/>
-    <published>2025-12-03T04:49:01.000Z</published>
-    <summary>
-      <![CDATA[<p>话说我又一次换主题了，这次依然是使用AI工具帮我生成的。</p>
-<p>这次利用AI工具生成的hexo主题要比上一次生成的全面，上一次的记录《<a]]>
-    </summary>
-    <title>又换hexo主题了</title>
-    <updated>2025-12-08T05:38:22.000Z</updated>
   </entry>
 </feed>
