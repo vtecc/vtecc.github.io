@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#ededeb"/>
+  <rect x="120" y="100" width="560" height="400" fill="#fff" stroke="#d8d8d3"/>
+  <rect x="120" y="100" width="560" height="46" fill="#1a1a1a"/>
+  <circle cx="146" cy="123" r="6" fill="#4a4a4a"/><circle cx="166" cy="123" r="6" fill="#4a4a4a"/><circle cx="186" cy="123" r="6" fill="#4a4a4a"/>
+  <rect x="160" y="200" width="230" height="26" fill="#141414"/>
+  <rect x="160" y="246" width="150" height="12" fill="#c9c9c4"/>
+  <rect x="160" y="300" width="480" height="1" fill="#e2e2dd"/>
+  <rect x="160" y="330" width="200" height="120" fill="#efefec"/>
+  <rect x="380" y="330" width="120" height="120" fill="#efefec"/>
+  <rect x="520" y="330" width="120" height="120" fill="#efefec"/>
+  <text x="160" y="478" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" letter-spacing="6" fill="#9a9a95">WEITE.NET</text>
+</svg>

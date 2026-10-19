@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#efefec"/>
+  <circle cx="100" cy="100" r="78" fill="#e3e3df"/>
+  <text x="100" y="126" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="76" font-weight="700" fill="#111" text-anchor="middle">维</text>
+</svg>

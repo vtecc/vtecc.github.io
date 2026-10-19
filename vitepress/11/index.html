@@ -1,85 +1,162 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#111111">
 
-    <title>学习一下vitepress的使用 | 维特笔记</title>
-    <meta name="description" content="维特笔记，记录技术、生活与思考。">
-    <!-- canonical 规范链接 -->
-    <link rel="canonical" href="https://www.weite.net/vitepress/11/">
-    <!-- favicon图标 -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <!-- Open Graph 社交分享 -->
-    <meta property="og:site_name" content="维特笔记">
-    <meta property="og:title" content="学习一下vitepress的使用 | 维特笔记">
-    <meta property="og:description" content="维特笔记，记录技术、生活与思考。">
-    <meta property="og:url" content="https://www.weite.net/vitepress/11/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/img/share-cover.webp">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="学习一下vitepress的使用 | 维特笔记">
-    <meta name="twitter:description" content="维特笔记，记录技术、生活与思考。">
-    <meta name="twitter:image" content="/img/share-cover.webp">
-    <style>
-        
-    </style>
-    <link rel="stylesheet" href="/css/main.css">
-    
-    
-    
-    
-    
-<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="维特笔记" type="application/atom+xml">
-</head>
+  <title>学习一下vitepress的使用 · 维特笔记</title>
+  <meta name="description" content="在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。 在自己电脑上安装vitepress的前置条件 Node.js 18 及以上版本。 通过命令行界面 (CLI) 访问 VitePress 的终端，比如：g">
+  <meta name="author" content="维特笔记">
+  <link rel="canonical" href="https://www.weite.net/vitepress/11/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="维特笔记" href="/atom.xml">
 
-<nav class="site-nav">
-    <div class="nav-wrap">
-        <a href="/" class="nav-logo">维特笔记</a>
-        <div class="nav-menu">
-            
-                <a href="/">首页</a>
-            
-                <a href="/archives">归档</a>
-            
-                <a href="/friends">友链</a>
-            
-                <a href="/about">关于</a>
-            
-        </div>
-    </div>
-</nav>
-<main class="container post-page">
-    <div class="breadcrumb">
-        <a href="/">首页</a>
-        
-            <span class="breadcrumb-sep">/</span>
-            
-            <a href="/categories/vitepress/">vitepress</a>
-        
-        <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">学习一下vitepress的使用</span>
-    </div>
-    <h1 class="post-title">学习一下vitepress的使用</h1>
-    <div class="post-meta">
-        <time>发布时间：2026-01-15</time>
-        
-        <div class="post-readtime">⏱ 预计阅读 2 分钟</div>
-        
-        <div class="post-tags">
-            <span>标签：</span>
-            
-            <a href="/tags/vitepress/" class="tag-item">#vitepress</a>
-            
-        </div>
-        
-    </div>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="学习一下vitepress的使用 · 维特笔记">
+  <meta property="og:description" content="在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。 在自己电脑上安装vitepress的前置条件 Node.js 18 及以上版本。 通过命令行界面 (CLI) 访问 VitePress 的终端，比如：g">
+  <meta property="og:url" content="https://www.weite.net/vitepress/11/">
+  <meta property="og:site_name" content="维特笔记">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="学习一下vitepress的使用 · 维特笔记">
+  <meta name="twitter:description" content="在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。 在自己电脑上安装vitepress的前置条件 Node.js 18 及以上版本。 通过命令行界面 (CLI) 访问 VitePress 的终端，比如：g">
+  
+  
 
-    <div class="post-layout-wrap">
-        <article class="post-content">
-            <p>在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。</p>
+  <link rel="stylesheet" href="/css/style.css?v=faf85986">
+
+  
+  
+  
+  <link rel="preconnect" href="https://img.weite.net" crossorigin>
+  
+  <link rel="preconnect" href="https://img.vte.cc" crossorigin>
+  
+  <link rel="preconnect" href="https://waline.weite.net" crossorigin>
+  
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body class="is-inner">
+
+
+<header class="site-header" id="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="维特笔记">
+      <span class="brand-mark">维</span>
+      <span class="brand-text">
+        <strong>维特笔记</strong>
+        <em>记录 · 思考 · 折腾</em>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/archives/">文章</a>
+      
+        <a class="nav-link" href="/portfolio/">作品</a>
+      
+        <a class="nav-link" href="/services/">服务</a>
+      
+        <a class="nav-link" href="/friends/">友链</a>
+      
+        <a class="nav-link" href="/about/">关于</a>
+      
+        <a class="nav-link" href="/contact/">联系</a>
+      
+    </nav>
+
+    <div class="header-actions">
+      
+      <button class="icon-btn js-search-open" type="button" aria-label="搜索">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+      </button>
+      
+      <button class="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <nav>
+      
+        <a class="" href="/"><span>首页</span><i>→</i></a>
+      
+        <a class="" href="/archives/"><span>文章</span><i>→</i></a>
+      
+        <a class="" href="/portfolio/"><span>作品</span><i>→</i></a>
+      
+        <a class="" href="/services/"><span>服务</span><i>→</i></a>
+      
+        <a class="" href="/friends/"><span>友链</span><i>→</i></a>
+      
+        <a class="" href="/about/"><span>关于</span><i>→</i></a>
+      
+        <a class="" href="/contact/"><span>联系</span><i>→</i></a>
+      
+    </nav>
+    <div class="mobile-nav-foot">
+      
+        <a href="https://github.com/vtecc" target="_blank" rel="noopener">GitHub</a>
+      
+        <a href="mailto:weite.net@outlook.com" target="_blank" rel="noopener">邮箱</a>
+      
+        <a href="/atom.xml" target="_blank" rel="noopener">RSS</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="search-layer" id="search-layer" aria-hidden="true">
+  <div class="search-layer-inner">
+    <button class="search-close js-search-close" type="button" aria-label="关闭搜索">×</button>
+    <p class="search-hint">输入关键词，搜索站内文章</p>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+      <input type="search" id="search-layer-input" placeholder="例如：Hexo、生活、AI" autocomplete="off">
+    </div>
+    <div class="search-results" id="search-layer-results"></div>
+  </div>
+</div>
+
+
+
+
+<section class="article-hero">
+  <div class="shell">
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      
+      <a href="/categories/vitepress/">vitepress</a>
+      <span>/</span>
+      
+      <em>正文</em>
+    </nav>
+    <h1 class="article-title">学习一下vitepress的使用</h1>
+    <div class="article-meta">
+      <time datetime="2026-01-15T06:48:20.000Z">2026年01月15日</time>
+      <span class="dot">·</span>
+      <span>2 分钟阅读</span>
+      <span class="dot">·</span>
+      <span>335 字</span>
+      
+    </div>
+  </div>
+</section>
+
+<article class="section article-section">
+  <div class="shell article-layout">
+    <div class="article-main">
+      
+
+      <div class="article-content" id="article-content">
+        <p>在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。</p>
 <h1 id="在自己电脑上安装vitepress的前置条件"><a href="#在自己电脑上安装vitepress的前置条件" class="headerlink" title="在自己电脑上安装vitepress的前置条件"></a>在自己电脑上安装vitepress的前置条件</h1><ul>
 <li><p>Node.js 18 及以上版本。</p>
 </li>
@@ -93,174 +170,333 @@
 <p>第二条命令是</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx vitepress init<br></code></pre></td></tr></table></figure>
 <p>也就是所谓的vitepress安装向导，这个会提示你一步一步去安装vitepress。附图：</p>
-<p><img src="https://img.vte.cc/test/vitepress.png" loading="lazy"></p>
+<p><img src="https://img.vte.cc/test/vitepress.png" loading="lazy" decoding="async"></p>
 <p>当看到<code>Done! Now run npm run docs:dev and start writing.</code>这段话的时候，vitepress就在自己的电脑里安装成功了。</p>
 <p>vitepress的目录结构是这样的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">├─ docs<br>│  ├─ .vitepress<br>│  │  └─ config.js<br>│  ├─ api-examples.md<br>│  ├─ markdown-examples.md<br>│  └─ index.md<br>└─ package.json<br></code></pre></td></tr></table></figure>
 
 <p>如果要查看自己电脑中的这个vitepress，还需要一条命令就是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run docs:dev<br></code></pre></td></tr></table></figure>
-<p><img src="https://img.vte.cc/test/vitepress1.png" loading="lazy"></p>
+<p><img src="https://img.vte.cc/test/vitepress1.png" loading="lazy" decoding="async"></p>
 <p>这时候会给一个本地的地址+端口号：<code>http://localhost:5173/</code>。直接在自己的浏览器里输入这个地址就可以查看在自己电脑上安装的vitepress了。附图：</p>
-<p><img src="https://img.vte.cc/test/vitepress2.png" loading="lazy"></p>
+<p><img src="https://img.vte.cc/test/vitepress2.png" loading="lazy" decoding="async"></p>
 <p>就这样我们的vitepress就在自己的电脑里安装成功了，这时候只需要把vitepress修改成为你自己想实现的页面，就OK了。</p>
 
-        </article>
-        <aside class="post-toc">
-            <div class="toc-inner">
-                <h4 class="toc-title">目录</h4>
-                <nav id="toc-nav"></nav>
-            </div>
-        </aside>
-    </div>
+      </div>
 
-    
-    <div class="cc-notice">
-        <p><strong>版权声明：</strong>
-        本文采用
+      
+      <div class="article-tags">
+        <span class="label">标签</span>
         
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY‑NC‑SA 4.0</a>
+        <a href="/tags/vitepress/"># vitepress</a>
         
-        许可协议进行许可。转载请注明出处。
+      </div>
+      
+
+      
+      <div class="copyright-box">
+        <p><strong>版权声明</strong>：本文采用
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA 4.0</a>
+          许可协议，转载请注明来自 <a href="/">维特笔记</a>。
         </p>
-    </div>
-    
+      </div>
+      
 
-    <div class="post-nav">
+      
+      <div class="share-row">
+        <span class="label">分享</span>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fwww.weite.net%2Fvitepress%2F11%2F&title=%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8Bvitepress%E7%9A%84%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">微博</a>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.weite.net%2Fvitepress%2F11%2F&text=%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8Bvitepress%E7%9A%84%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">X</a>
+        <button type="button" class="js-copy-link" data-url="https://www.weite.net/vitepress/11/">复制链接</button>
+      </div>
+      
+
+      
+      <div class="author-box">
+        <img src="/img/avatar.svg" alt="维特笔记" loading="lazy" decoding="async">
+        <div>
+          <h3>维特笔记</h3>
+          <p>一个做事三分钟热度、却把博客坚持了一年的人。</p>
+          <div class="author-links">
+            <a href="/about/">关于我</a>
+            <a href="/archives/">全部文章</a>
+          </div>
+        </div>
+      </div>
+      
+
+      <nav class="post-nav">
         
         <a class="post-nav-item prev" href="/natter/12/">
-            <span>← 上一篇</span>
-            <div>不备案部署在GitHub的博客是否需要EdgeOne加速</div>
+          <span>← 上一篇</span>
+          <strong>不备案部署在GitHub的博客是否需要EdgeOne加速</strong>
         </a>
         
+
         
         <a class="post-nav-item next" href="/natter/10/">
-            <span>下一篇 →</span>
-            <div>邯郸博物馆一日游</div>
+          <span>下一篇 →</span>
+          <strong>邯郸博物馆一日游</strong>
         </a>
         
-    </div>
-    
-    <div class="waline-wrap">
-        <h3>评论</h3>
-        <div id="waline-container" style="min-height:100px;"></div>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded',function(){
-        const observer = new IntersectionObserver((entries)=>{
-            entries.forEach(item=>{
-                if(item.isIntersecting){
-                    observer.unobserve(item.target);
-                    console.log('文章页：Waline区域进入视口，开始加载waline资源');
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = '/waline/waline.css';
-                    document.head.appendChild(link);
-                    const moduleScript = document.createElement('script');
-                    moduleScript.type = 'module';
-                    moduleScript.textContent = `
-                        import * as Waline from '/waline/waline.js';
-                        Waline.init({
-                            el: '#waline-container',
-                            serverURL: 'https://waline.weite.net',
-                            pageview: false,
-                            comment: true,
-                        });
-                        console.log('✅文章页Waline初始化成功');
-                    `;
-                    document.body.appendChild(moduleScript);
-                }
-            })
-        })
-        const box = document.querySelector('#waline-container');
-        if(box) observer.observe(box);
-    })
-    </script>
-    
+      </nav>
 
-    <button id="back-top" type="button" title="回到顶部">↑</button>
-
-    <script>
-    (function buildPostToc(){
-        const tocNav = document.getElementById('toc-nav');
-        const tocWrap = document.querySelector('.post-toc');
-        if(!tocNav || !tocWrap) return;
-
-        const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'));
-        const h2List = headings.filter(el=>el.tagName==='H2');
-
-        if(h2List.length < 3){
-            tocWrap.classList.add('toc-hide');
-            return;
-        }
-
-        headings.forEach(h=>{
-            if(!h.id){
-                h.id = "toc-" + h.innerText.trim().replace(/\W+/g,"-");
-            }
-            const a = document.createElement('a');
-            a.href = "#"+h.id;
-            a.innerText = h.innerText;
-            if(h.tagName === 'H3') a.classList.add("toc-h3");
-            tocNav.appendChild(a);
-        });
-    })();
-
-    (function backTopInit(){
-        const btn = document.getElementById('back-top');
-        if(!btn) return;
-        const showOffset = window.innerHeight;
-        function scrollHandler(){
-            if(window.scrollY > showOffset){
-                btn.classList.add('show');
-            }else{
-                btn.classList.remove('show');
-            }
-        }
-        window.addEventListener('scroll', scrollHandler);
-        btn.addEventListener('click', ()=>{
-            window.scrollTo({top:0, behavior:'smooth'});
-        });
-        scrollHandler();
-    })();
-    </script>
-</main>
-<footer class="site-footer">
-    <p>
-        © 2026 All Rights Reserved
-        
-        <br>本站始建于 2025-09-15，已稳定运行 <span id="run-time"></span>
-        <script>
-(function(){
-  const startTime = new Date("2025-09-15").getTime();
-  function update(){
-    const now = Date.now();
-    let diff = now - startTime;
-    if(diff < 0) diff = 0;
-    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const second = Math.floor((diff % (1000 * 60)) / 1000);
-    const el = document.getElementById('run-time');
-    if(el){
-      el.innerText = `${day}天 ${hour}时 ${minute}分 ${second}秒`;
-    }
+      
+      
+<section class="comments-area" id="comments">
+  <div class="section-line-head">
+    <h2>评论</h2>
+    <p>说点什么，让我知道你来过</p>
+  </div>
+  <div id="waline-container" class="waline-container"></div>
+</section>
+<script>
+(function () {
+  var box = document.getElementById('waline-container');
+  if (!box) return;
+  var loaded = false;
+  function loadWaline() {
+    if (loaded) return;
+    loaded = true;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/waline/waline.css?v=a1666994';
+    document.head.appendChild(link);
+    var s = document.createElement('script');
+    s.type = 'module';
+    s.textContent = [
+      "import * as Waline from '/waline/waline.js?v=2f300192';",
+      "Waline.init({",
+      "  el: '#waline-container',",
+      "  serverURL: 'https://waline.weite.net',",
+      "  lang: 'zh-CN',",
+      "  placeholder: '说点什么吧，欢迎交流…',",
+      "  requiredMeta: [\"nick\",\"mail\"], ",
+      "  login: 'enable',",
+      "  pageSize: 10,",
+      "  pageview: false,",
+      "  comment: true,",
+      "  dark: false,",
+      "  search: false",
+      "});"
+    ].join('\n');
+    document.body.appendChild(s);
   }
-  update();
-  setInterval(update, 1000);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { io.unobserve(e.target); loadWaline(); }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(box);
+  } else {
+    loadWaline();
+  }
 })();
-        </script>
+</script>
+
+
+      
+    </div>
+
+    <aside class="article-side">
+      
+
+      <div class="side-block side-author">
+        <img src="/img/avatar.svg" alt="维特笔记" loading="lazy" decoding="async">
+        <h4>维特笔记</h4>
+        <p>一个做事三分钟热度、却把博客坚持了一年的人。</p>
+        <div class="side-social">
+          
+          <a href="https://github.com/vtecc" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          </a>
+          
+          <a href="mailto:weite.net@outlook.com" target="_blank" rel="noopener" aria-label="邮箱">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 7.6L3.6 5.4 3 6l9 7 9-7-.6-.6L12 11.6z"/></svg>
+          </a>
+          
+          <a href="/atom.xml" target="_blank" rel="noopener" aria-label="RSS">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM1 8.6v3.1A11.3 11.3 0 0 1 12.3 23h3.1C15.4 14.6 9.4 8.6 1 8.6zM1 1v3.1C11.3 4.1 19.9 12.7 19.9 23H23C23 10.6 13.4 1 1 1z"/></svg>
+          </a>
+          
+        </div>
+      </div>
+
+      
+      <div class="side-block">
+        <h4 class="side-title">最近文章</h4>
+        <ul class="side-posts">
+          
+          <li>
+            <a href="/vitepress/25/">用豆包给我电脑里安装了一个VitePress</a>
+            <time>2026-10-14</time>
+          </li>
+          
+          <li>
+            <a href="/natter/24/">记录电脑重做系统后迁移hexo数据的记录</a>
+            <time>2026-10-11</time>
+          </li>
+          
+          <li>
+            <a href="/natter/23/">趁着这个假期好好的捣鼓了一下我这个小破站</a>
+            <time>2026-10-08</time>
+          </li>
+          
+          <li>
+            <a href="/natter/22/">一个中年老蹬琢磨下载自己喜欢音乐的办法</a>
+            <time>2026-09-28</time>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="side-block">
+        <h4 class="side-title">分类</h4>
+        <ul class="side-cats">
+          
+          <li><a href="/categories/natter/"><span>natter</span><em></em></a></li>
+          
+          <li><a href="/categories/vitepress/"><span>vitepress</span><em></em></a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="side-block">
+        <h4 class="side-title">标签</h4>
+        <div class="side-tags">
+          
+          <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+          
+          <a href="/tags/hexo/">hexo</a>
+          
+          <a href="/tags/%E9%82%AF%E9%83%B8%E5%8D%9A%E7%89%A9%E9%A6%86/">邯郸博物馆</a>
+          
+          <a href="/tags/vitepress/">vitepress</a>
+          
+          <a href="/tags/%E7%83%9F%E8%8A%B1/">烟花</a>
+          
+          <a href="/tags/%E8%87%AA%E9%A9%BE/">自驾</a>
+          
+          <a href="/tags/EdgeOne/">EdgeOne</a>
+          
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名</a>
+          
+          <a href="/tags/%E5%B0%8F%E7%A0%B4%E7%AB%99/">小破站</a>
+          
+          <a href="/tags/%E8%B1%86%E5%8C%85/">豆包</a>
+          
+          <a href="/tags/hexo%E4%B8%BB%E9%A2%98/">hexo主题</a>
+          
+          <a href="/tags/vercel/">vercel</a>
+          
+          <a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
+          
+          <a href="/tags/%E6%91%84%E5%BD%B1/">摄影</a>
+          
+        </div>
+      </div>
+      
+    </aside>
+  </div>
+</article>
+
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="/">
+          <span class="brand-mark">维</span>
+          <span>维特笔记</span>
+        </a>
+        <p class="footer-desc">一个普通 80 后的数字自留地，记录技术、生活与一些没头没尾的念头。</p>
+        <div class="footer-social">
+          
+          <a href="https://github.com/vtecc" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          </a>
+          
+          <a href="mailto:weite.net@outlook.com" target="_blank" rel="noopener" aria-label="邮箱">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 7.6L3.6 5.4 3 6l9 7 9-7-.6-.6L12 11.6z"/></svg>
+          </a>
+          
+          <a href="/atom.xml" target="_blank" rel="noopener" aria-label="RSS">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM1 8.6v3.1A11.3 11.3 0 0 1 12.3 23h3.1C15.4 14.6 9.4 8.6 1 8.6zM1 1v3.1C11.3 4.1 19.9 12.7 19.9 23H23C23 10.6 13.4 1 1 1z"/></svg>
+          </a>
+          
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul>
+          
+          <li><a href="/">首页</a></li>
+          
+          <li><a href="/archives/">文章</a></li>
+          
+          <li><a href="/portfolio/">作品</a></li>
+          
+          <li><a href="/services/">服务</a></li>
+          
+          <li><a href="/friends/">友链</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>浏览</h4>
+        <ul>
+          <li><a href="/archives/">文章归档</a></li>
+          <li><a href="/categories/">全部分类</a></li>
+          <li><a href="/tags/">全部标签</a></li>
+          <li><a href="/search/">搜索文章</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>保持联系</h4>
+        <ul>
+          <li><a href="/contact/">写封邮件</a></li>
+          
+          <li><a href="/atom.xml" target="_blank" rel="noopener">RSS</a></li>
+          
+          <li><a href="/sitemap.xml" target="_blank" rel="noopener">站点地图</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025–2026 维特笔记. 保留所有权利。</p>
+      <p class="footer-meta">
         
-        <br>
-        <a href="/atom.xml" target="_blank" rel="noopener noreferrer">ATOM 订阅</a>
-        &nbsp;|&nbsp;
-        <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">站点地图</a>
-    </p>
+        <span>由 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 驱动</span>
+        <span class="dot">·</span>
+        <span>主题 Smarto</span>
+      </p>
+    </div>
+  </div>
 </footer>
-<script src="/js/main.js"></script>
-<!-- umami访问统计脚本放在这里 -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
+
+<button class="back-top" id="back-top" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+
+<div class="read-progress" id="read-progress"></div>
+
+<script>window.__ROOT__ = '/';</script>
+<script src="/js/main.js?v=c7cf5921" defer></script>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}
+</script>
+
 </body>
 </html>
-
 

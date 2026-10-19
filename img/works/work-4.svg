@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#e9e9e6"/>
+  <g stroke="#d2d2cd" stroke-width="1.5" fill="none">
+    <path d="M0 150 H800 M0 300 H800 M0 450 H800 M160 0 V600 M360 0 V600 M560 0 V600 M720 0 V600"/>
+    <path d="M60 500 C200 430 260 330 400 300 S600 210 740 120" stroke="#141414" stroke-width="2.5"/>
+  </g>
+  <circle cx="60" cy="500" r="8" fill="#141414"/>
+  <circle cx="400" cy="300" r="8" fill="#141414"/>
+  <circle cx="740" cy="120" r="12" fill="none" stroke="#141414" stroke-width="2.5"/>
+  <text x="70" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" letter-spacing="7" fill="#8f8f8a">CITY WALK</text>
+  <text x="70" y="560" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" fill="#6f6f6a">走过的路，都算数</text>
+</svg>
