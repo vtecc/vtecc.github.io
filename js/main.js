@@ -466,6 +466,14 @@
     }
   });
 
+  /* ---------- 建站天数实时计算 ---------- */
+  $$('.js-run-days').forEach(function (el) {
+    var s = el.getAttribute('data-start');
+    if (!s) return;
+    var ts = new Date(s.replace(/-/g, '/')).getTime();
+    if (!isNaN(ts)) el.textContent = Math.max(1, Math.floor((Date.now() - ts) / 86400000));
+  });
+
   /* 初始触发一次（放在末尾，确保所有变量已初始化） */
   onScroll();
 })();
