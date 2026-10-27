@@ -356,7 +356,7 @@
         fetch(action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, subject: subject, message: message, _captcha: 'false', _template: 'table' })
+          body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
         }).then(function (r) {
           if (tip) tip.textContent = r.ok ? '发送成功，我会尽快回复你。' : '发送失败，请稍后再试。';
           if (r.ok) contactForm.reset();
