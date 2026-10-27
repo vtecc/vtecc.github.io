@@ -499,7 +499,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .footer-bottom a { color: rgba(255, 255, 255, .55); }
 .footer-bottom a:hover { color: #fff; }
-.footer-meta { display: flex; align-items: center; }
+.footer-meta { display: flex; align-items: center; flex-wrap: wrap; row-gap: 4px; }
 .footer-meta .dot { color: rgba(255, 255, 255, .2); }
 
 /* Back to top + progress */
