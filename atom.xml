@@ -63,7 +63,7 @@
     <link href="https://www.weite.net/vitepress/25/"/>
     <published>2026-10-14T11:11:02.000Z</published>
     <summary>
-      <![CDATA[<p>话说现在看到的资讯方面的信息基本上被AI刷屏了，比如：ChatGPT、文心一言、通义千问、WorkBuddy、Kimi Work、Claude、豆包、Midjourney、即梦、可灵 Kling、Pika、Sora、 Prezo等。]]>
+      <![CDATA[<p>话说现在看到的资讯方面的信息基本上被AI刷屏了，比如：ChatGPT、文心一言、通义千问、WorkBuddy、Kimi Work、Claude、豆包、Midjourney、即梦、可灵 Kling、Pika、Sora、 Prezo等。 这些模型覆盖聊天、办公、创作、视频、绘画]]>
     </summary>
     <title>用豆包给我电脑里安装了一个VitePress</title>
     <updated>2026-10-14T11:54:39.567Z</updated>
@@ -103,7 +103,7 @@
     <published>2026-10-08T12:48:21.000Z</published>
     <summary>
       <![CDATA[<p>在观察了很多其他大佬的博客后我发现我的小破站还是有很多不足的地方，趁着这几天有点时间，就上手试着修修改改，一点点的完善我这个小破站。当然还有很多地方还是没弄成呢，先慢慢来吧，毕竟这个hexo主题是用AI写的就算出问题也得自己想办法去解决！</p>
-<h2]]>
+<h2 id="RSS-内]]>
     </summary>
     <title>趁着这个假期好好的捣鼓了一下我这个小破站</title>
     <updated>2026-10-08T14:04:14.000Z</updated>
@@ -158,7 +158,7 @@
     <link href="https://www.weite.net/natter/20/"/>
     <published>2026-09-14T13:29:47.000Z</published>
     <summary>
-      <![CDATA[<p>]]>
+      <![CDATA[<p>  时间真的好快，马上我这个小破站就要一周年了，遥想25年9月15日才搭建起来的小破站，竟然已经陆陆续续走过了一年的光景，只能说是时间真的好快啊！明天就一周年了，我在这里顺便记录一下，毕竟我只是一个做事只有三分钟热度的人，这个小破站竟然能够坚持住一年的时间，太不可思议了！<]]>
     </summary>
     <title>小破站一周年了</title>
     <updated>2026-09-14T14:44:00.000Z</updated>
@@ -292,7 +292,9 @@
     <link href="https://www.weite.net/natter/13/"/>
     <published>2026-03-11T02:35:47.000Z</published>
     <summary>
-      <![CDATA[<p>]]>
+      <![CDATA[<p>  刚刚抽了一眼我的这个小破站，竟然有两个月没动它了。现在有一个多小时的时间，就来更新一下我这个小破站。</p>
+<p>主要还是在春节期间比较懒，也差不多有两个月没开电脑了！一方面是比较忙，另一方面是比较懒！当然了主要还是懒！</p>
+<p>其实也不算是懒，主要问题是我们大]]>
     </summary>
     <title>这个春节去了一趟山东看了一场烟花秀</title>
     <updated>2026-03-11T02:56:30.000Z</updated>
@@ -311,7 +313,7 @@
     <published>2026-01-21T05:31:08.000Z</published>
     <summary>
       <![CDATA[<p>看到很多小伙伴在使用腾讯云的EdgeOne来给自己的站点加速，我心里也是痒痒的，这不咱也来试试这个EdgeOne。</p>
-<p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a]]>
+<p>但是在我折腾一圈以后发现，我这个部署在GitHub上的小破站还不如不使用EdgeOne加速。在使用<a href="https://www.it]]>
     </summary>
     <title>不备案部署在GitHub的博客是否需要EdgeOne加速</title>
     <updated>2026-01-21T06:02:02.000Z</updated>
@@ -330,7 +332,7 @@
     <published>2026-01-15T06:48:20.000Z</published>
     <summary>
       <![CDATA[<p>在使用vitepress之前，咱们得先在自己的电脑里安装这个vitepress。如果您不知道什么是vitepress，请去搜索引擎搜一下就知道了。</p>
-<h1 id="在自己电脑上安装vitepress的前置条件"><a]]>
+<h1 id="在自己电脑上安装vitepress的前置条件"><a href="#在自己电脑上安装vitepress]]>
     </summary>
     <title>学习一下vitepress的使用</title>
     <updated>2026-01-15T07:15:30.000Z</updated>
@@ -368,7 +370,7 @@
     <published>2025-12-29T02:32:31.000Z</published>
     <summary>
       <![CDATA[<p>这不马上年底了，咱也跟风来个年底总结，我先把自己的记忆捋一遍。脑子里好像没啥太多的记忆！那就先从我搭建这个博客来说吧。</p>
-<p>9月份利用ai+学习的方式，搭建起来这个小破站。当时好像使用的是<code>keep</code>主题，这个可以在我写的文章里看到《<a]]>
+<p>9月份利用ai+学习的方式，搭建起来这个小破站。当时好像使用的是<code>keep</code>主题，这个可以在我写的文章里看到《<a h]]>
     </summary>
     <title>咱也来个年终总结</title>
     <updated>2025-12-29T03:17:18.000Z</updated>
@@ -387,7 +389,8 @@
     <link href="https://www.weite.net/natter/8/"/>
     <published>2025-12-22T03:23:30.000Z</published>
     <summary>
-      <![CDATA[<p>话说看到别人的博客里都有好多好多的功能，像什么<code>足迹]]>
+      <![CDATA[<p>话说看到别人的博客里都有好多好多的功能，像什么<code>足迹 相册</code>等功能，属实是有点羡慕！所以现在趁着AI可以使用，那就让AI帮我写一个页面得了，嘎嘎。</p>
+<p>先说一下我的思路，我想的是要有新功能，但是还不需要花钱，并且适合我这种小白使用。所以我发现]]>
     </summary>
     <title>优化博客之增加一个摄影页面</title>
     <updated>2025-12-22T03:57:38.000Z</updated>
