@@ -346,28 +346,71 @@
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var tip = $('#contact-tip');
+      var btn = contactForm.querySelector('button[type="submit"]');
       var data = new FormData(contactForm);
       var name = data.get('name') || '';
       var email = data.get('email') || '';
       var subject = data.get('subject') || '来自博客的联系';
       var message = data.get('message') || '';
       var action = contactForm.getAttribute('data-action');
+      var mode = contactForm.getAttribute('data-mode');
+
+      function say(text) { if (tip) tip.textContent = text; }
+      function busy(on) { if (btn) btn.disabled = !!on; }
+
+      /* 直接写进自己的 Waline，无需第三方表单服务 */
+      if (mode === 'waline') {
+        var server = (contactForm.getAttribute('data-waline-server') || '').replace(/\/$/, '');
+        var page = contactForm.getAttribute('data-waline-page') || '/_contact-inbox/';
+        busy(true);
+        say('正在发送…');
+        fetch(server + '/api/comment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nick: name,
+            mail: email,
+            url: page,
+            comment: '**主题：' + subject + '**\n\n' + message,
+            ua: navigator.userAgent
+          })
+        }).then(function (r) {
+          return r.json();
+        }).then(function (res) {
+          busy(false);
+          if (res && res.errno === 0) {
+            say('留言已送达，我会尽快回复你。');
+            contactForm.reset();
+          } else {
+            var msg = res && res.errmsg;
+            if (msg && typeof msg === 'object') {
+              msg = Object.keys(msg).map(function (k) { return msg[k]; }).join('；');
+            }
+            say('发送失败：' + (msg || '请稍后再试'));
+          }
+        }).catch(function () {
+          busy(false);
+          say('网络有点问题，也可以直接发邮件给我。');
+        });
+        return;
+      }
+
       if (action) {
         fetch(action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
         }).then(function (r) {
-          if (tip) tip.textContent = r.ok ? '发送成功，我会尽快回复你。' : '发送失败，请稍后再试。';
+          say(r.ok ? '发送成功，我会尽快回复你。' : '发送失败，请稍后再试。');
           if (r.ok) contactForm.reset();
         }).catch(function () {
-          if (tip) tip.textContent = '网络有点问题，也可以直接发邮件给我。';
+          say('网络有点问题，也可以直接发邮件给我。');
         });
       } else {
         var mail = contactForm.getAttribute('data-email') || '';
         var body = '姓名：' + name + '\n邮箱：' + email + '\n\n' + message;
         window.location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        if (tip) tip.textContent = '已打开邮件客户端，发送即可。';
+        say('已打开邮件客户端，发送即可。');
       }
     });
   }
