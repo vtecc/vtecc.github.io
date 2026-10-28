@@ -149,7 +149,7 @@
       <div class="hero-stats">
         <div><strong>29</strong><span>篇文章</span></div>
         <div><strong>2</strong><span>个分类</span></div>
-        <div><strong class="js-run-days" data-start="2025-09-15">407</strong><span>天记录</span></div>
+        <div><strong class="js-run-days" data-start="2025-09-15">408</strong><span>天记录</span></div>
       </div>
     </div>
 
@@ -461,7 +461,13 @@
   <div class="shell subscribe-inner">
     <h2>订阅更新</h2>
     <p>留下邮箱，有新文章时通知你。不群发，不打扰。</p>
-    <form class="subscribe-form" id="subscribe-form" data-action="" data-email="weite.net@outlook.com" data-success="已为你打开邮件客户端，发送后即完成订阅。">
+    <form class="subscribe-form" id="subscribe-form"
+      data-mode="waline"
+      data-action=""
+      data-waline-server="https://waline.weite.net"
+      data-waline-page="/_subscribe/"
+      data-email="weite.net@outlook.com"
+      data-success="订阅成功！我已记下你的邮箱，新文章发布后会通知你。">
       <input type="email" name="email" required placeholder="输入你的邮箱地址…">
       <button type="submit" aria-label="订阅">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
@@ -569,7 +575,7 @@
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="cb9e51cb-83df-4277-b9ec-7bb1b8359e6b"></script>
 
-<script src="/js/main.js?v=1c5f68ac" defer></script>
+<script src="/js/main.js?v=94c169ed" defer></script>
 
 <script type="speculationrules">
 {"prerender":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}

@@ -320,22 +320,65 @@
       var email = input ? input.value.trim() : '';
       if (!email) return;
       var action = subForm.getAttribute('data-action');
+      var mode = subForm.getAttribute('data-mode');
       var success = subForm.getAttribute('data-success') || '订阅成功，谢谢！';
+      var btn = subForm.querySelector('button[type="submit"]');
+
+      function say(text) { if (tip) tip.textContent = text; }
+      function busy(on) { if (btn) btn.disabled = !!on; }
+
+      /* 订阅意向写入自己的 Waline，管理员会收到邮件通知 */
+      if (mode === 'waline') {
+        var server = (subForm.getAttribute('data-waline-server') || '').replace(/\/$/, '');
+        var page = subForm.getAttribute('data-waline-page') || '/_subscribe/';
+        busy(true);
+        say('正在提交…');
+        fetch(server + '/api/comment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nick: email.split('@')[0] || '订阅读者',
+            mail: email,
+            url: page,
+            comment: '**订阅申请**：希望在新文章发布时收到通知。订阅邮箱：' + email,
+            ua: navigator.userAgent
+          })
+        }).then(function (r) {
+          return r.json();
+        }).then(function (res) {
+          busy(false);
+          if (res && res.errno === 0) {
+            say(success);
+            if (input) input.value = '';
+          } else {
+            var msg = res && res.errmsg;
+            if (msg && typeof msg === 'object') {
+              msg = Object.keys(msg).map(function (k) { return msg[k]; }).join('；');
+            }
+            say('提交失败：' + (msg || '请稍后再试'));
+          }
+        }).catch(function () {
+          busy(false);
+          say('网络有点问题，请稍后再试。');
+        });
+        return;
+      }
+
       if (action) {
         fetch(action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email })
         }).then(function (r) {
-          if (tip) tip.textContent = r.ok ? success : '订阅失败，请稍后再试。';
+          say(r.ok ? success : '订阅失败，请稍后再试。');
           if (r.ok && input) input.value = '';
         }).catch(function () {
-          if (tip) tip.textContent = '网络有点问题，请稍后再试。';
+          say('网络有点问题，请稍后再试。');
         });
       } else {
         var mail = subForm.getAttribute('data-email') || '';
         window.location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent('订阅更新') + '&body=' + encodeURIComponent('你好，我想订阅「' + document.title + '」的更新。\n\n我的邮箱：' + email);
-        if (tip) tip.textContent = success;
+        say(success);
       }
     });
   }
